@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Script/body.gd" type="Script" id=1]
 [ext_resource path="res://Script/main.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scenes/PlayableCharacters/Spirit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=6]
 [ext_resource path="res://Assets/map/live/flor.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Box_alive.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -86,8 +88,8 @@ position = Vector2( 278, 77 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="body" parent="." groups=["playable"] instance=ExtResource( 4 )]
-position = Vector2( 439, 69 )
+[node name="body" parent="." groups=["playable", "tangible"] instance=ExtResource( 4 )]
+position = Vector2( 498, 51 )
 script = ExtResource( 1 )
 jump_speed = -750
 
@@ -96,3 +98,9 @@ position = Vector2( 249, 296 )
 
 [node name="NPC2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 533, 171 )
+
+[node name="Box (alive)" parent="." groups=["tangible"] instance=ExtResource( 8 )]
+position = Vector2( 421, 96 )
+
+[node name="Button" parent="." instance=ExtResource( 9 )]
+position = Vector2( 348, 173 )

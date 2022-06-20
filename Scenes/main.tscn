@@ -99,4 +99,4 @@ position = Vector2( 249, 296 )
 position = Vector2( 533, 171 )
 
 [node name="Box (alive)" parent="." instance=ExtResource( 2 )]
-position = Vector2( 427, -29 )
+position = Vector2( 388, -2 )
