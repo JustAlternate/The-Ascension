@@ -6,6 +6,7 @@ export var speed = 500
 export var acceleration = 0.1
 export var friction = 0.05
 
+var _on_fontaine = false
 var alive = true
 
 func get_input():
@@ -27,8 +28,11 @@ func get_input():
 		velocity = velocity.linear_interpolate(input_velocity,acceleration)
 	else:
 		velocity = velocity.linear_interpolate(Vector2.ZERO,friction)
-		
 
+
+
+
+# revivre/mourire
 func dead():
 	alive = false
 	visible = true
