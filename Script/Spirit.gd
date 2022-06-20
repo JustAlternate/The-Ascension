@@ -7,6 +7,7 @@ export var acceleration = 0.1
 export var friction = 0.05
 
 var alive = true
+var dead = not alive
 
 func get_input():
 	input_velocity = Vector2.ZERO

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/button_form_in_menu.tres" type="StyleBox" id=2]
-[ext_resource path="res://Scenes/UI/menu_main.gd" type="Script" id=4]
+[ext_resource path="res://Script/menu_main.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
