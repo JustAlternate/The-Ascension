@@ -49,7 +49,7 @@ position = Vector2( 332, 316 )
 [node name="dead" type="Node2D" parent="."]
 
 [node name="NPC" parent="dead" instance=ExtResource( 3 )]
-position = Vector2( 294, 184 )
+position = Vector2( 718.845, 174.465 )
 collision_layer = 2
 collision_mask = 2
 

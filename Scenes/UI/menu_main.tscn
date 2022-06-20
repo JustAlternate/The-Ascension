@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/button_form_in_menu.tres" type="StyleBox" id=2]
@@ -11,6 +11,29 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=3]
 size = 64
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxLine" id=5]
+grow_begin = -20.0
+grow_end = -20.0
+thickness = 4
+vertical = true
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+extra_spacing_space = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxLine" id=6]
+grow_begin = -20.0
+grow_end = -20.0
+thickness = 4
+vertical = true
+
+[sub_resource type="StyleBoxLine" id=7]
+grow_begin = -20.0
+grow_end = -20.0
+thickness = 4
+vertical = true
 
 [node name="menu" type="Node"]
 script = ExtResource( 4 )
@@ -30,60 +53,66 @@ custom_fonts/font = SubResource( 1 )
 text = "The Ascension"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Button" type="Button" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 86.0
-margin_top = -80.0
-margin_right = 294.0
-margin_bottom = 16.0
+anchor_left = 0.0839844
+anchor_top = 0.366667
+anchor_right = 0.287109
+anchor_bottom = 0.526667
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
-custom_styles/hover = ExtResource( 2 )
+custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Play"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Button2" type="Button" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 86.0
-margin_top = 24.0
-margin_right = 421.0
-margin_bottom = 120.0
+anchor_left = 0.0839844
+anchor_top = 0.54
+anchor_right = 0.291016
+anchor_bottom = 0.7
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/hover = ExtResource( 2 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
 enabled_focus_mode = 0
-text = "Settings"
+text = " Settings"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Button3" type="Button" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 86.0
-margin_top = 127.0
-margin_right = 283.0
-margin_bottom = 223.0
+anchor_left = 0.0839844
+anchor_top = 0.711667
+anchor_right = 0.276367
+anchor_bottom = 0.871667
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
-custom_styles/hover = ExtResource( 2 )
+custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
 [connection signal="button_up" from="Button2" to="." method="_on_Button_button_up"]
