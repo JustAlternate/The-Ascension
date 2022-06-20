@@ -1,19 +1,29 @@
 extends KinematicBody2D
 
-var velocity = Vector2()
-export var speed = 200
+var velocity = Vector2.ZERO
+var input_velocity = Vector2.ZERO
+export var speed = 500
+export var acceleration = 0.1
+export var friction = 0.05
+
 
 func get_input():
-	velocity = Vector2.ZERO
+	input_velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
+		input_velocity.y -= 1
 	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
+		input_velocity.y += 1
 	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
+		input_velocity.x -= 1
 	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	velocity = velocity.normalized() * speed
+		input_velocity.x += 1
+	input_velocity = input_velocity.normalized() * speed
+	
+	if input_velocity.length() > 0:
+		velocity = velocity.linear_interpolate(input_velocity,acceleration)
+	else:
+		velocity = velocity.linear_interpolate(Vector2.ZERO,friction)
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
