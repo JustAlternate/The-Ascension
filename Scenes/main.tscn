@@ -109,8 +109,6 @@ tile_data = PoolIntArray( 1048595, 2, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 
 [node name="Spirit" parent="." groups=["playable"] instance=ExtResource( 9 )]
 <<<<<<< Updated upstream
 position = Vector2( 278, 77 )
-collision_layer = 2
-collision_mask = 2
 
 [node name="body" parent="." groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( 439, 69 )
