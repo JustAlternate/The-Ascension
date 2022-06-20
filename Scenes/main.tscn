@@ -170,6 +170,7 @@ tile_data = PoolIntArray( 458753, 2, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0
 [node name="Node2D" parent="live" instance=ExtResource( 4 )]
 position = Vector2( 439, 69 )
 script = ExtResource( 5 )
+jump_speed = -500
 
 [node name="dead" type="Node2D" parent="."]
 
