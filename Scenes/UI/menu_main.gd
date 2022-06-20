@@ -15,8 +15,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-func _on_Button_button_down():
+func _on_Button_button_up():
 	var map_name = "niveau_1"
 	var path = "res://Scenes/{map_name}.tscn".format({"map_name":map_name})
 	get_tree().change_scene(path)
