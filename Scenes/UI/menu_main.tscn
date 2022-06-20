@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/button_form_in_menu.tres" type="StyleBox" id=2]
 [ext_resource path="res://Scenes/UI/font_for_button_in_menu.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/UI/menu_main.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -26,6 +27,7 @@ corner_detail = 4
 anti_aliasing = false
 
 [node name="menu" type="Node"]
+script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -88,6 +90,4 @@ custom_styles/normal = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Exit"
 
-[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
-[connection signal="button_up" from="Button3" to="." method="_on_Button3_button_up"]
-[connection signal="button_up" from="Button2" to="." method="_on_Button2_button_up"]
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
