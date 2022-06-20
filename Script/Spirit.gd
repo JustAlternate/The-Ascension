@@ -7,11 +7,12 @@ export var acceleration = 0.1
 export var friction = 0.05
 
 var alive = true
-var dead = not alive
 
 func get_input():
 	input_velocity = Vector2.ZERO
-	if dead:
+	if alive:
+		pass
+	else:
 		if Input.is_action_pressed("move_up"):
 			input_velocity.y -= 1
 		if Input.is_action_pressed("move_down"):
@@ -33,11 +34,15 @@ func dead():
 	visible = true
 	
 func revive():
+	velocity = Vector2.ZERO
 	alive = true
 	visible = false
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	get_input()
-	move_and_slide(velocity)
+	if alive:
+		global_position = get_tree().current_scene.get_node("body").global_position
+	else:
+		get_input()
+		move_and_slide(velocity)
 

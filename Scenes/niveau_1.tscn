@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Script/body.gd" type="Script" id=1]
 [ext_resource path="res://Script/main.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/map/NPC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/PlayableCharacters/body.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/PlayableCharacters/Spirit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Box_alive.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/map/Button.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -44,7 +43,15 @@ script = ExtResource( 2 )
 [node name="live_TileMap" parent="live" instance=ExtResource( 7 )]
 tile_data = PoolIntArray( 196618, 0, 0, 196619, 0, 0, 262150, 0, 0, 262151, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327693, 0, 0, 327694, 0, 0, 458763, 0, 0, 458764, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524297, 0, 0, 524298, 0, 0 )
 
+[node name="Button" parent="live" instance=ExtResource( 9 )]
+position = Vector2( 332, 316 )
+
 [node name="dead" type="Node2D" parent="."]
+
+[node name="NPC" parent="dead" instance=ExtResource( 3 )]
+position = Vector2( 294, 184 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="TileMap" type="TileMap" parent="dead"]
 tile_set = SubResource( 5 )
@@ -61,21 +68,7 @@ collision_mask = 2
 [node name="body" parent="." groups=["playable", "tangible"] instance=ExtResource( 4 )]
 position = Vector2( 498, 51 )
 scale = Vector2( 0.9, 0.9 )
-script = ExtResource( 1 )
 jump_speed = -750
-
-[node name="NPC" parent="." instance=ExtResource( 3 )]
-position = Vector2( 249, 296 )
-collision_layer = 3
-collision_mask = 3
-
-[node name="NPC2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 533, 171 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="Box (alive)" parent="." groups=["tangible"] instance=ExtResource( 8 )]
 position = Vector2( 421, 96 )
-
-[node name="Button" parent="." instance=ExtResource( 9 )]
-position = Vector2( 348, 173 )
