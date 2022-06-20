@@ -2,7 +2,7 @@ extends Area2D
 
 
 var player_in_range = false
-signal interacted
+signal interacted(instance)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
