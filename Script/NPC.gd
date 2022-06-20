@@ -2,7 +2,7 @@ extends Area2D
 
 
 var player_in_range = false
-
+signal interacted
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +13,8 @@ func _ready():
 func _process(delta):
 	if player_in_range:
 		if Input.is_action_just_pressed("interact"):
-			pass
+			print("BONJOUR AVENTURIER BIEN OU QUOI ?")
+			emit_signal("interacted",self)
 
 
 func _on_Bonhomme_body_entered(body):
