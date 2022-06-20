@@ -35,6 +35,7 @@ frame = 1
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PoolVector2Array( 19, -706, -609, -29, -611, 128, -285, 608, 318, 613, 643, 121, 642, -37 )
 
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
