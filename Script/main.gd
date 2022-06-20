@@ -1,6 +1,6 @@
 extends Node2D
 
-var state = 1
+export var state = 1
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -16,10 +16,12 @@ func change_state():
 		state = 0
 		$live.visible = false
 		$dead.visible = true
+		$Spirit.dead()
 	else:
 		state = 1
 		$live.visible = true
 		$dead.visible = false
+		$Spirit.revive()
 
 func _input(event):
 	if event.is_action_pressed("test"):

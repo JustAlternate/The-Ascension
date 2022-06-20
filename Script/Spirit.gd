@@ -6,18 +6,20 @@ export var speed = 500
 export var acceleration = 0.1
 export var friction = 0.05
 
+var alive = true
 
 func get_input():
 	input_velocity = Vector2.ZERO
-	if Input.is_action_pressed("move_up"):
-		input_velocity.y -= 1
-	if Input.is_action_pressed("move_down"):
-		input_velocity.y += 1
-	if Input.is_action_pressed("move_left"):
-		input_velocity.x -= 1
-	if Input.is_action_pressed("move_right"):
-		input_velocity.x += 1
-	input_velocity = input_velocity.normalized() * speed
+	if dead:
+		if Input.is_action_pressed("move_up"):
+			input_velocity.y -= 1
+		if Input.is_action_pressed("move_down"):
+			input_velocity.y += 1
+		if Input.is_action_pressed("move_left"):
+			input_velocity.x -= 1
+		if Input.is_action_pressed("move_right"):
+			input_velocity.x += 1
+		input_velocity = input_velocity.normalized() * speed
 	
 	if input_velocity.length() > 0:
 		velocity = velocity.linear_interpolate(input_velocity,acceleration)
@@ -25,6 +27,14 @@ func get_input():
 		velocity = velocity.linear_interpolate(Vector2.ZERO,friction)
 		
 
+func dead():
+	alive = false
+	visible = true
+	
+func revive():
+	alive = true
+	visible = false
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	get_input()
