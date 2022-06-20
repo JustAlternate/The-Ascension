@@ -30,9 +30,18 @@ func get_input():
 	else:
 		velocity = Vector2.ZERO
 
+# Pour l'instant permet de pousser la boîte
+func kinematic_physics():
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider is MovableBox:
+			collision.collider.slide(-collision.normal * (run_speed / 2))
+
+
 func _physics_process(delta):
 	velocity.y += gravity * delta
 	get_input()
+	kinematic_physics()
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func dead():

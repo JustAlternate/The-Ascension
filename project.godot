@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "MovableBox",
+"language": "GDScript",
+"path": "res://Script/Box_alive.gd"
+} ]
+_global_script_class_icons={
+"MovableBox": ""
+}
+
 [application]
 
 config/name="black_and_white_jam"
