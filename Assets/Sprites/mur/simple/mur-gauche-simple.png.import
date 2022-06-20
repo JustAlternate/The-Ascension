@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flor-left.png-47df3c5cc16f9d74348b877dad23404b.stex"
+path="res://.import/mur-gauche-simple.png-45ce840351cd5ac67f1e693f9f7b0949.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/map/live/flor-left.png"
-dest_files=[ "res://.import/flor-left.png-47df3c5cc16f9d74348b877dad23404b.stex" ]
+source_file="res://Assets/Sprites/mur/simple/mur-gauche-simple.png"
+dest_files=[ "res://.import/mur-gauche-simple.png-45ce840351cd5ac67f1e693f9f7b0949.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

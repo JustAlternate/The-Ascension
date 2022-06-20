@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flor.png-7f20ec04f9f90f967bdddf0669a4fef2.stex"
+path="res://.import/fontaine_noir.png-b22bbb788dfadeceeaa03642d20281f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/map/live/flor.png"
-dest_files=[ "res://.import/flor.png-7f20ec04f9f90f967bdddf0669a4fef2.stex" ]
+source_file="res://Assets/Sprites/fontaine_noir.png"
+dest_files=[ "res://.import/fontaine_noir.png-b22bbb788dfadeceeaa03642d20281f3.stex" ]
 
 [params]
 

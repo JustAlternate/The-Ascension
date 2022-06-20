@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flor.png-7f20ec04f9f90f967bdddf0669a4fef2.stex"
+path="res://.import/mur-coin-haut-gauche.png-f5af656bbe9943545ea57e3702ef4d1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/map/live/flor.png"
-dest_files=[ "res://.import/flor.png-7f20ec04f9f90f967bdddf0669a4fef2.stex" ]
+source_file="res://Assets/Sprites/mur/coin/mur-coin-haut-gauche.png"
+dest_files=[ "res://.import/mur-coin-haut-gauche.png-f5af656bbe9943545ea57e3702ef4d1c.stex" ]
 
 [params]
 

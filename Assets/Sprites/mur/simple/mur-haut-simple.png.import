@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flor.png-7f20ec04f9f90f967bdddf0669a4fef2.stex"
+path="res://.import/mur-haut-simple.png-b2ee3fd32820b760b70639541a28bb1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/map/live/flor.png"
-dest_files=[ "res://.import/flor.png-7f20ec04f9f90f967bdddf0669a4fef2.stex" ]
+source_file="res://Assets/Sprites/mur/simple/mur-haut-simple.png"
+dest_files=[ "res://.import/mur-haut-simple.png-b2ee3fd32820b760b70639541a28bb1c.stex" ]
 
 [params]
 

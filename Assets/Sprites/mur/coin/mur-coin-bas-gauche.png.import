@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flor-right.png-73d0c12e4d95697d17af5f3ab7bc207d.stex"
+path="res://.import/mur-coin-bas-gauche.png-229718ff0ef02784bd3abdbf1f1fa931.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/map/dead/flor-right.png"
-dest_files=[ "res://.import/flor-right.png-73d0c12e4d95697d17af5f3ab7bc207d.stex" ]
+source_file="res://Assets/Sprites/mur/coin/mur-coin-bas-gauche.png"
+dest_files=[ "res://.import/mur-coin-bas-gauche.png-229718ff0ef02784bd3abdbf1f1fa931.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
