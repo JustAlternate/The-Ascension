@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/Box_alive.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Script/main.gd" type="Script" id=10]
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/map/movable_plateforme.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Script/ColorRect.gd" type="Script" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -39,7 +40,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[node name="main2" type="Node2D"]
+[node name="main" type="Node2D" groups=["main"]]
 script = ExtResource( 10 )
 
 [node name="ressources" type="Node2D" parent="."]
@@ -53,7 +54,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="piege_horizontale_simple" parent="ressources" instance=ExtResource( 8 )]
-position = Vector2( -100, 200 )
+position = Vector2( -107, 198 )
 scale = Vector2( 0.02, 0.02 )
 
 [node name="Button_levier" parent="ressources" instance=ExtResource( 6 )]
@@ -61,10 +62,11 @@ position = Vector2( -100, 300 )
 collision_layer = 0
 collision_mask = 0
 
-[node name="Button_tangible" parent="ressources" instance=ExtResource( 5 )]
-position = Vector2( -100, 400 )
+[node name="Button_tangible" parent="ressources/Button_levier" instance=ExtResource( 5 )]
+position = Vector2( 0, 100 )
+scale = Vector2( 3.33333, 1 )
 
-[node name="fontaine" parent="ressources" instance=ExtResource( 7 )]
+[node name="fontaine" parent="ressources" groups=["grp_change_color"] instance=ExtResource( 7 )]
 position = Vector2( -100, 500 )
 scale = Vector2( 0.05, 0.05 )
 
@@ -76,10 +78,20 @@ position = Vector2( 70, 0 )
 
 [node name="niveau" type="Node2D" parent="."]
 
+[node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
+margin_left = -41.0
+margin_top = -33.0
+margin_right = 1083.0
+margin_bottom = 652.0
+script = ExtResource( 13 )
+
 [node name="live" type="Node2D" parent="niveau"]
 
 [node name="live_TileMap" parent="niveau/live" instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0 )
+
+[node name="NPC2" parent="niveau/live" instance=ExtResource( 3 )]
+position = Vector2( 225, 468 )
 
 [node name="dead" type="Node2D" parent="niveau"]
 
@@ -96,8 +108,10 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]
-position = Vector2( 272, 171 )
+position = Vector2( 54, 444 )
 scale = Vector2( 0.1, 0.1 )
 jump_speed = -750
+
+[connection signal="change_color" from="." to="ressources/fontaine" method="_on_main_change_color"]
 
 [editable path="ressources/movable_plateforme"]

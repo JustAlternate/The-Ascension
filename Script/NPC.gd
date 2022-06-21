@@ -9,12 +9,22 @@ func _ready():
 	pass # Replace with function body.
 
 
+func show_text(text):
+	$Label.show()
+	for i in text:
+		yield(get_tree().create_timer(.1),"timeout")
+		$Label.text = $Label.text + i
+	emit_signal("interacted",self)
+
+	yield(get_tree().create_timer(5),"timeout")
+	$Label.text = ""
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if player_in_range:
 		if Input.is_action_just_pressed("interact"):
-			print("BONJOUR AVENTURIER BIEN OU QUOI ?")
-			emit_signal("interacted",self)
+			show_text("Bonjour Aventurier bien ou quoi ?")
 
 
 func _on_Bonhomme_body_entered(body):

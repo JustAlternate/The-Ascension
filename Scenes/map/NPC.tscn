@@ -1,18 +1,79 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Script/NPC.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/dwaynetherockjohnson.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/personnage/perssonnage-attente.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/white.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/UI/font_for_button_in_menu.tres" type="DynamicFont" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 50.0
 
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 4096, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 2048, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 4096, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 2048, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 4096, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 6144, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 2048, 6144, 2048, 2048 )
+
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="NPC" type="Area2D"]
 script = ExtResource( 1 )
@@ -24,6 +85,19 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.066, 0.066 )
 frames = SubResource( 2 )
+playing = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -80.0
+margin_top = -108.0
+margin_right = 81.0
+margin_bottom = -69.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/normal = SubResource( 14 )
+align = 1
+valign = 1
+autowrap = true
 
 [connection signal="body_entered" from="." to="." method="_on_Bonhomme_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Bonhomme_body_exited"]
