@@ -111,21 +111,21 @@ __meta__ = {
 }
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-anchor_left = 0.00488281
-anchor_top = 0.311667
-anchor_right = 0.285156
-anchor_bottom = 0.936667
-margin_left = 569.0
+anchor_left = 0.0742188
+anchor_top = 0.366667
+anchor_right = 0.241211
+anchor_bottom = 0.873333
+margin_left = 385.0
 margin_top = -16.0
-margin_right = 569.0
+margin_right = 385.0
 margin_bottom = -16.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 623.446, 343.288 )
-scale = Vector2( 0.3, 0.3 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ColorRect2"]
+position = Vector2( 78.3395, 155.937 )
+scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 19 )
 frame = 2
 playing = true
