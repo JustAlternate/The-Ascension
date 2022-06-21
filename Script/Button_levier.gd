@@ -16,7 +16,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -31,8 +30,14 @@ func _on_Button_body_exited(body):
 func _input(event):
 	if event.is_action_pressed("interact") and entered:
 		if activated:
+			activated = false
+			$AnimatedSprite.animation = "switch_activation"
+			$AnimatedSprite.frame = 0
 			emit_signal("switch")
 			emit_signal("desactivated")
 		else:
+			activated = true
+			$AnimatedSprite.animation = "switch_desactivation"
+			$AnimatedSprite.frame = 0
 			emit_signal("switch")
 			emit_signal("activated")

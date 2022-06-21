@@ -29,13 +29,30 @@ func desactivation():
 	$AnimatedSprite.animation = "desactivate"
 	activate = false
 
+#groupe_fonction
+func change_color():
+	if material == load("res://shader_inversion.tres"):
+		material = null
+	else:
+		material = load("res://shader_inversion.tres")
+
+func try_revive():
+	if body_in and activate:
+		get_tree().call_group("main","dont_revive")
+##
+
 func _on_piege_horizontale_simple_body_entered(body):
 	if body.name == "body" :
 		body_in = true
 		if activate:
-			emit_signal("death")
-
+			get_tree().call_group("main","death")
 
 func _on_piege_horizontale_simple_body_exited(body):
 	if body.name == "body":
 		body_in = false
+
+func _on_Button_levier_activated():
+	desactivation()
+
+func _on_Button_levier_desactivated():
+	activation()

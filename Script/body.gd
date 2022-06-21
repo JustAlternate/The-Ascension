@@ -91,12 +91,8 @@ func revive():
 	velocity = Vector2.ZERO
 
 
-
-func _on_Fontaine_revive():
-	revive()
-
-
 # booléens pour savoir si le joueur risque d'être écrasé
+"""
 func _on_bottom_area_entered(area):
 	bottom_collide = true
 func _on_bottom_body_entered(body):
@@ -117,3 +113,4 @@ func _on_top_area_exited(area):
 func _on_top_body_exited(body):
 	if body != self:
 		top_collide = false
+"""
