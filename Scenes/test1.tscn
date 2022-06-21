@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Script/main.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/map/NPC.tscn" type="PackedScene" id=3]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Scenes/PlayableCharacters/Spirit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Box_alive.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/map/Button.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
@@ -35,40 +34,38 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[node name="niveau_1" type="Node2D"]
+[node name="test1" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="NPC" parent="." instance=ExtResource( 3 )]
+position = Vector2( 390, 509 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="live" type="Node2D" parent="."]
 
 [node name="live_TileMap" parent="live" instance=ExtResource( 7 )]
-tile_data = PoolIntArray( 196618, 0, 0, 196619, 0, 0, 262150, 0, 0, 262151, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327693, 0, 0, 327694, 0, 0, 458763, 0, 0, 458764, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524297, 0, 0, 524298, 0, 0 )
-
-[node name="Button" parent="live" instance=ExtResource( 9 )]
-position = Vector2( 332, 316 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65551, 0, 0, 131072, 0, 0, 131087, 0, 0, 196608, 0, 0, 196623, 0, 0, 262144, 0, 0, 262159, 0, 0, 327680, 0, 0, 327695, 0, 0, 393216, 0, 0, 393220, 0, 0, 393231, 0, 0, 458752, 0, 0, 458756, 0, 0, 458767, 0, 0, 524288, 0, 0, 524292, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
 
 [node name="dead" type="Node2D" parent="."]
-
-[node name="NPC" parent="dead" instance=ExtResource( 3 )]
-position = Vector2( 718.845, 174.465 )
-collision_layer = 2
-collision_mask = 2
 
 [node name="TileMap" type="TileMap" parent="dead"]
 tile_set = SubResource( 5 )
 collision_layer = 2
 collision_mask = 2
 format = 1
-tile_data = PoolIntArray( 12, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65551, 0, 0, 131072, 0, 0, 131087, 0, 0, 196608, 0, 0, 196623, 0, 0, 262144, 0, 0, 262159, 0, 0, 327680, 0, 0, 327695, 0, 0, 393216, 0, 0, 393220, 0, 0, 393231, 0, 0, 458752, 0, 0, 458756, 0, 0, 458767, 0, 0, 524288, 0, 0, 524292, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
+
+[node name="Button" parent="dead" instance=ExtResource( 9 )]
+position = Vector2( 931, 342 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="Spirit" parent="." groups=["playable"] instance=ExtResource( 5 )]
-position = Vector2( 278, 77 )
+position = Vector2( -106, 113 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="body" parent="." groups=["playable", "tangible"] instance=ExtResource( 4 )]
-position = Vector2( 498, 51 )
-scale = Vector2( 0.1, 0.1 )
-jump_speed = -750
-
-[node name="Box (alive)" parent="." groups=["tangible"] instance=ExtResource( 8 )]
-position = Vector2( 421, 96 )
+position = Vector2( 656, 544 )
+scale = Vector2( 0.9, 0.9 )

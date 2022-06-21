@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/perssonnage-attente.png-f8fb6e6bd426b6e78d595ac8f929d9c2.stex"
+path="res://.import/spotlight_1.png-3f96808c415161868eaf227f19eefb67.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/personnage/perssonnage-attente.png"
-dest_files=[ "res://.import/perssonnage-attente.png-f8fb6e6bd426b6e78d595ac8f929d9c2.stex" ]
+source_file="res://Assets/particules/spotlight_1.png"
+dest_files=[ "res://.import/spotlight_1.png-3f96808c415161868eaf227f19eefb67.stex" ]
 
 [params]
 

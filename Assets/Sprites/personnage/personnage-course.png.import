@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/personnage-course.png-3583e20a35a222778aaefd0dd70c539e.stex"
+path="res://.import/personnage-course.png-5432893a12afe44a52338a70755d815f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/mur/personnage/personnage-course.png"
-dest_files=[ "res://.import/personnage-course.png-3583e20a35a222778aaefd0dd70c539e.stex" ]
+source_file="res://Assets/Sprites/personnage/personnage-course.png"
+dest_files=[ "res://.import/personnage-course.png-5432893a12afe44a52338a70755d815f.stex" ]
 
 [params]
 
