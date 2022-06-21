@@ -10,12 +10,13 @@ extends Node
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	$Sprite.position.y -= 1
 
 func _on_Button_button_up():
 	var map_name = "niveau_1"
 	var path = "res://Scenes/{map_name}.tscn".format({"map_name":map_name})
 	get_tree().change_scene(path)
+	
+func _on_Button3_button_up():
+	get_tree().quit()

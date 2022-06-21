@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/button_form_in_menu.tres" type="StyleBox" id=2]
 [ext_resource path="res://Assets/Sprites/personnage/perssonnage-attente.png" type="Texture" id=3]
 [ext_resource path="res://Script/menu_main.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/UI/building_sprite.tscn" type="PackedScene" id=5]
+[ext_resource path="res://shader_inversion.tres" type="Material" id=6]
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
@@ -111,14 +113,15 @@ __meta__ = {
 }
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 anchor_left = 0.0742188
 anchor_top = 0.366667
 anchor_right = 0.241211
 anchor_bottom = 0.873333
-margin_left = 385.0
-margin_top = -16.0
-margin_right = 385.0
-margin_bottom = -16.0
+margin_left = 328.0
+margin_top = 3.0
+margin_right = 328.0
+margin_bottom = 3.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -127,7 +130,7 @@ __meta__ = {
 position = Vector2( 78.3395, 155.937 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 19 )
-frame = 2
+frame = 8
 playing = true
 
 [node name="Button" type="Button" parent="."]
@@ -149,8 +152,13 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="Sprite" parent="." instance=ExtResource( 5 )]
+material = ExtResource( 6 )
+position = Vector2( 793.176, 2902.26 )
+scale = Vector2( 1.8, 1.8 )
+
 [node name="Label" type="Label" parent="."]
-anchor_right = 1.0
+anchor_right = 0.618164
 margin_bottom = 204.0
 custom_fonts/font = SubResource( 1 )
 text = "The Ascension"
@@ -163,7 +171,7 @@ __meta__ = {
 [node name="Button2" type="Button" parent="."]
 anchor_left = 0.0839844
 anchor_top = 0.54
-anchor_right = 0.291016
+anchor_right = 0.383789
 anchor_bottom = 0.7
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -174,7 +182,7 @@ custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
 enabled_focus_mode = 0
-text = " Settings"
+text = "Options"
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -200,4 +208,4 @@ __meta__ = {
 
 [connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
 [connection signal="button_up" from="Button2" to="." method="_on_Button_button_up"]
-[connection signal="button_up" from="Button3" to="." method="_on_Button_button_up"]
+[connection signal="button_up" from="Button3" to="." method="_on_Button3_button_up"]

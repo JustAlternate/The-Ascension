@@ -39,7 +39,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[node name="main" type="Node2D"]
+[node name="main2" type="Node2D"]
 script = ExtResource( 10 )
 
 [node name="ressources" type="Node2D" parent="."]
