@@ -3,6 +3,7 @@ extends Area2D
 var activated = false
 var entered = false
 
+signal switch
 signal activated
 signal desactivated
 # Declare member variables here. Examples:
@@ -30,6 +31,8 @@ func _on_Button_body_exited(body):
 func _input(event):
 	if event.is_action_pressed("interact") and entered:
 		if activated:
+			emit_signal("switch")
 			emit_signal("desactivated")
 		else:
+			emit_signal("switch")
 			emit_signal("activated")
