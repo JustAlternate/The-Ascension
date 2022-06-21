@@ -23,3 +23,7 @@ func change_state():
 func _input(event):
 	if event.is_action_pressed("test"):
 		change_state()
+
+
+func _on_piege_horizontale_simple_death():
+	change_state()

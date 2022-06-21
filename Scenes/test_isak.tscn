@@ -77,3 +77,5 @@ jump_speed = -750
 
 [node name="Box (alive)" parent="." groups=["tangible"] instance=ExtResource( 8 )]
 position = Vector2( 99, 237 )
+
+[connection signal="death" from="live/piege_horizontale_simple" to="." method="_on_piege_horizontale_simple_death"]
