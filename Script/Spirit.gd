@@ -38,7 +38,7 @@ func get_input():
 
 # revivre/mourire
 func dead():
-	global_position = get_tree().current_scene.get_node("body").global_position
+	global_position = get_tree().current_scene.get_node("niveau/body").global_position
 	alive = false
 	visible = true
 	
