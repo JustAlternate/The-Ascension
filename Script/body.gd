@@ -9,6 +9,8 @@ var velocity = Vector2.ZERO
 
 var alive = false
 
+var top_collide = false
+var bottom_collide = false
 
 func _ready():
 	velocity.x = 0
@@ -63,6 +65,10 @@ func kinematic_physics():
 		var collision = get_slide_collision(index)
 		if collision.collider is MovableBox:
 			collision.collider.slide(-collision.normal * (run_speed / 2))
+			
+	if top_collide and bottom_collide:
+		dead()
+
 
 
 func _physics_process(delta):
@@ -88,3 +94,26 @@ func revive():
 
 func _on_Fontaine_revive():
 	revive()
+
+
+# booléens pour savoir si le joueur risque d'être écrasé
+func _on_bottom_area_entered(area):
+	bottom_collide = true
+func _on_bottom_body_entered(body):
+	if body != self:
+		bottom_collide = true
+func _on_bottom_area_exited(area):
+	bottom_collide = false
+func _on_bottom_body_exited(body):
+	if body != self:
+		bottom_collide = false
+func _on_top_area_entered(area):
+	top_collide = true
+func _on_top_body_entered(body):
+	if body != self:
+		top_collide = true
+func _on_top_area_exited(area):
+	top_collide = false
+func _on_top_body_exited(body):
+	if body != self:
+		top_collide = false

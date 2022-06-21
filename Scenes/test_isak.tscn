@@ -63,7 +63,7 @@ tile_data = PoolIntArray( 196618, 0, 0, 196619, 0, 0, 262150, 0, 0, 262151, 0, 0
 position = Vector2( 190, 119 )
 
 [node name="Box (alive)" parent="live" groups=["tangible"] instance=ExtResource( 8 )]
-position = Vector2( 99, 237 )
+position = Vector2( 463, -364 )
 
 [node name="dead" type="Node2D" parent="."]
 
