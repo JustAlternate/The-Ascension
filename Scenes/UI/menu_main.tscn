@@ -1,12 +1,72 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/button_form_in_menu.tres" type="StyleBox" id=2]
+[ext_resource path="res://Assets/Sprites/mur/personnage/perssonnage-attente.png" type="Texture" id=3]
 [ext_resource path="res://Script/menu_main.gd" type="Script" id=4]
 
-[sub_resource type="DynamicFont" id=1]
-size = 64
-font_data = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 4096, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 2048, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 4096, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 2048, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 4096, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 6144, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 2048, 6144, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
 
 [sub_resource type="DynamicFont" id=3]
 size = 64
@@ -17,6 +77,10 @@ grow_begin = -20.0
 grow_end = -20.0
 thickness = 4
 vertical = true
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 64
@@ -46,16 +110,22 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Label" type="Label" parent="."]
-anchor_right = 1.0
-margin_bottom = 204.0
-custom_fonts/font = SubResource( 1 )
-text = "The Ascension"
-align = 1
-valign = 1
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_left = 0.00292969
+anchor_top = 0.295
+anchor_right = 0.245117
+anchor_bottom = 0.936667
+margin_left = 569.0
+margin_right = 569.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ColorRect2"]
+position = Vector2( 31.6405, 171.495 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 19 )
+playing = true
 
 [node name="Button" type="Button" parent="."]
 anchor_left = 0.0839844
@@ -72,6 +142,17 @@ custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Play"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 204.0
+custom_fonts/font = SubResource( 1 )
+text = "The Ascension"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
