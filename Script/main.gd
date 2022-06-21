@@ -14,6 +14,7 @@ func change_state():
 		$niveau/Spirit.dead()
 		$niveau/body.dead()
 		$niveau/ColorRect.modulate = Color(0,0,0)
+		
 	else:
 		state = 1
 		$niveau/live.visible = true
