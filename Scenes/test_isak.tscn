@@ -42,12 +42,12 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 script = ExtResource( 2 )
 
 [node name="Spirit" parent="." groups=["playable"] instance=ExtResource( 5 )]
-position = Vector2( 53.14, 55.7868 )
+position = Vector2( 58, 84 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="body" parent="." groups=["playable", "tangible"] instance=ExtResource( 4 )]
-position = Vector2( 672, 84 )
+position = Vector2( 60.0001, 442 )
 scale = Vector2( 0.1, 0.1 )
 jump_speed = -750
 

@@ -13,12 +13,14 @@ func change_state():
 		$niveau/dead.visible = true
 		$niveau/Spirit.dead()
 		$niveau/body.dead()
+		$niveau/ColorRect.modulate = Color(0,0,0)
 	else:
 		state = 1
 		$niveau/live.visible = true
 		$niveau/dead.visible = false
 		$niveau/Spirit.revive()
 		$niveau/body.revive()
+		$niveau/ColorRect.modulate = Color(255,255,255)
 
 func _input(event):
 	if event.is_action_pressed("test"):
