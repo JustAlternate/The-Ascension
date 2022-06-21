@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/map/piege_horizontale_simple.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/main.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/map/Box_alive.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/map/Button_tangible.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/map/fontaine.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/map/movable_plateforme.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -46,7 +47,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="body" parent="." groups=["playable", "tangible"] instance=ExtResource( 4 )]
-position = Vector2( 473.958, 196.664 )
+position = Vector2( 672, 84 )
 scale = Vector2( 0.1, 0.1 )
 jump_speed = -750
 
@@ -85,7 +86,19 @@ scale = Vector2( 0.1, 0.1 )
 collision_layer = 2
 collision_mask = 2
 
+[node name="movable_plateforme" parent="." instance=ExtResource( 11 )]
+position = Vector2( 558, 221 )
+vitesse = 20
+
+[node name="départ" parent="movable_plateforme" index="1"]
+position = Vector2( 66, -52 )
+
+[node name="arrivé" parent="movable_plateforme" index="2"]
+position = Vector2( -315, -80 )
+
 [connection signal="death" from="live/piege_horizontale_simple" to="." method="_on_piege_horizontale_simple_death"]
 [connection signal="revive" from="dead/Fontaine" to="." method="_on_Fontaine_revive"]
 [connection signal="revive" from="dead/Fontaine" to="Spirit" method="_on_Fontaine_revive"]
 [connection signal="revive" from="dead/Fontaine" to="body" method="_on_Fontaine_revive"]
+
+[editable path="movable_plateforme"]

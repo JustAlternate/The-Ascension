@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="black_and_white_jam"
-run/main_scene="res://Scenes/test_isak.tscn"
+run/main_scene="res://Scenes/niveau_type.tscn"
 config/icon="res://icon.png"
 
 [input]

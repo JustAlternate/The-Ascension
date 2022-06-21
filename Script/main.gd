@@ -9,16 +9,16 @@ func _ready():
 func change_state():
 	if state == 1:
 		state = 0
-		$live.visible = false
-		$dead.visible = true
-		$Spirit.dead()
-		$body.dead()
+		$niveau/live.visible = false
+		$niveau/dead.visible = true
+		$niveau/Spirit.dead()
+		$niveau/body.dead()
 	else:
 		state = 1
-		$live.visible = true
-		$dead.visible = false
-		$Spirit.revive()
-		$body.revive()
+		$niveau/live.visible = true
+		$niveau/dead.visible = false
+		$niveau/Spirit.revive()
+		$niveau/body.revive()
 
 func _input(event):
 	if event.is_action_pressed("test"):
