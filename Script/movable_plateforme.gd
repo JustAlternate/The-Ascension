@@ -4,7 +4,7 @@ signal path_finished
 
 export var vitesse = 50
 
-var direction = 1 #0=ne bouge pas, 1 = vers l'arrivée, -1 = vers le départ
+var direction = 0 #0=ne bouge pas, 1 = vers l'arrivée, -1 = vers le départ
 
 var etat = 1 # 1: à l'arrivé, -1: au départ, si la plateforme est en mouvement donne l'emplacement de départ 
 

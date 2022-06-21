@@ -1,10 +1,13 @@
 extends Node2D
 
+signal change_color
 export var state = 1
 
 func _ready():
 	change_state()
 	change_state()
+
+
 
 func change_state():
 	if state == 1:
@@ -13,7 +16,7 @@ func change_state():
 		$niveau/dead.visible = true
 		$niveau/Spirit.dead()
 		$niveau/body.dead()
-		$niveau/ColorRect.modulate = Color(0,0,0)
+		get_tree().call_group("grp_change_color","change_color")
 		
 	else:
 		state = 1
@@ -21,7 +24,7 @@ func change_state():
 		$niveau/dead.visible = false
 		$niveau/Spirit.revive()
 		$niveau/body.revive()
-		$niveau/ColorRect.modulate = Color(255,255,255)
+		get_tree().call_group("grp_change_color","change_color")
 
 func _input(event):
 	if event.is_action_pressed("test"):
@@ -34,3 +37,4 @@ func _on_piege_horizontale_simple_death():
 
 func _on_Fontaine_revive():
 	change_state()
+

@@ -12,7 +12,7 @@
 [ext_resource path="res://Script/main.gd" type="Script" id=10]
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/map/movable_plateforme.tscn" type="PackedScene" id=12]
-[ext_resource path="res://shader_inversion.tres" type="Material" id=13]
+[ext_resource path="res://Script/ColorRect.gd" type="Script" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -40,7 +40,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[node name="main" type="Node2D"]
+[node name="main" type="Node2D" groups=["main"]]
 script = ExtResource( 10 )
 
 [node name="ressources" type="Node2D" parent="."]
@@ -62,11 +62,11 @@ position = Vector2( -100, 300 )
 collision_layer = 0
 collision_mask = 0
 
-[node name="Button_tangible" parent="ressources" instance=ExtResource( 5 )]
-position = Vector2( -100, 400 )
+[node name="Button_tangible" parent="ressources/Button_levier" instance=ExtResource( 5 )]
+position = Vector2( 0, 100 )
+scale = Vector2( 3.33333, 1 )
 
-[node name="fontaine" parent="ressources" instance=ExtResource( 7 )]
-material = ExtResource( 13 )
+[node name="fontaine" parent="ressources" groups=["grp_change_color"] instance=ExtResource( 7 )]
 position = Vector2( -100, 500 )
 scale = Vector2( 0.05, 0.05 )
 
@@ -78,11 +78,12 @@ position = Vector2( 70, 0 )
 
 [node name="niveau" type="Node2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="niveau"]
+[node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
 margin_left = -41.0
 margin_top = -33.0
-margin_right = 1127.0
-margin_bottom = 696.0
+margin_right = 1083.0
+margin_bottom = 652.0
+script = ExtResource( 13 )
 
 [node name="live" type="Node2D" parent="niveau"]
 
@@ -107,5 +108,7 @@ collision_mask = 2
 position = Vector2( 129, 442 )
 scale = Vector2( 0.1, 0.1 )
 jump_speed = -750
+
+[connection signal="change_color" from="." to="ressources/fontaine" method="_on_main_change_color"]
 
 [editable path="ressources/movable_plateforme"]
