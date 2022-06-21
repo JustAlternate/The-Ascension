@@ -84,3 +84,7 @@ func revive():
 	alive = true
 	velocity = Vector2.ZERO
 
+
+
+func _on_Fontaine_revive():
+	revive()

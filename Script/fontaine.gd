@@ -29,4 +29,6 @@ func _on_Area2D_body_exited(body):
 
 func _input(event):
 	if event.is_action_pressed("interact"):
-		emit_signal("revive")
+		if body_in:
+			emit_signal("revive")
+

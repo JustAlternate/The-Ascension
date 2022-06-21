@@ -82,5 +82,10 @@ tile_data = PoolIntArray( 12, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 262
 [node name="Fontaine" parent="dead" instance=ExtResource( 10 )]
 position = Vector2( 910, 259 )
 scale = Vector2( 0.1, 0.1 )
+collision_layer = 2
+collision_mask = 2
 
 [connection signal="death" from="live/piege_horizontale_simple" to="." method="_on_piege_horizontale_simple_death"]
+[connection signal="revive" from="dead/Fontaine" to="." method="_on_Fontaine_revive"]
+[connection signal="revive" from="dead/Fontaine" to="Spirit" method="_on_Fontaine_revive"]
+[connection signal="revive" from="dead/Fontaine" to="body" method="_on_Fontaine_revive"]
