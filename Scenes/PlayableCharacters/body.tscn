@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Assets/Sprites/personnage/perssonnage-attente.png" type="Texture" id=1]
 [ext_resource path="res://Script/body.gd" type="Script" id=2]
@@ -147,14 +147,14 @@ flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 4096, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 2048, 2048 )
-
 [sub_resource type="AtlasTexture" id=43]
 flags = 4
 atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 2048, 2048 )
 
 [sub_resource type="SpriteFrames" id=1]
@@ -174,19 +174,25 @@ animations = [ {
 "name": "saut",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 25 ) ],
-"loop": true,
-"name": "pousse",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 43 ) ],
 "loop": true,
 "name": "mort",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ) ],
+"loop": true,
+"name": "pousse",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 301.472, 674.068 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 266.667, 25.0003 )
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 266.667, 22.5007 )
 
 [node name="Node2D" type="KinematicBody2D"]
 scale = Vector2( 0.03, 0.03 )
@@ -199,5 +205,35 @@ playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -5.84299, 3.56323 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 13 )
+
+[node name="bottom" type="Area2D" parent="."]
+position = Vector2( 0, 660 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottom"]
+position = Vector2( 0, 0.000671387 )
+shape = SubResource( 44 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="top" type="Area2D" parent="."]
+position = Vector2( 0, -650 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
+position = Vector2( 0, -0.000610352 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="area_entered" from="bottom" to="." method="_on_bottom_area_entered"]
+[connection signal="area_exited" from="bottom" to="." method="_on_bottom_area_exited"]
+[connection signal="body_entered" from="bottom" to="." method="_on_bottom_body_entered"]
+[connection signal="body_exited" from="bottom" to="." method="_on_bottom_body_exited"]
+[connection signal="area_entered" from="top" to="." method="_on_top_area_entered"]
+[connection signal="area_exited" from="top" to="." method="_on_top_area_exited"]
+[connection signal="body_entered" from="top" to="." method="_on_top_body_entered"]
+[connection signal="body_exited" from="top" to="." method="_on_top_body_exited"]

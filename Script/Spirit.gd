@@ -55,3 +55,7 @@ func _physics_process(delta):
 		get_input()
 		move_and_slide(velocity)
 
+
+
+func _on_Fontaine_revive():
+	revive()

@@ -27,3 +27,7 @@ func _input(event):
 
 func _on_piege_horizontale_simple_death():
 	change_state()
+
+
+func _on_Fontaine_revive():
+	change_state()
