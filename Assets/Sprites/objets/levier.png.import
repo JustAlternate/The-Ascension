@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tesla-multi-centre.png-fb3ae5d45773d04c9ef96138c8adc7f0.stex"
+path="res://.import/levier.png-bb5e095bdfaa44d356bb14ba79d11d61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/objets/tesla-multi-centre.png"
-dest_files=[ "res://.import/tesla-multi-centre.png-fb3ae5d45773d04c9ef96138c8adc7f0.stex" ]
+source_file="res://Assets/Sprites/objets/levier.png"
+dest_files=[ "res://.import/levier.png-bb5e095bdfaa44d356bb14ba79d11d61.stex" ]
 
 [params]
 

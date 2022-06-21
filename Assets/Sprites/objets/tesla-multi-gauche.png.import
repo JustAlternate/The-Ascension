@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tesla-multi-gauche.png-0b2f9ad1b324d164ee2f83f9a9a73f79.stex"
+path="res://.import/tesla-multi-gauche.png-d111a1077bcba4b8e4ba73a05e03257d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/piege/tesla-multi-gauche.png"
-dest_files=[ "res://.import/tesla-multi-gauche.png-0b2f9ad1b324d164ee2f83f9a9a73f79.stex" ]
+source_file="res://Assets/Sprites/objets/tesla-multi-gauche.png"
+dest_files=[ "res://.import/tesla-multi-gauche.png-d111a1077bcba4b8e4ba73a05e03257d.stex" ]
 
 [params]
 

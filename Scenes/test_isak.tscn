@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/map/piege_horizontale_simple.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/main.gd" type="Script" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Scenes/PlayableCharacters/Spirit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Box_alive.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/map/Box_alive.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/map/Button_tangible.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/map/fontaine.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -39,10 +40,20 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [node name="niveau_1" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="Spirit" parent="." groups=["playable"] instance=ExtResource( 5 )]
+position = Vector2( 53.14, 55.7868 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="body" parent="." groups=["playable", "tangible"] instance=ExtResource( 4 )]
+position = Vector2( 473.958, 196.664 )
+scale = Vector2( 0.1, 0.1 )
+jump_speed = -750
+
 [node name="live" type="Node2D" parent="."]
 
 [node name="piege_horizontale_simple" parent="live" instance=ExtResource( 1 )]
-position = Vector2( 303, 276 )
+position = Vector2( 291, 246 )
 scale = Vector2( 0.05, 0.05 )
 
 [node name="live_TileMap" parent="live" instance=ExtResource( 7 )]
@@ -50,6 +61,9 @@ tile_data = PoolIntArray( 196618, 0, 0, 196619, 0, 0, 262150, 0, 0, 262151, 0, 0
 
 [node name="Button" parent="live" instance=ExtResource( 9 )]
 position = Vector2( 190, 119 )
+
+[node name="Box (alive)" parent="live" groups=["tangible"] instance=ExtResource( 8 )]
+position = Vector2( 99, 237 )
 
 [node name="dead" type="Node2D" parent="."]
 
@@ -65,15 +79,8 @@ collision_mask = 2
 format = 1
 tile_data = PoolIntArray( 12, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0 )
 
-[node name="Spirit" parent="." groups=["playable"] instance=ExtResource( 5 )]
-position = Vector2( 53.14, 55.7868 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="body" parent="." groups=["playable", "tangible"] instance=ExtResource( 4 )]
-position = Vector2( 473.958, 196.664 )
+[node name="Fontaine" parent="dead" instance=ExtResource( 10 )]
+position = Vector2( 910, 259 )
 scale = Vector2( 0.1, 0.1 )
-jump_speed = -750
 
-[node name="Box (alive)" parent="." groups=["tangible"] instance=ExtResource( 8 )]
-position = Vector2( 99, 237 )
+[connection signal="death" from="live/piege_horizontale_simple" to="." method="_on_piege_horizontale_simple_death"]

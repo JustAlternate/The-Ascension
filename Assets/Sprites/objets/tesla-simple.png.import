@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tesla-simple.png-6a854360a8d2bcd3a287a39b358f7917.stex"
+path="res://.import/tesla-simple.png-0d3b4585a7dc8e23f9099e075f8757c2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/piege/tesla-simple.png"
-dest_files=[ "res://.import/tesla-simple.png-6a854360a8d2bcd3a287a39b358f7917.stex" ]
+source_file="res://Assets/Sprites/objets/tesla-simple.png"
+dest_files=[ "res://.import/tesla-simple.png-0d3b4585a7dc8e23f9099e075f8757c2.stex" ]
 
 [params]
 

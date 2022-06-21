@@ -8,22 +8,32 @@ extends Area2D
 signal death
 
 var body_in = false
+export var activate = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
+	if activate:
+		$AnimatedSprite.animation = "activate"
+	else:
+		$AnimatedSprite.animation = "desactivate"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
+func activation():
+	$AnimatedSprite.animation = "activate"
+	activate = true
+
+func desactivation():
+	$AnimatedSprite.animation = "desactivate"
+	activate = false
 
 func _on_piege_horizontale_simple_body_entered(body):
-	if body.name == "body":
+	if body.name == "body" :
 		body_in = true
-		emit_signal("death")
+		if activate:
+			emit_signal("death")
 
 
 func _on_piege_horizontale_simple_body_exited(body):

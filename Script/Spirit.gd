@@ -19,8 +19,12 @@ func get_input():
 		if Input.is_action_pressed("move_down"):
 			input_velocity.y += 1
 		if Input.is_action_pressed("move_left"):
+			if $AnimatedSprite.flip_h == false:
+				$AnimatedSprite.flip_h = true
 			input_velocity.x -= 1
 		if Input.is_action_pressed("move_right"):
+			if $AnimatedSprite.flip_h == true:
+				$AnimatedSprite.flip_h = false
 			input_velocity.x += 1
 		input_velocity = input_velocity.normalized() * speed
 	
