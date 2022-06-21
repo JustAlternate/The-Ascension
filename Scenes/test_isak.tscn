@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/PlayableCharacters/Spirit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Box_alive.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/map/Box_alive.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/map/Button_tangible.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
@@ -42,7 +42,7 @@ script = ExtResource( 2 )
 [node name="live" type="Node2D" parent="."]
 
 [node name="piege_horizontale_simple" parent="live" instance=ExtResource( 1 )]
-position = Vector2( 303, 276 )
+position = Vector2( 291, 246 )
 scale = Vector2( 0.05, 0.05 )
 
 [node name="live_TileMap" parent="live" instance=ExtResource( 7 )]
