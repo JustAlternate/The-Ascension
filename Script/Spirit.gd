@@ -34,6 +34,7 @@ func get_input():
 
 # revivre/mourire
 func dead():
+	global_position = get_tree().current_scene.get_node("body").global_position
 	alive = false
 	visible = true
 	
@@ -45,7 +46,7 @@ func revive():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if alive:
-		global_position = get_tree().current_scene.get_node("body").global_position
+		global_position = Vector2(-100,-100)
 	else:
 		get_input()
 		move_and_slide(velocity)
