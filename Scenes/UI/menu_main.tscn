@@ -2,70 +2,70 @@
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/button_form_in_menu.tres" type="StyleBox" id=2]
-[ext_resource path="res://Assets/Sprites/mur/personnage/perssonnage-attente.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/personnage/perssonnage-attente.png" type="Texture" id=3]
 [ext_resource path="res://Script/menu_main.gd" type="Script" id=4]
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 2048, 0, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 4096, 0, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 2048, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 4096, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 4096, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 2048, 4096, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 4096, 4096, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=29]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 6144, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=30]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 2048, 6144, 2048, 2048 )
 
 [sub_resource type="SpriteFrames" id=19]
 animations = [ {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
 "loop": true,
 "name": "default",
-"speed": 2.0
+"speed": 3.0
 } ]
 
 [sub_resource type="DynamicFont" id=3]
@@ -111,20 +111,23 @@ __meta__ = {
 }
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-anchor_left = 0.00292969
-anchor_top = 0.295
-anchor_right = 0.245117
+anchor_left = 0.00488281
+anchor_top = 0.311667
+anchor_right = 0.285156
 anchor_bottom = 0.936667
 margin_left = 569.0
+margin_top = -16.0
 margin_right = 569.0
+margin_bottom = -16.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="ColorRect2"]
-position = Vector2( 31.6405, 171.495 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 623.446, 343.288 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 19 )
+frame = 2
 playing = true
 
 [node name="Button" type="Button" parent="."]
