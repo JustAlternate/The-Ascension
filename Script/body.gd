@@ -16,6 +16,10 @@ func _ready():
 
 func get_input():
 	if alive:
+		
+		if is_on_floor():
+			$AnimatedSprite.play()
+		
 		velocity.x = 0
 		var right = Input.is_action_pressed("move_right")
 		var left = Input.is_action_pressed("move_left")
@@ -23,10 +27,33 @@ func get_input():
 
 		if is_on_floor() and jump:
 			velocity.y = jump_speed
-		if right:
+			$AnimatedSprite.animation = 'saut'
+		
+		elif right:
+			
 			velocity.x += run_speed
-		if left:
+			$AnimatedSprite.animation = "course"
+			if $AnimatedSprite.flip_h == true:
+				$AnimatedSprite.flip_h = false
+			
+			if not is_on_floor():
+				$AnimatedSprite.frame = 4
+				$AnimatedSprite.stop()
+		
+		elif left:
+			
 			velocity.x -= run_speed
+			$AnimatedSprite.animation = "course"
+			if $AnimatedSprite.flip_h == false:
+				$AnimatedSprite.flip_h = true
+			
+			if not is_on_floor():
+				$AnimatedSprite.frame = 4
+				$AnimatedSprite.stop()
+		
+		elif is_on_floor():
+			$AnimatedSprite.animation = "idle"
+		
 	else:
 		velocity = Vector2.ZERO
 
