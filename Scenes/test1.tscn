@@ -67,5 +67,5 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="body" parent="." groups=["playable", "tangible"] instance=ExtResource( 4 )]
-position = Vector2( 656, 544 )
-scale = Vector2( 0.9, 0.9 )
+position = Vector2( 647, 449 )
+scale = Vector2( 0.1, 0.1 )
