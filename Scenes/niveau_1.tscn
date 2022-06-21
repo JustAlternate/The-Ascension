@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Box_alive.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/map/Button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/map/Button_tangible.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -61,14 +61,14 @@ format = 1
 tile_data = PoolIntArray( 12, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0 )
 
 [node name="Spirit" parent="." groups=["playable"] instance=ExtResource( 5 )]
-position = Vector2( 278, 77 )
+position = Vector2( 53.14, 55.7868 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="body" parent="." groups=["playable", "tangible"] instance=ExtResource( 4 )]
-position = Vector2( 498, 51 )
+position = Vector2( 473.958, 196.664 )
 scale = Vector2( 0.1, 0.1 )
 jump_speed = -750
 
 [node name="Box (alive)" parent="." groups=["tangible"] instance=ExtResource( 8 )]
-position = Vector2( 421, 96 )
+position = Vector2( 215.939, 286.919 )
