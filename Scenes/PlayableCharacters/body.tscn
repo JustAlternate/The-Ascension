@@ -62,6 +62,36 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 2048, 6144, 2048, 2048 )
 
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2048, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 2048, 2048 )
+
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 3 )
@@ -122,36 +152,6 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 4096, 6144, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 2048, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=28]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=29]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 2048, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=30]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 4096, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 2048, 2048 )
-
 [sub_resource type="AtlasTexture" id=43]
 flags = 4
 atlas = ExtResource( 6 )
@@ -164,11 +164,6 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
-"loop": true,
-"name": "course",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
 "loop": true,
 "name": "saut",
@@ -178,6 +173,11 @@ animations = [ {
 "loop": true,
 "name": "pousse",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "course",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 43 ) ],
 "loop": true,
@@ -199,5 +199,4 @@ playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -5.84299, 3.56323 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 13 )
