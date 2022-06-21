@@ -72,6 +72,10 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func dead():
+	if $AnimatedSprite.flip_h:
+		$AnimatedSprite.flip_h = false
+		
+	$AnimatedSprite.animation = "mort"
 	alive = false
 	velocity = Vector2.ZERO
 
