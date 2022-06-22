@@ -31,4 +31,4 @@ func _on_Button_body_exited(body):
 		if pushed == 0:
 			$AnimatedSprite.animation = "desactivation"
 			$AnimatedSprite.frame = 0
-			emit_signal("pushed")
+			emit_signal("unpushed")
