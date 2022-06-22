@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/box_fall.wav-b1089f5f0b9de787b0d932e4ef3ee5db.sample"
+
+[deps]
+
+source_file="res://Assets/sfx/box_fall.wav"
+dest_files=[ "res://.import/box_fall.wav-b1089f5f0b9de787b0d932e4ef3ee5db.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
