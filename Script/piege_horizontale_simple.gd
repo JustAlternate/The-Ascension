@@ -36,6 +36,7 @@ func change_color():
 	else:
 		material = load("res://shader_inversion.tres")
 
+
 func try_revive():
 	if body_in and activate:
 		get_tree().call_group("main","dont_revive")

@@ -22,10 +22,12 @@ func _ready():
 
 
 func _on_Button_body_entered(body):
-	entered = true
+	if body.is_in_group("playable"):
+		entered = true
 
 func _on_Button_body_exited(body):
-	entered = false
+	if body.is_in_group("playable"):
+		entered = false
 
 func _input(event):
 	if event.is_action_pressed("interact") and entered:
