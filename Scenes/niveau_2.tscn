@@ -1,17 +1,17 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Scenes/PlayableCharacters/body.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/map/Button_levier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/map/movable_plateforme_sticky.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/PlayableCharacters/Spirit.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/map/Button_levier.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/map/fontaine.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/map/piege_horizontale_simple.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Script/main.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/map/piege_horizontale_simple.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/map/fontaine.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/PlayableCharacters/body.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Script/ColorRect.gd" type="Script" id=8]
+[ext_resource path="res://Script/main.gd" type="Script" id=9]
+[ext_resource path="res://Assets/map/live/flor.png" type="Texture" id=10]
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=11]
-[ext_resource path="res://Script/ColorRect.gd" type="Script" id=13]
-[ext_resource path="res://Scenes/map/movable_plateforme_sticky.tscn" type="PackedScene" id=14]
-[ext_resource path="res://shader_inversion.tres" type="Material" id=15]
-[ext_resource path="res://Assets/map/live/flor.png" type="Texture" id=16]
+[ext_resource path="res://shader_inversion.tres" type="Material" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -40,7 +40,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 0/z_index = 0
 
 [node name="main" type="Node2D" groups=["main"]]
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 
 [node name="ressources" type="Node2D" parent="."]
 
@@ -48,16 +48,15 @@ script = ExtResource( 10 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
-visible = false
 margin_left = -27.5
 margin_top = -68.75
 margin_right = 1476.5
 margin_bottom = 912.25
-script = ExtResource( 13 )
+script = ExtResource( 8 )
 
 [node name="live" type="Node2D" parent="niveau"]
 
-[node name="live_TileMap" parent="niveau/live" instance=ExtResource( 9 )]
+[node name="live_TileMap" parent="niveau/live" instance=ExtResource( 3 )]
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 65536, 0, 0, 65555, 0, 0, 131072, 0, 0, 131091, 0, 0, 196608, 0, 0, 196627, 0, 0, 262144, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 327680, 0, 0, 327701, 0, 0, 393216, 0, 0, 393237, 0, 0, 458752, 0, 0, 458773, 0, 0, 524288, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 589824, 0, 0, 589827, 0, 0, 589828, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 655360, 0, 0, 655363, 0, 0, 655364, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0 )
 
 [node name="dead" type="Node2D" parent="niveau"]
@@ -69,16 +68,16 @@ collision_mask = 2
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 65536, 0, 0, 65551, 0, 0, 65555, 0, 0, 131072, 0, 0, 131087, 0, 0, 131091, 0, 0, 196608, 0, 0, 196623, 0, 0, 196627, 0, 0, 262144, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262163, 0, 0, 327680, 0, 0, 327691, 0, 0, 327699, 0, 0, 393216, 0, 0, 393227, 0, 0, 393235, 0, 0, 458752, 0, 0, 458763, 0, 0, 458771, 0, 0, 524288, 0, 0, 524299, 0, 0, 524307, 0, 0, 589824, 0, 0, 589835, 0, 0, 589843, 0, 0, 655360, 0, 0, 655371, 0, 0, 655379, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0 )
 
-[node name="Button_levier" parent="niveau/dead" instance=ExtResource( 6 )]
-material = ExtResource( 15 )
+[node name="Button_levier" parent="niveau/dead" instance=ExtResource( 1 )]
+material = ExtResource( 12 )
 position = Vector2( 403.75, 76.25 )
 rotation = -9.42476
 scale = Vector2( 0.1, 0.1 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="Button_levier2" parent="niveau/dead" instance=ExtResource( 6 )]
-material = ExtResource( 15 )
+[node name="Button_levier2" parent="niveau/dead" instance=ExtResource( 1 )]
+material = ExtResource( 12 )
 position = Vector2( 947.5, 161.25 )
 scale = Vector2( 0.1, 0.1 )
 collision_layer = 2
@@ -90,12 +89,12 @@ collision_layer = 2
 collision_mask = 2
 speed = 450
 
-[node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]
+[node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
 position = Vector2( 101.25, 635 )
 scale = Vector2( 0.1, 0.1 )
 jump_speed = -700
 
-[node name="movable_plateforme2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 14 )]
+[node name="movable_plateforme2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 543.75, 485 )
 scale = Vector2( 5, 1 )
 vitesse = 75
@@ -105,14 +104,13 @@ position = Vector2( 107, 3.74991 )
 
 [node name="enfant" type="Node2D" parent="niveau/movable_plateforme2"]
 
-[node name="enfant1" parent="niveau/movable_plateforme2/enfant" groups=["grp_change_color"] instance=ExtResource( 7 )]
-position = Vector2( -26.25, -62 )
-rotation = 3.14159
-scale = Vector2( 0.011, -0.05 )
+[node name="enfant1" parent="niveau/movable_plateforme2/enfant" groups=["grp_change_color"] instance=ExtResource( 6 )]
+position = Vector2( -24.75, -92.5 )
+scale = Vector2( 0.02, 0.1 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="enfant2" parent="niveau/movable_plateforme2/enfant" groups=["grp_change_color", "grp_piege"] instance=ExtResource( 8 )]
+[node name="enfant2" parent="niveau/movable_plateforme2/enfant" groups=["grp_change_color", "grp_piege"] instance=ExtResource( 5 )]
 position = Vector2( 15.25, -98.75 )
 rotation = 3.14159
 scale = Vector2( 0.01, -0.046 )
@@ -121,10 +119,10 @@ scale = Vector2( 0.01, -0.046 )
 use_parent_material = true
 position = Vector2( 32.6933, 13.458 )
 scale = Vector2( 0.967678, 0.846774 )
-texture = ExtResource( 16 )
+texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
-[node name="movable_plateforme3" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 14 )]
+[node name="movable_plateforme3" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 1045, 372.5 )
 scale = Vector2( 1, 3 )
 
@@ -135,14 +133,14 @@ position = Vector2( -0.00012207, -52.5 )
 use_parent_material = true
 position = Vector2( 0.00012207, -82.9167 )
 scale = Vector2( 1, 1.6276 )
-texture = ExtResource( 16 )
+texture = ExtResource( 10 )
 
 [node name="enfant" type="Node2D" parent="niveau/movable_plateforme3"]
 
 [node name="Sprite" type="Sprite" parent="niveau/movable_plateforme3/enfant"]
 position = Vector2( 31.2501, -9.58331 )
 scale = Vector2( 0.917112, 2.42998 )
-texture = ExtResource( 16 )
+texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
 [connection signal="activated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_forward"]

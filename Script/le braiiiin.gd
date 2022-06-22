@@ -21,3 +21,7 @@ func _on_Area2D_body_entered(body):
 		$ColorRect.visible=false
 		$StaticBody2D.set_collision_layer_bit(1,false)
 		$StaticBody2D.set_collision_mask_bit(1,false)
+
+
+func _on_Button_levier_activated():
+	get_node("StaticBody2D").get_node("CollisionShape2D").disabled = true
