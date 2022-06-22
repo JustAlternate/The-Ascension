@@ -92,7 +92,8 @@ speed = 450
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
 position = Vector2( 101.25, 635 )
 scale = Vector2( 0.1, 0.1 )
-jump_speed = -700
+run_speed = 400
+jump_speed = -900
 
 [node name="movable_plateforme2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 543.75, 485 )
