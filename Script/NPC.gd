@@ -1,6 +1,6 @@
 extends Area2D
 
-
+export var dialogue_npc:String
 var player_in_range = false
 signal interacted(instance)
 
@@ -10,21 +10,28 @@ func _ready():
 
 
 func show_text(text):
-	$Label.show()
-	for i in text:
-		yield(get_tree().create_timer(.1),"timeout")
-		$Label.text = $Label.text + i
-	emit_signal("interacted",self)
+	
+	if $Sprite.visible == false:
+		
+		$Label.show()
+		$Sprite.show()
+		
+		for i in text:
+			yield(get_tree().create_timer(.1),"timeout")
+			$Label.text = $Label.text + i
+		
+		emit_signal("interacted",self)
 
-	yield(get_tree().create_timer(5),"timeout")
-	$Label.text = ""
+		yield(get_tree().create_timer(5),"timeout")
+		$Label.text = ""
+		$Sprite.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if player_in_range:
 		if Input.is_action_just_pressed("interact"):
-			show_text("Bonjour Aventurier bien ou quoi ?")
+			show_text(dialogue_npc)
 
 
 func _on_Bonhomme_body_entered(body):

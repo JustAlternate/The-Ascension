@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Script/NPC.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/personnage/perssonnage-attente.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/white.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/font_for_button_in_menu.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Sprites/personnage/boite_dialogue.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 50.0
@@ -77,21 +78,31 @@ region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="NPC" type="Area2D"]
 script = ExtResource( 1 )
+dialogue_npc = "Bonjour Aventurier"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 use_parent_material = true
+scale = Vector2( 10, 10 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.066, 0.066 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
+frame = 8
 playing = true
 
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -160, -663 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 5 )
+
 [node name="Label" type="Label" parent="."]
-margin_left = -80.0
-margin_top = -108.0
-margin_right = 81.0
-margin_bottom = -69.0
+visible = false
+margin_left = -712.0
+margin_top = -804.0
+margin_right = 391.0
+margin_bottom = -564.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 4 )
 custom_styles/normal = SubResource( 14 )
