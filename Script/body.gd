@@ -57,7 +57,7 @@ func get_input():
 			$AnimatedSprite.animation = "idle"
 		
 	else:
-		velocity = Vector2.ZERO
+		pass
 
 # Pour l'instant permet de pousser la boîte
 func kinematic_physics():
@@ -76,6 +76,7 @@ func _physics_process(delta):
 	get_input()
 	kinematic_physics()
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+
 
 func dead():
 	if $AnimatedSprite.flip_h:

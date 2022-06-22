@@ -5,7 +5,7 @@ signal path_finished
 export var vitesse = 50
 
 export var direction = 0 #0=ne bouge pas, 1 = vers l'arrivée, -1 = vers le départ
-
+var linear_velocity
 var etat = 1 # 1: à l'arrivée, -1: au départ, si la plateforme est en mouvement donne l'emplacement de départ 
 
 
@@ -17,9 +17,9 @@ func _ready():
 func _physics_process(delta):
 	
 	if direction!=0:
-
-		$plateforme.global_position += ($"arrivée".global_position - $"départ".global_position)*direction*delta*vitesse/100
-		
+		linear_velocity=($"arrivée".global_position - $"départ".global_position)*direction*delta*vitesse/100
+		$plateforme.global_position += linear_velocity 
+		$enfant.global_position += linear_velocity
 		
 		if $"départ".global_position.distance_to($"arrivée".global_position) < $"départ".global_position.distance_to($plateforme.global_position) and direction==1:
 			emit_signal("path_finished")
@@ -40,10 +40,8 @@ func move_forward():
 func move_backward():
 	direction = -1
 
-
 func change_color():
 	if material == load("res://shader_inversion.tres"):
 		material = null
 	else:
 		material = load("res://shader_inversion.tres")
-
