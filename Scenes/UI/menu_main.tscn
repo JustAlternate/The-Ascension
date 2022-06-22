@@ -1,74 +1,10 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/button_form_in_menu.tres" type="StyleBox" id=2]
-[ext_resource path="res://Assets/Sprites/personnage/perssonnage-attente.png" type="Texture" id=3]
 [ext_resource path="res://Script/menu_main.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/UI/building_sprite.tscn" type="PackedScene" id=5]
 [ext_resource path="res://shader_inversion.tres" type="Material" id=6]
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 2048, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 4096, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 2048, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 4096, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 4096, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 2048, 4096, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=28]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 4096, 4096, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=29]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 6144, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=30]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 2048, 6144, 2048, 2048 )
-
-[sub_resource type="SpriteFrames" id=19]
-animations = [ {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
-"loop": true,
-"name": "default",
-"speed": 3.0
-} ]
 
 [sub_resource type="DynamicFont" id=3]
 size = 64
@@ -101,7 +37,7 @@ grow_end = -20.0
 thickness = 4
 vertical = true
 
-[node name="menu" type="Node"]
+[node name="menu_main" type="Node"]
 script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -111,27 +47,6 @@ color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
-anchor_left = 0.0742188
-anchor_top = 0.366667
-anchor_right = 0.241211
-anchor_bottom = 0.873333
-margin_left = 328.0
-margin_top = 3.0
-margin_right = 328.0
-margin_bottom = 3.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="ColorRect2"]
-position = Vector2( 78.3395, 155.937 )
-scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 19 )
-frame = 8
-playing = true
 
 [node name="Button" type="Button" parent="."]
 anchor_left = 0.0839844
@@ -207,5 +122,5 @@ __meta__ = {
 }
 
 [connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
-[connection signal="button_up" from="Button2" to="." method="_on_Button_button_up"]
+[connection signal="button_up" from="Button2" to="." method="_on_Button2_button_up"]
 [connection signal="button_up" from="Button3" to="." method="_on_Button3_button_up"]
