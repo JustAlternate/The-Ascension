@@ -11,7 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	pass
+	$Sprite.position.y -=1
 
 func _on_Button_button_up():
 	var map_name = "niveau_intro"
