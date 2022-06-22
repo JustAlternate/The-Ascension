@@ -74,8 +74,8 @@ scale = Vector2( 0.05, 0.05 )
 [node name="movable_plateforme" parent="ressources" instance=ExtResource( 12 )]
 position = Vector2( -100, 600 )
 
-[node name="arrivé" parent="ressources/movable_plateforme" index="2"]
-position = Vector2( 70, 0 )
+[node name="arrivée" type="Position2D" parent="ressources/movable_plateforme"]
+position = Vector2( -125, 7 )
 
 [node name="niveau" type="Node2D" parent="."]
 
@@ -111,5 +111,3 @@ scale = Vector2( 0.1, 0.1 )
 jump_speed = -750
 
 [connection signal="change_color" from="." to="ressources/fontaine" method="_on_main_change_color"]
-
-[editable path="ressources/movable_plateforme"]

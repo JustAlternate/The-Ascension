@@ -29,7 +29,4 @@ shape = SubResource( 3 )
 
 [node name="départ" type="Position2D" parent="."]
 
-[node name="arrivé" type="Position2D" parent="."]
-position = Vector2( 339, 0 )
-
 [connection signal="path_finished" from="." to="." method="_on_movable_plateforme_path_finished"]
