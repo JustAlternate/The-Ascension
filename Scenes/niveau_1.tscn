@@ -1,7 +1,6 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/body.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/map/Box_alive.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/map/NPC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/PlayableCharacters/Spirit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/map/Button_tangible.tscn" type="PackedScene" id=5]
@@ -56,9 +55,6 @@ extents = Vector2( 57.25, 134.5 )
 script = ExtResource( 10 )
 
 [node name="ressources" type="Node2D" parent="."]
-
-[node name="Box (alive)" parent="ressources" groups=["tangible"] instance=ExtResource( 2 )]
-position = Vector2( -100, 0 )
 
 [node name="NPC" parent="ressources" instance=ExtResource( 3 )]
 position = Vector2( -180, 130 )
