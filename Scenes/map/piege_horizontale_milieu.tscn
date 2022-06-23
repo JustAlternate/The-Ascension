@@ -81,7 +81,7 @@ position = Vector2( 75.4999, -76.7499 )
 scale = Vector2( 1.729, 1.50415 )
 frames = SubResource( 12 )
 animation = "activate"
-frame = 7
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -90,11 +90,9 @@ shape = SubResource( 13 )
 
 [node name="on" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
-bus = "Tesla"
 
 [node name="off" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-bus = "Tesla"
 
 [connection signal="body_entered" from="." to="." method="_on_piege_horizontale_simple_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_piege_horizontale_simple_body_exited"]

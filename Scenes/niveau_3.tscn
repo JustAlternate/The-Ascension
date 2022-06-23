@@ -51,6 +51,7 @@ script = ExtResource( 9 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
+visible = false
 margin_left = -56.0
 margin_top = -94.0
 margin_right = 2106.0
@@ -67,11 +68,11 @@ position = Vector2( 1046, 764 )
 scale = Vector2( 0.05, 0.5 )
 
 [node name="Button_tangible2" parent="niveau/live" instance=ExtResource( 14 )]
-position = Vector2( 1510, 1150 )
+position = Vector2( 1510, 1148 )
 scale = Vector2( 0.05, 0.5 )
 
 [node name="chieur_de_caisse" type="Sprite" parent="niveau/live"]
-position = Vector2( 800, 128 )
+position = Vector2( 752, 128 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 17 )
 
@@ -171,14 +172,14 @@ texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
 [node name="Button_levier" parent="." groups=["grp_change_color"] instance=ExtResource( 1 )]
-position = Vector2( 412, 570 )
+position = Vector2( 295, 569 )
 rotation = 5.07036e-06
 scale = Vector2( 0.05, 0.05 )
 collision_layer = 3
 collision_mask = 3
 
 [node name="Box (alive)" parent="." groups=["boxable", "tangible"] instance=ExtResource( 13 )]
-position = Vector2( 400, 106 )
+position = Vector2( 375, 106 )
 scale = Vector2( 0.5, 0.5 )
 gravity = 200
 resurection_node_path = NodePath("../niveau/live/chieur_de_caisse")
@@ -199,9 +200,9 @@ scale = Vector2( 0.05, 0.05 )
 
 [connection signal="pushed" from="niveau/live/Button_tangible" to="niveau/movable_plateforme3" method="move_forward"]
 [connection signal="unpushed" from="niveau/live/Button_tangible" to="niveau/movable_plateforme3" method="move_backward"]
-[connection signal="pushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme3" method="move_forward"]
-[connection signal="unpushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme3" method="move_backward"]
-[connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/movable_plateforme3" method="move_forward"]
-[connection signal="desactivated" from="niveau/dead/Button_levier2" to="niveau/movable_plateforme3" method="move_backward"]
+[connection signal="pushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme4" method="move_forward"]
+[connection signal="unpushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme4" method="move_backward"]
+[connection signal="activated" from="niveau/dead/Button_levier2" to="piege_vertical_centre" method="_on_Button_levier2_desactivated"]
+[connection signal="desactivated" from="niveau/dead/Button_levier2" to="piege_vertical_centre" method="_on_Button_levier2_activated"]
 [connection signal="activated" from="Button_levier" to="niveau/movable_plateforme2" method="move_forward"]
 [connection signal="desactivated" from="Button_levier" to="niveau/movable_plateforme2" method="move_backward"]
