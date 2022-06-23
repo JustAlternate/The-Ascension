@@ -4,6 +4,7 @@ extends KinematicBody2D
 export var run_speed = 350
 export var jump_speed = -1000
 export var gravity = 2500
+export var vitesse_dechelage:int = 50
 
 var velocity = Vector2.ZERO
 
@@ -35,7 +36,7 @@ func get_input():
 		var jump = Input.is_action_just_pressed("move_up")
 
 		if sur_echelle and Input.is_action_pressed("move_up"):
-			velocity.y = -100
+			velocity.y = -vitesse_dechelage
 
 		if is_on_floor() and jump:
 
@@ -50,10 +51,10 @@ func get_input():
 				$AnimatedSprite.animation = "course"
 				if $AnimatedSprite.flip_h == true:
 					$AnimatedSprite.flip_h = false
-			
-			if not is_on_floor():
-				$AnimatedSprite.frame = 4
-				$AnimatedSprite.stop()
+				
+				if not is_on_floor():
+					$AnimatedSprite.frame = 4
+					$AnimatedSprite.stop()
 		
 		elif left:
 			
@@ -63,10 +64,10 @@ func get_input():
 				if $AnimatedSprite.flip_h == false:
 					$AnimatedSprite.flip_h = true
 			
-			if not is_on_floor():
-				$AnimatedSprite.frame = 4
-				$AnimatedSprite.stop()
-		
+				if not is_on_floor():
+					$AnimatedSprite.frame = 4
+					$AnimatedSprite.stop()
+			
 		elif is_on_floor():
 			$AnimatedSprite.animation = "idle"
 	else:
@@ -77,6 +78,8 @@ func get_input():
 func _on_Echelle_montage_echelle():
 	print('tu veux echelle')
 	sur_echelle = true
+	$AnimatedSprite.play()
+	
 
 func _on_Echelle_pas_echelle():
 	print('tu veux pas echelle')

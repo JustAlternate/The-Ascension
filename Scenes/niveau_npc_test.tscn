@@ -90,14 +90,14 @@ script = ExtResource( 13 )
 [node name="live_TileMap" parent="niveau/live" instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 458760, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0 )
 
+[node name="Echelle" parent="niveau/live" instance=ExtResource( 14 )]
+position = Vector2( 461, 351 )
+scale = Vector2( 0.16, 0.24 )
+
 [node name="NPC2" parent="niveau/live" instance=ExtResource( 3 )]
 position = Vector2( 795, 124 )
 scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "Bonjour Aventurier, bien ou quoi, je suis the rock."
-
-[node name="Echelle" parent="niveau/live/NPC2" instance=ExtResource( 14 )]
-position = Vector2( -1670, 1135 )
-scale = Vector2( 0.8, 1.2 )
 
 [node name="dead" type="Node2D" parent="niveau"]
 
@@ -119,7 +119,7 @@ scale = Vector2( 0.1, 0.1 )
 jump_speed = -750
 
 [connection signal="change_color" from="." to="ressources/fontaine" method="_on_main_change_color"]
-[connection signal="montage_echelle" from="niveau/live/NPC2/Echelle" to="niveau/body" method="_on_Echelle_montage_echelle"]
-[connection signal="pas_echelle" from="niveau/live/NPC2/Echelle" to="niveau/body" method="_on_Echelle_pas_echelle"]
+[connection signal="montage_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_montage_echelle"]
+[connection signal="pas_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_pas_echelle"]
 
 [editable path="ressources/movable_plateforme"]
