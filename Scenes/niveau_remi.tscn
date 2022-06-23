@@ -77,16 +77,22 @@ scale = Vector2( 0.05, 0.05 )
 light_mask = 3
 position = Vector2( 672.857, 111.429 )
 scale = Vector2( 2, 2 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Box (alive)2" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
 light_mask = 3
 position = Vector2( 940, 110 )
 scale = Vector2( 2, 2 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Box (alive)3" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
 light_mask = 3
 position = Vector2( 352.857, 108.571 )
 scale = Vector2( 2, 2 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="plateforme_boite_2_1" type="StaticBody2D" parent="niveau" groups=["grp_change_color"]]
 light_mask = 3

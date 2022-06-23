@@ -6,8 +6,10 @@ export var speed = 500
 export var acceleration = 0.1
 export var friction = 0.05
 
+var interact
 var _on_fontaine = false
 var alive = true
+var pushing = null
 
 func get_input():
 	input_velocity = Vector2.ZERO
@@ -19,12 +21,14 @@ func get_input():
 		if Input.is_action_pressed("move_down"):
 			input_velocity.y += 1
 		if Input.is_action_pressed("move_left"):
-			if $AnimatedSprite.flip_h == false:
+			if $AnimatedSprite.flip_h == false and not (pushing != null and interact):
 				$AnimatedSprite.flip_h = true
+				$pousse/CollisionShape2D.position.x = -50
 			input_velocity.x -= 1
 		if Input.is_action_pressed("move_right"):
-			if $AnimatedSprite.flip_h == true:
+			if $AnimatedSprite.flip_h == true and not (pushing != null and interact):
 				$AnimatedSprite.flip_h = false
+				$pousse/CollisionShape2D.position.x = 50
 			input_velocity.x += 1
 		input_velocity = input_velocity.normalized() * speed
 	
@@ -33,7 +37,10 @@ func get_input():
 	else:
 		velocity = velocity.linear_interpolate(Vector2.ZERO,friction)
 
-
+func move_box():
+	interact = Input.is_action_pressed("interact")
+	if interact and pushing != null:
+		pushing.move_and_slide(velocity, Vector2(0, -1))
 
 
 # revivre/mourire
@@ -55,8 +62,22 @@ func _physics_process(delta):
 	else:
 		get_input()
 		move_and_slide(velocity)
+		move_box()
 
 
 
 func _on_Fontaine_revive():
 	revive()
+
+
+
+func _on_pousse_body_entered(body):
+	if body.is_in_group("boxable"):
+		pushing = body
+
+
+
+
+func _on_pousse_body_exited(body):
+	if body.is_in_group("boxable"):
+		pushing = null
