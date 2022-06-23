@@ -2,6 +2,11 @@ extends KinematicBody2D
 class_name MovableBox
 
 export var gravity = 500
+export var resurection_node_path:NodePath
+export var vitesse_resurection = 0.5
+
+onready var resurection_node = get_node(resurection_node_path)
+
 
 var velocity = Vector2.ZERO
 var was_on_floor = false
@@ -42,3 +47,9 @@ func pouf():
 		pouf_force = rand_range(30,50) 
 	else: 
 		pouf_force = -rand_range(30,50)
+
+
+func detruire():
+	global_position = Vector2(-100,-100)
+	yield(get_tree().create_timer(vitesse_resurection),"timeout")
+	global_position = resurection_node.global_position
