@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/in_the_office.wav-749deee4f8efcb08160eb5e869f7bf94.sample"
+path="res://.import/menu.wav-c1b75588e76314673597eae7fb5e2934.sample"
 
 [deps]
 
-source_file="res://Assets/in_the_office.wav"
-dest_files=[ "res://.import/in_the_office.wav-749deee4f8efcb08160eb5e869f7bf94.sample" ]
+source_file="res://Assets/sfx/menu.wav"
+dest_files=[ "res://.import/menu.wav-c1b75588e76314673597eae7fb5e2934.sample" ]
 
 [params]
 
