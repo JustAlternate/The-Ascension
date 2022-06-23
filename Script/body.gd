@@ -14,8 +14,8 @@ var alive = false
 
 var sur_echelle = false
 
-var top_collide = false
-var bottom_collide = false
+var top_collide = 0
+var bottom_collide = 0
 var top_body
 
 func _ready():
@@ -100,8 +100,8 @@ func kinematic_physics():
 		if collision.collider is MovableBox:
 			collision.collider.slide(-collision.normal * (run_speed / 2))
 			
-	if top_collide and bottom_collide:
-		dead()
+	if top_collide > 0 and bottom_collide > 0:
+		get_tree().call_group("main","death")
 		if top_body!=null:
 			top_body.pouf()
 
@@ -143,29 +143,37 @@ func revive():
 # booléens pour savoir si le joueur risque d'être écrasé
 
 func _on_bottom_area_entered(area):
-	bottom_collide = true
+	bottom_collide += 1
+	print("bottom_collide_area")
 func _on_bottom_body_entered(body):
-	if body != self and body.is_in_group("boxable"):
-		bottom_collide = true
+	if body != self:
+		bottom_collide += 1
+		print("bottom_collide_body")
+		
 func _on_bottom_area_exited(area):
-	bottom_collide = false
+	bottom_collide -= 1
 func _on_bottom_body_exited(body):
-	if body != self and body.is_in_group("boxable"):
-		bottom_collide = false
+	if body != self:
+		bottom_collide -= 1
+		
+		
 func _on_top_area_entered(area):
 	if area.is_in_group("area_tue"):
-		top_collide = true
+		top_collide += 1
+		print("top_collide_area")
 func _on_top_body_entered(body):
-	if body != self:
-		top_collide = true
+	if body != self and body.is_in_group("body_tue"):
+		top_collide += 1
+		print("top_collide_body")
 		if body.is_in_group("boxable"):
 			top_body = body
+			
 func _on_top_area_exited(area):
 	if area.is_in_group("area_tue"):
-		top_collide = false
+		top_collide -= 1
 func _on_top_body_exited(body):
-	if body != self:
-		top_collide = false
+	if body != self and body.is_in_group("body_tue"):
+		top_collide -= 1
 		if body.is_in_group("boxable"):
 			top_body = null
 

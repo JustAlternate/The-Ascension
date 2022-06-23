@@ -12,7 +12,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(pushed)
+	#print(pushed)
+	pass
 
 
 func _on_Button_body_entered(body):

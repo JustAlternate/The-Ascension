@@ -81,7 +81,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -432 )
 frames = SubResource( 10 )
 animation = "activate"
-frame = 2
+frame = 7
 playing = true
 
 [node name="left_area" type="Area2D" parent="."]

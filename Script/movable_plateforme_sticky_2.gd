@@ -22,8 +22,10 @@ func _physics_process(delta):
 		linear_velocity=($"arrivée".global_position - $"départ".global_position)*direction*delta*vitesse/100
 		$plateforme.global_position += linear_velocity 
 		$enfant.global_position += linear_velocity
+		"""
 		for thing in movable_things:
 			thing.global_position += linear_velocity
+			"""
 		
 		if $"départ".global_position.distance_to($"arrivée".global_position) < $"départ".global_position.distance_to($plateforme.global_position) and direction==1:
 			emit_signal("path_finished")

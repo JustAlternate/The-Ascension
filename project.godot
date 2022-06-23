@@ -24,6 +24,10 @@ config/name="black_and_white_jam"
 run/main_scene="res://Scenes/UI/menu_main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Music="*res://Scenes/UI/music.tscn"
+
 [display]
 
 window/stretch/mode="2d"
