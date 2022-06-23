@@ -5,6 +5,8 @@ export var gravity = 500
 
 var velocity = Vector2.ZERO
 var was_on_floor = false
+var poufing=0
+var pouf_force = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +17,11 @@ func _ready():
 func _physics_process(delta):
 	velocity.y += gravity
 	velocity = move_and_slide(velocity,Vector2(0, -1))
+	if poufing > 0:
+		poufing -= delta
+		velocity.y += -310 * poufing
+		velocity.x = pouf_force * poufing
+	velocity = move_and_slide(velocity)
 	velocity = Vector2.ZERO
 	play_fall_sound()
 
@@ -28,3 +35,10 @@ func play_fall_sound():
 
 func slide(vector):
 	velocity.x = vector.x
+
+func pouf():
+	poufing=2
+	if (rand_range(-1,1) < 0):
+		pouf_force = rand_range(30,50) 
+	else: 
+		pouf_force = -rand_range(30,50)
