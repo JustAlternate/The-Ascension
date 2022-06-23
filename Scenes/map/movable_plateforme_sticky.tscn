@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/map/live/flor.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 32, 32 )
+extents = Vector2( 32, 2.5 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,6 +27,14 @@ shape = SubResource( 3 )
 use_parent_material = true
 frames = SubResource( 1 )
 
+[node name="Area2D" type="Area2D" parent="plateforme"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plateforme/Area2D"]
+position = Vector2( 0, -34.5 )
+shape = SubResource( 3 )
+
 [node name="départ" type="Position2D" parent="."]
 
 [connection signal="path_finished" from="." to="." method="_on_movable_plateforme_path_finished"]
+[connection signal="body_entered" from="plateforme/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="plateforme/Area2D" to="." method="_on_Area2D_body_exited"]

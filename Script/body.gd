@@ -11,6 +11,7 @@ var alive = false
 
 var top_collide = false
 var bottom_collide = false
+var top_body
 
 func _ready():
 	velocity.x = 0
@@ -68,6 +69,8 @@ func kinematic_physics():
 			
 	if top_collide and bottom_collide:
 		dead()
+		if top_body!=null:
+			top_body.pouf()
 
 
 
@@ -93,7 +96,7 @@ func revive():
 
 
 # booléens pour savoir si le joueur risque d'être écrasé
-"""
+
 func _on_bottom_area_entered(area):
 	bottom_collide = true
 func _on_bottom_body_entered(body):
@@ -109,12 +112,16 @@ func _on_top_area_entered(area):
 func _on_top_body_entered(body):
 	if body != self:
 		top_collide = true
+		if body.is_in_group("boxable"):
+			top_body = body
 func _on_top_area_exited(area):
 	top_collide = false
 func _on_top_body_exited(body):
 	if body != self:
 		top_collide = false
-"""
+		if body.is_in_group("boxable"):
+			top_body = null
+
 
 # Pour les bruits de pas
 func _on_AnimatedSprite_frame_changed():
