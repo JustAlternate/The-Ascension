@@ -23,10 +23,12 @@ func _ready():
 
 func activation():
 	$AnimatedSprite.animation = "activate"
+	$on.play()
 	activate = true
 
 func desactivation():
 	$AnimatedSprite.animation = "desactivate"
+	$off.play()
 	activate = false
 
 #groupe_fonction
