@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Assets/Sprites/personnage/perssonnage-attente.png" type="Texture" id=1]
 [ext_resource path="res://Script/body.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/sfx/step/step4.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/sfx/step/step5.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/sfx/step/step1.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Sprites/personnage/perso-monte-echelle.png" type="Texture" id=12]
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
@@ -162,6 +163,46 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 4096, 6144, 2048, 2048 )
 
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 4096, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 2048, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 4096, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 2048, 4096, 2048, 2048 )
+
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
@@ -188,6 +229,11 @@ animations = [ {
 "loop": true,
 "name": "course",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ) ],
+"loop": true,
+"name": "echelle",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=13]
@@ -210,8 +256,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "idle"
-frame = 2
+animation = "mort"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
