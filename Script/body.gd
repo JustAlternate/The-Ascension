@@ -6,6 +6,7 @@ export var jump_speed = -1000
 export var gravity = 2500
 
 var velocity = Vector2.ZERO
+var mort_velocity = 0
 
 var alive = false
 
@@ -79,6 +80,8 @@ func _physics_process(delta):
 	get_input()
 	kinematic_physics()
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	velocity.x *= 0.9 #pour le repoussage de mort
+
 
 
 func dead():
@@ -88,6 +91,9 @@ func dead():
 	$AnimatedSprite.animation = "mort"
 	alive = false
 	velocity = Vector2.ZERO
+	velocity.x = mort_velocity
+	print(mort_velocity)
+	mort_velocity = 0
 
 
 func revive():
