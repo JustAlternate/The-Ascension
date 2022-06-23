@@ -7,25 +7,30 @@ var backup_position
 func _ready():
 	change_state()
 	change_state()
-
+	$niveau/body/DeathSoundEffect.stop()
+	$niveau/Spirit/ReviveSFX.stop()
 
 
 func change_state():
 	if state == 1:
 		state = 0
+		$niveau/body/DeathSoundEffect.play()
 		$niveau/live.visible = false
 		$niveau/dead.visible = true
 		$niveau/Spirit.dead()
 		$niveau/body.dead()
 		get_tree().call_group("grp_change_color","change_color")
+
 		
 	else:
 		state = 1
+		$niveau/Spirit/ReviveSFX.play()
 		$niveau/live.visible = true
 		$niveau/dead.visible = false
 		$niveau/Spirit.revive()
 		$niveau/body.revive()
 		get_tree().call_group("grp_change_color","change_color")
+
 
 func revive():
 	if state == 0:
