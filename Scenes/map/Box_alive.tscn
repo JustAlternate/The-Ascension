@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Script/Box_alive.gd" type="Script" id=2]
+[ext_resource path="res://Assets/sfx/box_fall.wav" type="AudioStream" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -23,3 +24,7 @@ frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+
+[node name="FallSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+bus = "Live/Die"
