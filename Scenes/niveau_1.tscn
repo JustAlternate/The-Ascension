@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/Box_alive.tscn" type="PackedScene" id=2]
@@ -17,6 +17,11 @@
 [ext_resource path="res://shader_inversion.tres" type="Material" id=15]
 [ext_resource path="res://Assets/map/live/flor.png" type="Texture" id=16]
 [ext_resource path="res://Script/niveau_1.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/map/Tesla-pole_petit.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/map/piege_horizontale_milieu.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/map/Tesla-pole_grand.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/map/Tesla-pole_seul.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Script/script_de_base.gd" type="Script" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -99,6 +104,7 @@ position = Vector2( 7, -6 )
 script = ExtResource( 17 )
 
 [node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
+visible = false
 margin_left = -41.0
 margin_top = -33.0
 margin_right = 1083.0
@@ -108,7 +114,7 @@ script = ExtResource( 13 )
 [node name="live" type="Node2D" parent="niveau"]
 
 [node name="live_TileMap" parent="niveau/live" instance=ExtResource( 9 )]
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65551, 0, 0, 131072, 0, 0, 131087, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65551, 0, 0, 131072, 0, 0, 131087, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
 
 [node name="dead" type="Node2D" parent="niveau"]
 
@@ -136,7 +142,7 @@ format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65541, 0, 0, 65551, 0, 0, 131072, 0, 0, 131077, 0, 0, 131087, 0, 0, 196608, 0, 0, 196613, 0, 0, 196623, 0, 0, 262144, 0, 0, 262149, 0, 0, 262159, 0, 0, 327680, 0, 0, 327685, 0, 0, 327695, 0, 0, 393216, 0, 0, 393221, 0, 0, 393231, 0, 0, 458752, 0, 0, 458757, 0, 0, 458767, 0, 0, 524288, 0, 0, 524293, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
 
 [node name="fontaine2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 7 )]
-position = Vector2( 743, 473 )
+position = Vector2( 813, 473 )
 scale = Vector2( 0.065, 0.065 )
 collision_layer = 3
 collision_mask = 3
@@ -158,11 +164,6 @@ position = Vector2( 86, 336 )
 scale = Vector2( 0.07, 0.07 )
 run_speed = 320
 jump_speed = -700
-
-[node name="piege_horizontale_simple2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 8 )]
-position = Vector2( 493, 380 )
-scale = Vector2( 0.03, 0.03 )
-activate = false
 
 [node name="piege_horizontale_simple" parent="niveau" groups=["grp_change_color", "grp_piege"] instance=ExtResource( 8 )]
 position = Vector2( 262, 340 )
@@ -193,11 +194,32 @@ position = Vector2( -69.3334, -0.000427246 )
 position = Vector2( 1051, 318 )
 shape = SubResource( 7 )
 
+[node name="Node2D" type="Node2D" parent="niveau"]
+
+[node name="Tesla-polePetit" parent="niveau/Node2D" groups=["grp_change_color"] instance=ExtResource( 18 )]
+position = Vector2( 472, 411 )
+rotation = 1.57079
+scale = Vector2( 0.05, 0.05 )
+script = ExtResource( 22 )
+
+[node name="Tesla-poleGrand" parent="niveau/Node2D" groups=["grp_change_color"] instance=ExtResource( 20 )]
+position = Vector2( 645, 415 )
+scale = Vector2( 0.05, 0.05 )
+script = ExtResource( 22 )
+
+[node name="piege_horizontale_simple" parent="niveau/Node2D" groups=["grp_change_color"] instance=ExtResource( 19 )]
+position = Vector2( 545, 382 )
+rotation = 1.42109e-13
+scale = Vector2( 0.05, 0.05 )
+
+[node name="Tesla-poleSeul" parent="niveau/Node2D" instance=ExtResource( 21 )]
+use_parent_material = false
+
 [connection signal="change_color" from="." to="ressources/fontaine" method="_on_main_change_color"]
-[connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/piege_horizontale_simple2" method="_on_Button_levier_desactivated"]
 [connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/piege_horizontale_simple" method="_on_Button_levier_activated"]
-[connection signal="desactivated" from="niveau/dead/Button_levier2" to="niveau/piege_horizontale_simple2" method="_on_Button_levier_activated"]
+[connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/Node2D/piege_horizontale_simple" method="activation"]
 [connection signal="desactivated" from="niveau/dead/Button_levier2" to="niveau/piege_horizontale_simple" method="_on_Button_levier_desactivated"]
+[connection signal="desactivated" from="niveau/dead/Button_levier2" to="niveau/Node2D/piege_horizontale_simple" method="desactivation"]
 [connection signal="activated" from="niveau/dead/Button_levier3" to="niveau/movable_plateforme" method="move_forward"]
 [connection signal="desactivated" from="niveau/dead/Button_levier3" to="niveau/movable_plateforme" method="move_backward"]
 [connection signal="body_entered" from="niveau/fin" to="niveau" method="_on_fin_body_entered"]

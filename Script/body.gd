@@ -129,6 +129,36 @@ func revive():
 	velocity = Vector2.ZERO
 
 
+# booléens pour savoir si le joueur risque d'être écrasé
+
+func _on_bottom_area_entered(area):
+	bottom_collide = true
+func _on_bottom_body_entered(body):
+	if body != self and body.is_in_group("boxable"):
+		bottom_collide = true
+func _on_bottom_area_exited(area):
+	bottom_collide = false
+func _on_bottom_body_exited(body):
+	if body != self and body.is_in_group("boxable"):
+		bottom_collide = false
+func _on_top_area_entered(area):
+	if area.is_in_group("area_tue"):
+		top_collide = true
+func _on_top_body_entered(body):
+	if body != self:
+		top_collide = true
+		if body.is_in_group("boxable"):
+			top_body = body
+func _on_top_area_exited(area):
+	if area.is_in_group("area_tue"):
+		top_collide = false
+func _on_top_body_exited(body):
+	if body != self:
+		top_collide = false
+		if body.is_in_group("boxable"):
+			top_body = null
+
+
 # Pour les bruits de pas
 func _on_AnimatedSprite_frame_changed():
 	if $AnimatedSprite.animation == "course":
