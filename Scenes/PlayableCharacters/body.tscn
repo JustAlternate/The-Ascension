@@ -97,6 +97,11 @@ flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 4096, 2048, 2048 )
 
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 2048, 2048 )
+
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 3 )
@@ -157,11 +162,6 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 4096, 6144, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=43]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 2048, 2048 )
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
@@ -179,15 +179,15 @@ animations = [ {
 "name": "saut",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
-"loop": true,
-"name": "course",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 43 ) ],
 "loop": true,
 "name": "mort",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "course",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=13]
@@ -211,7 +211,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 9
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -239,7 +239,6 @@ bus = "Live/Die"
 [node name="StepSoundEffects" type="Node2D" parent="."]
 
 [node name="step1" type="AudioStreamPlayer2D" parent="StepSoundEffects"]
-scale = Vector2( 1, 1 )
 stream = ExtResource( 11 )
 bus = "Step"
 
@@ -260,3 +259,11 @@ stream = ExtResource( 10 )
 bus = "Step"
 
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
+[connection signal="area_entered" from="bottom" to="." method="_on_bottom_area_entered"]
+[connection signal="area_exited" from="bottom" to="." method="_on_bottom_area_exited"]
+[connection signal="body_entered" from="bottom" to="." method="_on_bottom_body_entered"]
+[connection signal="body_exited" from="bottom" to="." method="_on_bottom_body_exited"]
+[connection signal="area_entered" from="top" to="." method="_on_top_area_entered"]
+[connection signal="area_exited" from="top" to="." method="_on_top_area_exited"]
+[connection signal="body_entered" from="top" to="." method="_on_top_body_entered"]
+[connection signal="body_exited" from="top" to="." method="_on_top_body_exited"]

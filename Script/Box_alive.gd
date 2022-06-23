@@ -19,7 +19,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity,Vector2(0, -1))
 	if poufing > 0:
 		poufing -= delta
-		velocity.y += -310 * poufing
+		velocity.y += -300 * poufing
 		velocity.x = pouf_force * poufing
 	velocity = move_and_slide(velocity)
 	velocity = Vector2.ZERO
@@ -38,7 +38,7 @@ func slide(vector):
 
 func pouf():
 	poufing=2
-	if (rand_range(-1,1) < 0):
+	if (randi()%2 < 1):
 		pouf_force = rand_range(30,50) 
 	else: 
 		pouf_force = -rand_range(30,50)

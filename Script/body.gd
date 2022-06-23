@@ -100,12 +100,12 @@ func revive():
 func _on_bottom_area_entered(area):
 	bottom_collide = true
 func _on_bottom_body_entered(body):
-	if body != self:
+	if body != self and body.is_in_group("boxable"):
 		bottom_collide = true
 func _on_bottom_area_exited(area):
 	bottom_collide = false
 func _on_bottom_body_exited(body):
-	if body != self:
+	if body != self and body.is_in_group("boxable"):
 		bottom_collide = false
 func _on_top_area_entered(area):
 	top_collide = true
