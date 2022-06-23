@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tesla_on.wav-cd359fe771078d2d138d1f62abe3e96d.sample"
+
+[deps]
+
+source_file="res://Assets/sfx/tesla_on.wav"
+dest_files=[ "res://.import/tesla_on.wav-cd359fe771078d2d138d1f62abe3e96d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
