@@ -83,8 +83,6 @@ func get_input():
 	else:
 		pass
 
-
-
 func _on_Echelle_montage_echelle():
 	sur_echelle = true
 	$AnimatedSprite.play()
@@ -95,6 +93,7 @@ func _on_Echelle_pas_echelle():
 
 # Pour l'instant permet de pousser la boîte
 func kinematic_physics():
+	print(top_collide)
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
 		if collision.collider is MovableBox:
@@ -144,11 +143,9 @@ func revive():
 
 func _on_bottom_area_entered(area):
 	bottom_collide += 1
-	print("bottom_collide_area")
 func _on_bottom_body_entered(body):
 	if body != self:
 		bottom_collide += 1
-		print("bottom_collide_body")
 		
 func _on_bottom_area_exited(area):
 	bottom_collide -= 1

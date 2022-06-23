@@ -29,5 +29,9 @@ func _on_musicVolume_value_changed(value):
 
 
 func _on_sfxVolume_value_changed(value):
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), log(value)*20)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), log(value)*20)
 
+
+
+func _on_masterVolume_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), log(value)*20)

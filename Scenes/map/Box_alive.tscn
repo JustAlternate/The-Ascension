@@ -4,20 +4,15 @@
 [ext_resource path="res://Script/Box_alive.gd" type="Script" id=2]
 [ext_resource path="res://Assets/sfx/box_fall.wav" type="AudioStream" id=3]
 
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 2048, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 2048, 0, 2048, 2048 )
-
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
@@ -29,26 +24,26 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 4096, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 2048, 2048 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 2048, 2048, 2048, 2048 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ SubResource( 5 ) ],
-"loop": true,
-"name": "3",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 4 ) ],
-"loop": true,
-"name": "1",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 7 ) ],
 "loop": true,
 "name": "2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "0",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ) ],
@@ -61,9 +56,14 @@ animations = [ {
 "name": "4",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
-"name": "0",
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "3",
 "speed": 5.0
 } ]
 

@@ -38,7 +38,7 @@ func _physics_process(delta):
 			direction = 0
 
 func _on_movable_plateforme_path_finished():
-	print("finished")
+	pass
 
 func move_forward():
 	direction = 1
