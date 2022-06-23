@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Assets/Sprites/personnage/perssonnage-attente.png" type="Texture" id=1]
 [ext_resource path="res://Script/body.gd" type="Script" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://Assets/Sprites/personnage/personnage-pousse.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/personnage/perso-saut.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/personnage/tombe.png" type="Texture" id=6]
+[ext_resource path="res://Assets/sfx/step/step3.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/sfx/step/step2.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/sfx/step/step4.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/sfx/step/step5.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/sfx/step/step1.wav" type="AudioStream" id=11]
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
@@ -230,6 +235,30 @@ shape = SubResource( 45 )
 stream = SubResource( 46 )
 bus = "Live/Die"
 
+[node name="StepSoundEffects" type="Node2D" parent="."]
+
+[node name="step1" type="AudioStreamPlayer2D" parent="StepSoundEffects"]
+scale = Vector2( 1, 1 )
+stream = ExtResource( 11 )
+bus = "Step"
+
+[node name="step2" type="AudioStreamPlayer2D" parent="StepSoundEffects"]
+stream = ExtResource( 8 )
+bus = "Step"
+
+[node name="step3" type="AudioStreamPlayer2D" parent="StepSoundEffects"]
+stream = ExtResource( 7 )
+bus = "Step"
+
+[node name="step4" type="AudioStreamPlayer2D" parent="StepSoundEffects"]
+stream = ExtResource( 9 )
+bus = "Step"
+
+[node name="step5" type="AudioStreamPlayer2D" parent="StepSoundEffects"]
+stream = ExtResource( 10 )
+bus = "Step"
+
+[connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
 [connection signal="area_entered" from="bottom" to="." method="_on_bottom_area_entered"]
 [connection signal="area_exited" from="bottom" to="." method="_on_bottom_area_exited"]
 [connection signal="body_entered" from="bottom" to="." method="_on_bottom_body_entered"]

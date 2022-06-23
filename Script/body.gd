@@ -115,3 +115,21 @@ func _on_top_body_exited(body):
 	if body != self:
 		top_collide = false
 """
+
+# Pour les bruits de pas
+func _on_AnimatedSprite_frame_changed():
+	if $AnimatedSprite.animation == "course":
+		match $AnimatedSprite.frame:
+			0, 6:
+				var rand = (randi() % 5) + 1
+				match rand:
+					1:
+						$StepSoundEffects/step1.play()
+					2:
+						$StepSoundEffects/step2.play()
+					3:
+						$StepSoundEffects/step3.play()
+					4:
+						$StepSoundEffects/step4.play()
+					5:
+						$StepSoundEffects/step5.play()
