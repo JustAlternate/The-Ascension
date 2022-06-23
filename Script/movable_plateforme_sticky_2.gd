@@ -3,6 +3,7 @@ extends Node2D
 signal path_finished
 
 export var vitesse = 50
+export var choose_collision_layer = 1
 
 export var direction = 0 #0=ne bouge pas, 1 = vers l'arrivée, -1 = vers le départ
 var linear_velocity
@@ -11,6 +12,7 @@ var movable_things:Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$plateforme.collision_layer = choose_collision_layer
 	$plateforme.global_position = $"départ".global_position
 
 

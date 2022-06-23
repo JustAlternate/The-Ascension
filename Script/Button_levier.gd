@@ -43,3 +43,11 @@ func _input(event):
 			$AnimatedSprite.frame = 0
 			emit_signal("switch")
 			emit_signal("activated")
+			
+func change_color():
+	if material == null:
+		material = load("res://shader_inversion.tres")
+	else:
+		material = null
+
+

@@ -39,9 +39,15 @@ func _on_left_area_body_entered(body):
 		body.mort_velocity =-500
 		get_tree().call_group("main","death")
 		print("left")
+	elif body.is_in_group("destructible"):
+		body.detruire()
+
 
 func _on_right_area_body_entered(body):
 	if body.name == "body" and activate:
 		get_tree().call_group("main","death")
 		body.mort_velocity =500
 		print("right")
+	elif body.is_in_group("destructible"):
+		body.detruire()
+
