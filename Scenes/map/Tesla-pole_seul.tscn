@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Script/script_de_base.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/objets/tesla-pole_seul.png" type="Texture" id=2]
+
+[node name="Tesla-poleSeul" type="Sprite" groups=["grp_change_color"]]
+use_parent_material = true
+position = Vector2( 645, 501.9 )
+scale = Vector2( 0.05, 0.144727 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )

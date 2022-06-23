@@ -7,6 +7,7 @@ export var gravity = 2500
 export var vitesse_dechelage:int = 50
 
 var velocity = Vector2.ZERO
+var mort_velocity = 0
 
 var alive = false
 
@@ -107,6 +108,8 @@ func _physics_process(delta):
 	get_input()
 	kinematic_physics()
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	velocity.x *= 0.9 #pour le repoussage de mort
+
 
 
 func dead():
@@ -116,11 +119,44 @@ func dead():
 	$AnimatedSprite.animation = "mort"
 	alive = false
 	velocity = Vector2.ZERO
+	velocity.x = mort_velocity
+	print(mort_velocity)
+	mort_velocity = 0
 
 
 func revive():
 	alive = true
 	velocity = Vector2.ZERO
+
+
+# booléens pour savoir si le joueur risque d'être écrasé
+
+func _on_bottom_area_entered(area):
+	bottom_collide = true
+func _on_bottom_body_entered(body):
+	if body != self and body.is_in_group("boxable"):
+		bottom_collide = true
+func _on_bottom_area_exited(area):
+	bottom_collide = false
+func _on_bottom_body_exited(body):
+	if body != self and body.is_in_group("boxable"):
+		bottom_collide = false
+func _on_top_area_entered(area):
+	if area.is_in_group("area_tue"):
+		top_collide = true
+func _on_top_body_entered(body):
+	if body != self:
+		top_collide = true
+		if body.is_in_group("boxable"):
+			top_body = body
+func _on_top_area_exited(area):
+	if area.is_in_group("area_tue"):
+		top_collide = false
+func _on_top_body_exited(body):
+	if body != self:
+		top_collide = false
+		if body.is_in_group("boxable"):
+			top_body = null
 
 
 # Pour les bruits de pas
