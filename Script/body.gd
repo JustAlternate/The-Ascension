@@ -8,7 +8,8 @@ export var vitesse_dechelage:int = 50
 
 var velocity = Vector2.ZERO
 var mort_velocity = 0
-
+var pushing = null
+var interact
 var alive = false
 
 var sur_echelle = false
@@ -35,7 +36,7 @@ func get_input():
 		var right = Input.is_action_pressed("move_right")
 		var left = Input.is_action_pressed("move_left")
 		var jump = Input.is_action_just_pressed("move_up")
-
+		
 		if sur_echelle and Input.is_action_pressed("move_up"):
 			velocity.y = -vitesse_dechelage
 
@@ -49,9 +50,13 @@ func get_input():
 			
 			velocity.x += run_speed
 			if not sur_echelle:
-				$AnimatedSprite.animation = "course"
-				if $AnimatedSprite.flip_h == true:
-					$AnimatedSprite.flip_h = false
+				if pushing != null and interact:
+					$AnimatedSprite.animation = "pousse"
+				else:
+					$AnimatedSprite.animation = "course"
+					if $AnimatedSprite.flip_h == true:
+						$AnimatedSprite.flip_h = false
+						$pousse/CollisionShape2D.position.x = 500
 				
 				if not is_on_floor():
 					$AnimatedSprite.frame = 4
@@ -61,9 +66,13 @@ func get_input():
 			
 			velocity.x -= run_speed
 			if not sur_echelle:
-				$AnimatedSprite.animation = "course"
-				if $AnimatedSprite.flip_h == false:
-					$AnimatedSprite.flip_h = true
+				if pushing != null and interact:
+					$AnimatedSprite.animation = "pousse"
+				else:
+					$AnimatedSprite.animation = "course"
+					if $AnimatedSprite.flip_h == false:
+						$AnimatedSprite.flip_h = true
+						$pousse/CollisionShape2D.position.x = -500
 			
 				if not is_on_floor():
 					$AnimatedSprite.frame = 4
@@ -77,13 +86,11 @@ func get_input():
 
 
 func _on_Echelle_montage_echelle():
-	print('tu veux echelle')
 	sur_echelle = true
 	$AnimatedSprite.play()
 	
 
 func _on_Echelle_pas_echelle():
-	print('tu veux pas echelle')
 	sur_echelle = false
 
 # Pour l'instant permet de pousser la boîte
@@ -98,6 +105,10 @@ func kinematic_physics():
 		if top_body!=null:
 			top_body.pouf()
 
+func move_box():
+	interact = Input.is_action_pressed("interact")
+	if interact and pushing != null:
+		pushing.move_and_slide(velocity, Vector2(0, -1))
 
 
 func _physics_process(delta):
@@ -107,6 +118,7 @@ func _physics_process(delta):
 		velocity.y = 0
 	get_input()
 	kinematic_physics()
+	move_box()
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	velocity.x *= 0.9 #pour le repoussage de mort
 
@@ -120,7 +132,6 @@ func dead():
 	alive = false
 	velocity = Vector2.ZERO
 	velocity.x = mort_velocity
-	print(mort_velocity)
 	mort_velocity = 0
 
 
@@ -177,3 +188,15 @@ func _on_AnimatedSprite_frame_changed():
 					5:
 						$StepSoundEffects/step5.play()
 
+
+
+func _on_pousse_body_entered(body):
+	if body.is_in_group("boxable"):
+		pushing = body
+
+
+
+
+func _on_pousse_body_exited(body):
+	if body.is_in_group("boxable"):
+		pushing = null
