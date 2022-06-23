@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/map/Button_levier.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/movable_plateforme_sticky.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=11]
 [ext_resource path="res://shader_inversion.tres" type="Material" id=12]
 [ext_resource path="res://Scenes/map/Echelle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Script/niveau2.gd" type="Script" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -40,6 +41,9 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 99.625, 134.5 )
+
 [node name="main2" type="Node2D" groups=["main"]]
 script = ExtResource( 9 )
 
@@ -47,9 +51,9 @@ script = ExtResource( 9 )
 
 [node name="niveau" type="Node2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 14 )
 
 [node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
-visible = false
 margin_left = -56.0
 margin_top = -94.0
 margin_right = 2106.0
@@ -150,9 +154,16 @@ scale = Vector2( 0.1, 0.1 )
 jump_speed = -700
 vitesse_dechelage = 200
 
+[node name="fin" type="Area2D" parent="niveau"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
+position = Vector2( 2174, 718 )
+shape = SubResource( 7 )
+
 [connection signal="montage_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_montage_echelle"]
 [connection signal="pas_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_pas_echelle"]
 [connection signal="activated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_forward"]
 [connection signal="desactivated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_backward"]
 [connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/movable_plateforme3" method="move_forward"]
 [connection signal="desactivated" from="niveau/dead/Button_levier2" to="niveau/movable_plateforme3" method="move_backward"]
+[connection signal="body_entered" from="niveau/fin" to="niveau" method="_on_fin_body_entered"]

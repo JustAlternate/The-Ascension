@@ -20,3 +20,14 @@ func _on_Button2_button_up():
 	var scene_name = "menu_main"
 	var path = "res://Scenes/UI/{scene_name}.tscn".format({"scene_name":scene_name})
 	get_tree().change_scene(path)
+
+
+
+func _on_musicVolume_value_changed(value):
+	
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"), log(value)*20)
+
+
+func _on_sfxVolume_value_changed(value):
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), log(value)*20)
+

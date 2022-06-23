@@ -103,6 +103,10 @@ custom_icons/grabber = SubResource( 6 )
 custom_styles/slider = SubResource( 2 )
 custom_styles/grabber_area_highlight = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.5
 
 [node name="sfx" type="Label" parent="."]
 anchor_right = 0.995117
@@ -130,6 +134,10 @@ custom_icons/grabber = SubResource( 6 )
 custom_styles/slider = SubResource( 2 )
 custom_styles/grabber_area_highlight = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.5
 
 [node name="Button2" type="Button" parent="."]
 margin_left = 8.0
@@ -146,4 +154,6 @@ custom_styles/normal = SubResource( 11 )
 enabled_focus_mode = 0
 text = "Back"
 
+[connection signal="value_changed" from="music/musicVolume" to="." method="_on_musicVolume_value_changed"]
+[connection signal="value_changed" from="sfx/sfxVolume" to="." method="_on_sfxVolume_value_changed"]
 [connection signal="button_up" from="Button2" to="." method="_on_Button2_button_up"]
