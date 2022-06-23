@@ -49,6 +49,7 @@ script = ExtResource( 9 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
+visible = false
 margin_left = -56.0
 margin_top = -94.0
 margin_right = 2106.0
@@ -95,13 +96,13 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
-position = Vector2( 103.75, 640 )
+position = Vector2( -170, 550 )
 collision_layer = 2
 collision_mask = 2
 speed = 450
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
-position = Vector2( 104, 636 )
+position = Vector2( 124, 636 )
 scale = Vector2( 0.1, 0.1 )
 jump_speed = -700
 
@@ -148,8 +149,9 @@ offset = Vector2( -33.7499, -15.4172 )
 position = Vector2( 294, 1092 )
 scale = Vector2( 0.1, 0.1 )
 
-[node name="Box (alive)" parent="niveau" groups=["tangible"] instance=ExtResource( 13 )]
-position = Vector2( 546, 108 )
+[node name="Box (alive)" parent="niveau" groups=["boxable", "tangible"] instance=ExtResource( 13 )]
+position = Vector2( 528, 34 )
+gravity = 200
 
 [connection signal="pushed" from="niveau/live/Button_tangible" to="niveau/movable_plateforme3" method="move_forward"]
 [connection signal="unpushed" from="niveau/live/Button_tangible" to="niveau/movable_plateforme3" method="move_backward"]
