@@ -84,13 +84,13 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
-position = Vector2( 103.75, 640 )
+position = Vector2( 73.75, -142.5 )
 collision_layer = 2
 collision_mask = 2
 speed = 450
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
-position = Vector2( 101.25, 635 )
+position = Vector2( 72.5, 661.25 )
 scale = Vector2( 0.1, 0.1 )
 run_speed = 400
 jump_speed = -900

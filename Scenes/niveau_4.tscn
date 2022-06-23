@@ -49,7 +49,6 @@ script = ExtResource( 9 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
-visible = false
 margin_left = -56.0
 margin_top = -94.0
 margin_right = 2106.0
@@ -68,6 +67,10 @@ scale = Vector2( 0.1, 0.12 )
 
 [node name="Button_tangible" parent="niveau/live" instance=ExtResource( 14 )]
 position = Vector2( 1046, 764 )
+scale = Vector2( 0.05, 0.5 )
+
+[node name="Button_tangible2" parent="niveau/live" instance=ExtResource( 14 )]
+position = Vector2( 1510, 1150 )
 scale = Vector2( 0.05, 0.5 )
 
 [node name="dead" type="Node2D" parent="niveau"]
@@ -155,6 +158,8 @@ gravity = 200
 
 [connection signal="pushed" from="niveau/live/Button_tangible" to="niveau/movable_plateforme3" method="move_forward"]
 [connection signal="unpushed" from="niveau/live/Button_tangible" to="niveau/movable_plateforme3" method="move_backward"]
+[connection signal="pushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme3" method="move_forward"]
+[connection signal="unpushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme3" method="move_backward"]
 [connection signal="activated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_forward"]
 [connection signal="desactivated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_backward"]
 [connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/movable_plateforme3" method="move_forward"]
