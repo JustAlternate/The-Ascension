@@ -211,6 +211,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -259,11 +260,3 @@ stream = ExtResource( 10 )
 bus = "Step"
 
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
-[connection signal="area_entered" from="bottom" to="." method="_on_bottom_area_entered"]
-[connection signal="area_exited" from="bottom" to="." method="_on_bottom_area_exited"]
-[connection signal="body_entered" from="bottom" to="." method="_on_bottom_body_entered"]
-[connection signal="body_exited" from="bottom" to="." method="_on_bottom_body_exited"]
-[connection signal="area_entered" from="top" to="." method="_on_top_area_entered"]
-[connection signal="area_exited" from="top" to="." method="_on_top_area_exited"]
-[connection signal="body_entered" from="top" to="." method="_on_top_body_entered"]
-[connection signal="body_exited" from="top" to="." method="_on_top_body_exited"]

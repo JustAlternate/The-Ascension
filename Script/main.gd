@@ -14,7 +14,6 @@ func _ready():
 func change_state():
 	if state == 1:
 		state = 0
-		$niveau/body/DeathSoundEffect.play()
 		$niveau/live.visible = false
 		$niveau/dead.visible = true
 		$niveau/Spirit.dead()
@@ -24,7 +23,6 @@ func change_state():
 		
 	else:
 		state = 1
-		$niveau/Spirit/ReviveSFX.play()
 		$niveau/live.visible = true
 		$niveau/dead.visible = false
 		$niveau/Spirit.revive()

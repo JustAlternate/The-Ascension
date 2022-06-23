@@ -81,7 +81,7 @@ func _physics_process(delta):
 func dead():
 	if $AnimatedSprite.flip_h:
 		$AnimatedSprite.flip_h = false
-		
+	$DeathSoundEffect.play()
 	$AnimatedSprite.animation = "mort"
 	alive = false
 	velocity = Vector2.ZERO
