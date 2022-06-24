@@ -286,7 +286,7 @@ position = Vector2( 108.93, 324.68 )
 frames = SubResource( 12 )
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="niveau/live/decor"]
-position = Vector2( 614, 196 )
+position = Vector2( 614, 197 )
 frames = SubResource( 12 )
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="niveau/live/decor"]
@@ -308,33 +308,32 @@ frames = SubResource( 18 )
 position = Vector2( 330, 44 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 21 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 439, 45 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 21 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 802, 76 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 21 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 789, 298 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 21 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite10" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 612, 298 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 21 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite11" type="AnimatedSprite" parent="niveau/live/decor"]

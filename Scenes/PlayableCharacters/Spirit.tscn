@@ -4,44 +4,37 @@
 [ext_resource path="res://Script/Spirit.gd" type="Script" id=2]
 [ext_resource path="res://Assets/sfx/revive.wav" type="AudioStream" id=3]
 
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 2048, 2048 )
+region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 2048, 0, 2048, 2048 )
+region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 4096, 0, 2048, 2048 )
+region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 2048, 2048, 2048 )
+region = Rect2( 0, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 2048, 2048, 2048, 2048 )
+region = Rect2( 64, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
-region = Rect2( 4096, 2048, 2048, 2048 )
+region = Rect2( 128, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 4096, 2048, 2048 )
+region = Rect2( 0, 128, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -58,7 +51,7 @@ extents = Vector2( 35.2887, 49.4688 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
 animation = "idle"
 frame = 6

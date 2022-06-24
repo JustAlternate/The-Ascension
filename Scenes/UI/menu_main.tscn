@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/button_form_in_menu.tres" type="StyleBox" id=2]
+[ext_resource path="res://Assets/Sprites/building/building-noir-blanc.png" type="Texture" id=3]
 [ext_resource path="res://Script/menu_main.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=3]
@@ -68,6 +69,9 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 831, 2477 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 0.618164

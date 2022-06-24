@@ -269,13 +269,13 @@ scale = Vector2( 0.2, 0.4 )
 z_index = -1
 
 [node name="armoire" type="Sprite" parent="niveau/live/deco"]
-position = Vector2( 1346, 1062 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 1346, 1096 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 
 [node name="armoire2" type="Sprite" parent="niveau/live/deco"]
-position = Vector2( 222, 1064 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 222, 1096 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 
 [node name="mmmh_de_l_eau" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -308,6 +308,7 @@ playing = true
 position = Vector2( 1380, 98.0001 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 18 )
+frame = 1
 speed_scale = 2.0
 playing = true
 
@@ -315,7 +316,6 @@ playing = true
 position = Vector2( 1232, 1028 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 22 )
-frame = 1
 playing = true
 
 [node name="fenetre" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -349,6 +349,7 @@ frames = SubResource( 31 )
 position = Vector2( 128, 81 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 34 )
+frame = 1
 speed_scale = 0.05
 playing = true
 
@@ -356,6 +357,7 @@ playing = true
 position = Vector2( 1216, 81 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 34 )
+frame = 1
 speed_scale = 0.05
 playing = true
 
