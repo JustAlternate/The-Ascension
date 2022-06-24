@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/map/Button_levier.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/movable_plateforme_sticky.tscn" type="PackedScene" id=2]
@@ -14,11 +14,10 @@
 [ext_resource path="res://Scenes/map/Tesla-pole_seul.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/map/Box_alive.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/map/Button_tangible.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Sprites/white.png" type="Texture" id=15]
+[ext_resource path="res://Script/niveau_6.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/map/Tesla-pole_petit.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Sprites/objets/lance-caisse.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/map/Echelle.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Script/niveau_3.gd" type="Script" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -54,17 +53,16 @@ script = ExtResource( 9 )
 
 [node name="niveau" type="Node2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 19 )
+script = ExtResource( 15 )
 
 [node name="Node2D" type="Node2D" parent="niveau"]
 z_index = -2
 
 [node name="ColorRect" type="ColorRect" parent="niveau/Node2D" groups=["grp_change_color"]]
-visible = false
 margin_left = -56.0
 margin_top = -94.0
-margin_right = 2106.0
-margin_bottom = 1299.0
+margin_right = 2254.0
+margin_bottom = 1352.0
 script = ExtResource( 8 )
 
 [node name="live" type="Node2D" parent="niveau"]
@@ -125,7 +123,7 @@ tile_set = SubResource( 5 )
 collision_layer = 2
 collision_mask = 2
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 65536, 0, 0, 65555, 0, 0, 65567, 0, 0, 131072, 0, 0, 131091, 0, 0, 131103, 0, 0, 196608, 0, 0, 196627, 0, 0, 196639, 0, 0, 262144, 0, 0, 262163, 0, 0, 262175, 0, 0, 327680, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327711, 0, 0, 393216, 0, 0, 393247, 0, 0, 458752, 0, 0, 458783, 0, 0, 524288, 0, 0, 524319, 0, 0, 589824, 0, 0, 589855, 0, 0, 655360, 0, 0, 655391, 0, 0, 720896, 0, 0, 720927, 0, 0, 786432, 0, 0, 786463, 0, 0, 851968, 0, 0, 851999, 0, 0, 917504, 0, 0, 917535, 0, 0, 983040, 0, 0, 983071, 0, 0, 1048576, 0, 0, 1048607, 0, 0, 1114112, 0, 0, 1114143, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 65536, 0, 0, 65544, 0, 0, 65551, 0, 0, 65555, 0, 0, 65567, 0, 0, 131072, 0, 0, 131080, 0, 0, 131087, 0, 0, 131091, 0, 0, 131103, 0, 0, 196608, 0, 0, 196616, 0, 0, 196623, 0, 0, 196627, 0, 0, 196639, 0, 0, 262144, 0, 0, 262152, 0, 0, 262159, 0, 0, 262163, 0, 0, 262175, 0, 0, 327680, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327711, 0, 0, 393216, 0, 0, 393247, 0, 0, 458752, 0, 0, 458783, 0, 0, 524288, 0, 0, 524319, 0, 0, 589824, 0, 0, 589855, 0, 0, 655360, 0, 0, 655391, 0, 0, 720896, 0, 0, 720927, 0, 0, 786432, 0, 0, 786463, 0, 0, 851968, 0, 0, 851999, 0, 0, 917504, 0, 0, 917535, 0, 0, 983040, 0, 0, 983071, 0, 0, 1048576, 0, 0, 1048607, 0, 0, 1114112, 0, 0, 1114143, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0 )
 
 [node name="movable_plateforme5" parent="niveau/dead" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 1440, 192 )
@@ -138,12 +136,6 @@ position = Vector2( -0.00012207, -80 )
 [node name="enfant" type="Node2D" parent="niveau/dead/movable_plateforme5"]
 position = Vector2( 0, -4.57764e-05 )
 
-[node name="Sprite" type="Sprite" parent="niveau/dead/movable_plateforme5/enfant"]
-position = Vector2( 31.2501, -8.37039 )
-scale = Vector2( 0.917112, 2.35684 )
-texture = ExtResource( 15 )
-offset = Vector2( -33.7499, -15.4172 )
-
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( -112, 604 )
 collision_layer = 2
@@ -151,7 +143,7 @@ collision_mask = 2
 speed = 450
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
-position = Vector2( 262, 1078 )
+position = Vector2( 202, 1084 )
 scale = Vector2( 0.1, 0.1 )
 run_speed = 200
 jump_speed = -700
@@ -161,6 +153,7 @@ vitesse_dechelage = 100
 position = Vector2( 430, 1184 )
 scale = Vector2( 3, 1 )
 vitesse = 30
+choose_collision_layer = 3
 
 [node name="arrivée" type="Position2D" parent="niveau/movable_plateforme2"]
 position = Vector2( 0.39999, -832 )
@@ -198,9 +191,9 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="movable_plateforme6" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
-position = Vector2( 1248, 160 )
+position = Vector2( 1248, 192 )
 rotation = 1.57079
-scale = Vector2( 5, 1 )
+scale = Vector2( 4, 1 )
 vitesse = 30
 
 [node name="arrivée" type="Position2D" parent="niveau/movable_plateforme6"]
@@ -210,8 +203,8 @@ position = Vector2( -60.4, -0.000244141 )
 
 [node name="Sprite" type="Sprite" parent="niveau/movable_plateforme6/enfant"]
 use_parent_material = true
-position = Vector2( 31.6432, 13.458 )
-scale = Vector2( 0.967678, 0.846774 )
+position = Vector2( 32.8413, 13.1133 )
+scale = Vector2( 0.965802, 0.867561 )
 texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
@@ -271,7 +264,7 @@ resurection_node_path = NodePath("../live/chieur_de_caisse")
 vitesse_resurection = 1.0
 
 [node name="Box (alive)2" parent="niveau" groups=["area_tue", "tangible"] instance=ExtResource( 13 )]
-position = Vector2( 1350, 208 )
+position = Vector2( 1646, 210 )
 rotation = -4.54747e-13
 scale = Vector2( 1.8, 1.8 )
 gravity = 170
@@ -321,7 +314,7 @@ scale = Vector2( 1, 1.11111 )
 [node name="fin" type="Area2D" parent="niveau"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
-position = Vector2( 2206, 718 )
+position = Vector2( 2224, 720 )
 shape = SubResource( 7 )
 
 [connection signal="pushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme6" method="move_forward"]

@@ -1,6 +1,6 @@
 extends Node2D
 
-signal change_color
+signal change_color 
 export var state = 1 # 0 = dead, 1 = alive
 var backup_position 
 
