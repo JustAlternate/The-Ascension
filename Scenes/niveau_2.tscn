@@ -53,10 +53,12 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 extents = Vector2( 99.625, 134.5 )
 
 [sub_resource type="AtlasTexture" id=8]
+flags = 4
 atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=9]
+flags = 4
 atlas = ExtResource( 17 )
 region = Rect2( 0, 2048, 2048, 2048 )
 
@@ -132,26 +134,26 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 22 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 22 )
 region = Rect2( 2048, 4096, 2048, 2048 )
 
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 22 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
 [sub_resource type="SpriteFrames" id=25]
 animations = [ {
-"frames": [ SubResource( 23 ) ],
-"loop": true,
-"name": "helico",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 24 ) ],
 "loop": true,
 "name": "montgolfiere",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ) ],
+"loop": true,
+"name": "helico",
 "speed": 5.0
 } ]
 
@@ -163,7 +165,6 @@ scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 14 )
 
 [node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
-visible = false
 margin_left = -56.0
 margin_top = -94.0
 margin_right = 2434.0
@@ -282,6 +283,7 @@ shape = SubResource( 7 )
 position = Vector2( 148, 104 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="armoire" type="Sprite" parent="niveau/deco"]
@@ -304,6 +306,7 @@ texture = ExtResource( 21 )
 position = Vector2( 1888, 116 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 18 )
+frame = 1
 playing = true
 
 [node name="ventilo" type="AnimatedSprite" parent="niveau/deco"]
