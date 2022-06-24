@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://shader_inversion.tres" type="Material" id=2]
@@ -11,7 +11,12 @@
 [ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Script/main.gd" type="Script" id=10]
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/deco/vnetilo2.png" type="Texture" id=12]
 [ext_resource path="res://Script/ColorRect.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Sprites/deco/ventilo.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/deco/distrituteur.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites/deco/armoir+arbre.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/deco/fenetre .png" type="Texture" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -48,6 +53,86 @@ extents = Vector2( 119.688, 71.0625 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 57.25, 134.5 )
 
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ SubResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="main" type="Node2D" groups=["main"]]
 script = ExtResource( 10 )
 
@@ -55,7 +140,10 @@ script = ExtResource( 10 )
 position = Vector2( -29, 11 )
 script = ExtResource( 5 )
 
-[node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
+[node name="Node2D" type="Node2D" parent="niveau"]
+z_index = -10
+
+[node name="ColorRect" type="ColorRect" parent="niveau/Node2D" groups=["grp_change_color"]]
 margin_left = -173.0
 margin_top = -58.0
 margin_right = 1090.0
@@ -94,7 +182,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
-position = Vector2( 1, -312 )
+position = Vector2( -159, -210 )
 collision_layer = 2
 collision_mask = 2
 
@@ -129,6 +217,48 @@ color = Color( 0, 0, 0, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
 position = Vector2( -126, 123 )
 shape = SubResource( 10 )
+
+[node name="ventilo1" type="AnimatedSprite" parent="niveau"]
+position = Vector2( 780, 31 )
+scale = Vector2( 0.0876465, 0.0921631 )
+z_index = -1
+frames = SubResource( 13 )
+playing = true
+
+[node name="ventilo2" type="AnimatedSprite" parent="niveau"]
+position = Vector2( 907, 481 )
+scale = Vector2( 0.146301, 0.147339 )
+z_index = -1
+frames = SubResource( 17 )
+frame = 1
+playing = true
+
+[node name="distri" type="AnimatedSprite" parent="niveau"]
+position = Vector2( 974, 467 )
+scale = Vector2( 0.146027, 0.17717 )
+z_index = -1
+frames = SubResource( 19 )
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/distri"]
+position = Vector2( -4423.85, 197.551 )
+scale = Vector2( 0.380406, 0.453945 )
+z_index = -1
+frames = SubResource( 21 )
+
+[node name="ventilo1-1" type="AnimatedSprite" parent="niveau"]
+position = Vector2( 157, 30 )
+scale = Vector2( 0.0820923, 0.0906677 )
+z_index = -1
+frames = SubResource( 13 )
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau"]
+position = Vector2( 268, 207 )
+scale = Vector2( 0.2, 0.2 )
+z_index = -1
+frames = SubResource( 23 )
 
 [connection signal="change_color" from="." to="niveau/fontaine" method="_on_main_change_color"]
 [connection signal="activated" from="niveau/dead/Button_levier" to="niveau/piege_horizontale_simple" method="_on_Button_levier_activated"]
