@@ -1,12 +1,14 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Script/NPC.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/personnage/perssonnage-attente.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/white.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/font_for_button_in_menu.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/Sprites/personnage/boite_dialogue.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/mur2/robot/robot-calin.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/mur2/robot/robot-normal.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/personnage/PNJ.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/mur2/robot/robot-interogation.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites/mur2/robot/robot-enerver.png" type="Texture" id=10]
 [ext_resource path="res://Assets/sfx/voice.wav" type="AudioStream" id=11]
 
@@ -68,21 +70,21 @@ flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 2048, 6144, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 10 )
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 10 )
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 6 )
 region = Rect2( 2048, 0, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 10 )
-region = Rect2( 4096, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 10 )
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 6 )
 region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 6 )
+region = Rect2( 2048, 2048, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 7 )
@@ -100,13 +102,13 @@ region = Rect2( 0, 2048, 2048, 2048 )
 atlas = ExtResource( 7 )
 region = Rect2( 2048, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 10 )
-region = Rect2( 0, 4096, 2048, 2048 )
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 10 )
-region = Rect2( 2048, 4096, 2048, 2048 )
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 2048, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
@@ -145,55 +147,57 @@ region = Rect2( 0, 4096, 2048, 2048 )
 atlas = ExtResource( 10 )
 region = Rect2( 2048, 4096, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 10 )
-region = Rect2( 2048, 2048, 2048, 2048 )
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 10 )
-region = Rect2( 4096, 2048, 2048, 2048 )
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 2048, 0, 2048, 2048 )
 
 [sub_resource type="SpriteFrames" id=34]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 3.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
 "loop": true,
 "name": "RobotCalin",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "RobotNeutre",
-"speed": 5.0
+"speed": 3.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 42 ), SubResource( 43 ) ],
 "loop": true,
 "name": "RobotInterrogation",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [ SubResource( 23 ) ],
 "loop": true,
 "name": "PNJ1",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "RobotVener",
-"speed": 5.0
+"speed": 3.0
 }, {
-"frames": [ SubResource( 32 ) ],
+"frames": [ SubResource( 37 ) ],
 "loop": true,
 "name": "PNJ3",
-"speed": 5.0
+"speed": 3.0
 }, {
-"frames": [ SubResource( 33 ) ],
+"frames": [ SubResource( 36 ) ],
 "loop": true,
 "name": "PNJ2",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="StyleBoxTexture" id=35]
@@ -228,9 +232,9 @@ margin_left = -712.0
 margin_top = -804.0
 margin_right = 391.0
 margin_bottom = -564.0
-custom_styles/normal = SubResource( 35 )
-custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/normal = SubResource( 35 )
 align = 1
 valign = 1
 autowrap = true
