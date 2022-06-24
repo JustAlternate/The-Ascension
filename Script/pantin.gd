@@ -9,7 +9,7 @@ var velocity = Vector2.ZERO
 var mort_velocity = 0
 var pushing = null
 
-var actions = [[0.5,"r",true],[1.5,"j",true],[2,"j",false],[2,"r",false],[3,"s",true],[5,"f","coucou"]]
+var actions = [[0.5,"r",true],[2.5,"r",false]]
 var temps = 0
 var stop = false
 
