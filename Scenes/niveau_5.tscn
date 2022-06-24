@@ -268,10 +268,10 @@ script = ExtResource( 12 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 17 )
 
-[node name="Node2D2" type="Node2D" parent="niveau"]
+[node name="fond" type="Node2D" parent="niveau"]
 z_index = -4
 
-[node name="ColorRect" type="ColorRect" parent="niveau/Node2D2" groups=["grp_change_color"]]
+[node name="ColorRect" type="ColorRect" parent="niveau/fond" groups=["grp_change_color"]]
 margin_left = -94.0
 margin_top = -108.0
 margin_right = 2575.0
@@ -368,7 +368,6 @@ z_index = -1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 7400, 1960 )
 frames = SubResource( 25 )
-frame = 1
 speed_scale = 0.1
 playing = true
 offset = Vector2( -6040, -1120 )
@@ -376,6 +375,7 @@ offset = Vector2( -6040, -1120 )
 [node name="AnimatedSprite25" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 25780, 2840 )
 frames = SubResource( 25 )
+frame = 1
 speed_scale = 0.1
 playing = true
 offset = Vector2( -6040, -1120 )
@@ -383,13 +383,13 @@ offset = Vector2( -6040, -1120 )
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 8020.01, 1400 )
 frames = SubResource( 26 )
-frame = 1
 speed_scale = 1.5
 playing = true
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 2840.02, 880 )
 frames = SubResource( 26 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="niveau/live/deco"]
