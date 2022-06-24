@@ -3,10 +3,28 @@ extends Area2D
 export var dialogue_npc:String
 var player_in_range = false
 signal interacted(instance)
+export var skin = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	match skin:
+		0:
+			$AnimatedSprite.animation = "default"
+		1:
+			$AnimatedSprite.animation = "PNJ1"
+		2:
+			$AnimatedSprite.animation = "PNJ2"
+		3:
+			$AnimatedSprite.animation = "PNJ3"
+		4:
+			$AnimatedSprite.animation = "RobotCalin"
+		5:
+			$AnimatedSprite.animation = "RobotInterrogation"
+		6:
+			$AnimatedSprite.animation = "RobotNeutre"
+		7:
+			$AnimatedSprite.animation = "RobotVener"
 
 
 func show_text(text):
