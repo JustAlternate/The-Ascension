@@ -70,6 +70,36 @@ flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 2048, 6144, 2048, 2048 )
 
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 2048, 2048, 2048, 2048 )
+
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 10 )
@@ -110,36 +140,6 @@ flags = 4
 atlas = ExtResource( 10 )
 region = Rect2( 2048, 4096, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=33]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 2048, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=32]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=28]
-flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=29]
-flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 2048, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=30]
-flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=31]
-flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 2048, 2048, 2048, 2048 )
-
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 7 )
@@ -160,6 +160,11 @@ flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 2048, 2048, 2048, 2048 )
 
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 2048, 2048 )
+
 [sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 6 )
@@ -170,11 +175,6 @@ flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 2048, 2048 )
-
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
@@ -182,9 +182,9 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 32 ) ],
 "loop": true,
-"name": "RobotVener",
+"name": "PNJ3",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 33 ) ],
@@ -192,14 +192,14 @@ animations = [ {
 "name": "PNJ2",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 32 ) ],
-"loop": true,
-"name": "PNJ3",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "RobotCalin",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "RobotVener",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
@@ -207,14 +207,14 @@ animations = [ {
 "name": "RobotNeutre",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 34 ), SubResource( 35 ) ],
-"loop": true,
-"name": "RobotInterrogation",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 23 ) ],
 "loop": true,
 "name": "PNJ1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "RobotInterrogation",
 "speed": 5.0
 } ]
 
@@ -235,7 +235,8 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
-animation = "PNJ1"
+animation = "RobotNeutre"
+frame = 2
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -9,11 +9,6 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 2048, 0, 2048, 2048 )
-
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
@@ -24,26 +19,26 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 4096, 2048, 2048 )
 
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 2048, 4096, 2048, 2048 )
+
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 2048, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 2048, 4096, 2048, 2048 )
+region = Rect2( 2048, 0, 2048, 2048 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ SubResource( 7 ) ],
 "loop": true,
 "name": "2",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 4 ) ],
-"loop": true,
-"name": "1",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 3 ) ],
@@ -56,14 +51,19 @@ animations = [ {
 "name": "4",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 8 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
 "name": "3",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 8 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
-"name": "5",
+"name": "1",
 "speed": 5.0
 } ]
 
@@ -74,7 +74,7 @@ extents = Vector2( 31.9814, 32.0133 )
 max_value = 3.0
 _data = [ Vector2( 0.0294118, 2.23636 ), 0.0, 0.142657, 0, 0, Vector2( 0.637255, 1.63636 ), -3.94839, -3.94839, 0, 0, Vector2( 0.985294, 0 ), -3.78972, 0.0, 0, 0 ]
 
-[node name="Box (alive)" type="KinematicBody2D" groups=["boxable", "destructible"]]
+[node name="Box (alive)" type="KinematicBody2D" groups=["body_tue", "boxable", "destructible"]]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
