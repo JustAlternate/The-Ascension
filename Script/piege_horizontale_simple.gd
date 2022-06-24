@@ -49,7 +49,7 @@ func _on_piege_horizontale_simple_body_entered(body):
 		body_in = true
 		if activate:
 			get_tree().call_group("main","death")
-	elif body.is_in_group("destructible"):
+	elif body.is_in_group("destructible") and activate:
 		body.detruire()
 
 func _on_piege_horizontale_simple_body_exited(body):

@@ -14,7 +14,7 @@ func _ready():
 	$niveau/body/DeathSoundEffect.stop()
 	$niveau/Spirit/ReviveSFX.stop()
 	lowpassfilter.cutoff_hz = 20000
-
+	AudioServer.set_bus_effect_enabled(music_bus_idx,1,false)
 
 
 func change_state():
@@ -26,7 +26,7 @@ func change_state():
 		$niveau/body.dead()
 		get_tree().call_group("grp_change_color","change_color")
 		lowpassfilter.cutoff_hz = 800
-
+		AudioServer.set_bus_effect_enabled(music_bus_idx,1,true)
 
 		
 	else:
@@ -37,7 +37,7 @@ func change_state():
 		$niveau/body.revive()
 		get_tree().call_group("grp_change_color","change_color")
 		lowpassfilter.cutoff_hz = 20000
-
+		AudioServer.set_bus_effect_enabled(music_bus_idx,1,false)
 
 func revive():
 	if state == 0:

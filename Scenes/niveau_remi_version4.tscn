@@ -1,23 +1,21 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/Box_alive.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/map/Tesla-pole_petit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Script/plateforme qui disparait.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/PlayableCharacters/Spirit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/map/movable_plateforme.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/map/Button_levier.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/map/fontaine.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/map/Tesla-pole_seul.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/map/piege_vertical_centre_spé_droite.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Script/main.gd" type="Script" id=10]
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/map/Levier_desactive.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Script/ColorRect.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/plateforme_boite_2.gd" type="Script" id=14]
-[ext_resource path="res://Assets/Sprites/objets/lance-caisse.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/map/Tesla-pole_grand.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/map/live/flor.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/map/piege_vertical_centre.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Script/niveau_4.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 80.8036, 20 )
@@ -48,8 +46,8 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 99.625, 134.5 )
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 20.0893, 79.7958 )
 
 [node name="main2" type="Node2D" groups=["main"]]
 scale = Vector2( 0.7, 0.7 )
@@ -57,9 +55,9 @@ script = ExtResource( 10 )
 
 [node name="niveau" type="Node2D" parent="."]
 position = Vector2( -37.1429, 12.8571 )
-script = ExtResource( 18 )
 
 [node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
+visible = false
 margin_left = -53.0
 margin_top = -114.0
 margin_right = 1821.0
@@ -67,19 +65,24 @@ margin_bottom = 1015.0
 script = ExtResource( 13 )
 
 [node name="fontaine" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 7 )]
-position = Vector2( 127.143, 145.714 )
+position = Vector2( 111.429, 151.429 )
 scale = Vector2( 0.07, 0.07 )
 collision_layer = 3
 collision_mask = 3
 
 [node name="Box (alive)" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
 light_mask = 3
-position = Vector2( 707.143, 111.429 )
+position = Vector2( 672.857, 111.429 )
 scale = Vector2( 2, 2 )
 collision_layer = 3
 collision_mask = 3
-resurection_node_path = NodePath("../live/chieur_de_caisse2")
-vitesse_resurection = 1.0
+
+[node name="Box (alive)2" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
+light_mask = 3
+position = Vector2( 940, 110 )
+scale = Vector2( 2, 2 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Box (alive)3" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
 light_mask = 3
@@ -87,7 +90,26 @@ position = Vector2( 352.857, 108.571 )
 scale = Vector2( 2, 2 )
 collision_layer = 3
 collision_mask = 3
-vitesse_resurection = 1.0
+
+[node name="plateforme_boite_2_1" type="StaticBody2D" parent="niveau" groups=["grp_change_color"]]
+light_mask = 3
+position = Vector2( 832.857, 192.857 )
+scale = Vector2( 1.6, 1.6 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/plateforme_boite_2_1"]
+light_mask = 3
+position = Vector2( 81.25, 19.6429 )
+shape = SubResource( 8 )
+
+[node name="Sprite_plateforme" type="Sprite" parent="niveau/plateforme_boite_2_1"]
+light_mask = 3
+use_parent_material = true
+position = Vector2( 81.0328, 19.6428 )
+scale = Vector2( 2.51795, 0.63 )
+texture = ExtResource( 16 )
 
 [node name="plateforme_boite_2_2" type="StaticBody2D" parent="niveau" groups=["grp_change_color"]]
 light_mask = 3
@@ -114,6 +136,11 @@ texture = ExtResource( 16 )
 [node name="Levier_desactive" parent="niveau/live" instance=ExtResource( 12 )]
 position = Vector2( 1461.43, 291.428 )
 
+[node name="Levier_active2" parent="niveau/live" instance=ExtResource( 6 )]
+position = Vector2( 74.2858, 554.286 )
+rotation = 1.5708
+scale = Vector2( 0.1, 0.1 )
+
 [node name="live_TileMap" parent="niveau/live" instance=ExtResource( 9 )]
 tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, 0, 0, 0, 23, 0, 0, 65536, 0, 0, 65559, 0, 0, 131072, 0, 0, 131095, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196631, 0, 0, 262144, 0, 0, 262167, 0, 0, 327680, 0, 0, 327703, 0, 0, 393216, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 458752, 0, 0, 458775, 0, 0, 458779, 0, 0, 524288, 0, 0, 524311, 0, 0, 524315, 0, 0, 589824, 0, 0, 589847, 0, 0, 589851, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655387, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720923, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786459, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0 )
 
@@ -123,16 +150,6 @@ position = Vector2( 1504, 735 )
 [node name="arrivée" type="Position2D" parent="niveau/live/movable_plateforme2"]
 position = Vector2( 0, -210 )
 
-[node name="chieur_de_caisse2" type="Sprite" parent="niveau/live"]
-position = Vector2( 706.285, 2.28566 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 15 )
-
-[node name="chieur_de_caisse3" type="Sprite" parent="niveau/live"]
-position = Vector2( 352, 2.28566 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 15 )
-
 [node name="dead" type="Node2D" parent="niveau"]
 
 [node name="TileMap" type="TileMap" parent="niveau/dead"]
@@ -140,14 +157,54 @@ tile_set = SubResource( 5 )
 collision_layer = 2
 collision_mask = 2
 format = 1
-tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, 0, 0, 0, 13, 0, 0, 23, 0, 0, 65536, 0, 0, 65549, 0, 0, 65559, 0, 0, 131072, 0, 0, 131085, 0, 0, 131095, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196621, 0, 0, 196631, 0, 0, 262144, 0, 0, 262167, 0, 0, 327680, 0, 0, 327703, 0, 0, 393216, 0, 0, 393239, 0, 0, 458752, 0, 0, 458775, 0, 0, 524288, 0, 0, 524311, 0, 0, 589824, 0, 0, 589847, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655383, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720919, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786455, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0 )
+tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, 0, 0, 0, 23, 0, 0, 65536, 0, 0, 65559, 0, 0, 131072, 0, 0, 131095, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196631, 0, 0, 262144, 0, 0, 262167, 0, 0, 327680, 0, 0, 327703, 0, 0, 393216, 0, 0, 393239, 0, 0, 458752, 0, 0, 458775, 0, 0, 524288, 0, 0, 524311, 0, 0, 589824, 0, 0, 589847, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655383, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720919, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786455, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0 )
 
-[node name="Levier_active2" parent="niveau/dead" groups=["grp_change_color"] instance=ExtResource( 6 )]
-position = Vector2( 1140, 12.8572 )
+[node name="Levier_active" parent="niveau/dead" groups=["grp_change_color"] instance=ExtResource( 6 )]
+position = Vector2( 1244.29, 12.8572 )
 rotation = 3.14159
 scale = Vector2( 0.1, 0.1 )
 collision_layer = 2
 collision_mask = 2
+
+[node name="plateforme_boite_1_1" type="StaticBody2D" parent="niveau/dead" groups=["grp_change_color"]]
+light_mask = 3
+position = Vector2( 783, 142 )
+scale = Vector2( 1.6, 1.6 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/dead/plateforme_boite_1_1"]
+light_mask = 3
+position = Vector2( 11, -8 )
+shape = SubResource( 7 )
+
+[node name="Sprite_plateforme" type="Sprite" parent="niveau/dead/plateforme_boite_1_1"]
+light_mask = 3
+use_parent_material = true
+position = Vector2( 11.0714, -8.07568 )
+scale = Vector2( 0.627789, 2.50125 )
+texture = ExtResource( 16 )
+
+[node name="plateforme_boite_1_2" type="StaticBody2D" parent="niveau/dead" groups=["grp_change_color"]]
+light_mask = 3
+position = Vector2( 1040, 142.857 )
+scale = Vector2( 1.6, 1.6 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/dead/plateforme_boite_1_2"]
+light_mask = 3
+position = Vector2( 11, -8.72433 )
+shape = SubResource( 7 )
+
+[node name="Sprite_plateforme" type="Sprite" parent="niveau/dead/plateforme_boite_1_2"]
+light_mask = 3
+use_parent_material = true
+position = Vector2( 10.7143, -8.92856 )
+scale = Vector2( 0.627789, 2.50125 )
+texture = ExtResource( 16 )
 
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( 4, -240 )
@@ -155,41 +212,34 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]
-position = Vector2( 190, 571.428 )
+position = Vector2( 204.286, 535.714 )
 scale = Vector2( 0.1, 0.1 )
-run_speed = 250
 jump_speed = -850
 
-[node name="fin" type="Area2D" parent="niveau"]
+[node name="piege_vertical_centre2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 267.143, 748.571 )
+scale = Vector2( 0.079, 0.1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
-position = Vector2( 1651.43, 707.143 )
-shape = SubResource( 9 )
-
-[node name="piege_vertical_centre" parent="." instance=ExtResource( 17 )]
-position = Vector2( 255.716, 747.143 )
-scale = Vector2( 0.08, 0.1 )
-
-[node name="Tesla-polePetit" parent="." instance=ExtResource( 3 )]
-position = Vector2( 287.888, 668.422 )
+[node name="Tesla-poleGrand" parent="." instance=ExtResource( 15 )]
+position = Vector2( 259.995, 664.286 )
 rotation = 1.57079
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.064, 0.08 )
 
-[node name="Tesla-poleSeul" parent="." instance=ExtResource( 8 )]
-position = Vector2( 232.857, 682.857 )
+[node name="Tesla-poleGrand2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 259.995, 840 )
 rotation = 1.57079
-scale = Vector2( 0.3, 0.029 )
-
-[node name="Tesla-polePetit2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 257.303, 793.492 )
-rotation = 6.28318
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.064, 0.08 )
 
 [connection signal="change_color" from="." to="niveau/fontaine" method="_on_main_change_color"]
 [connection signal="activated" from="niveau/live/Levier_desactive" to="niveau/live/movable_plateforme2" method="move_forward"]
 [connection signal="body_entered" from="niveau/live/Levier_desactive" to="niveau/live/Levier_desactive" method="_on_Levier_desactive_body_entered"]
 [connection signal="body_exited" from="niveau/live/Levier_desactive" to="niveau/live/Levier_desactive" method="_on_Levier_desactive_body_exited"]
 [connection signal="desactivated" from="niveau/live/Levier_desactive" to="niveau/live/movable_plateforme2" method="move_backward"]
-[connection signal="activated" from="niveau/dead/Levier_active2" to="niveau/plateforme_boite_2_2" method="disparaitre"]
-[connection signal="desactivated" from="niveau/dead/Levier_active2" to="niveau/plateforme_boite_2_2" method="apparaitre"]
-[connection signal="body_entered" from="niveau/fin" to="niveau" method="_on_fin_body_entered"]
+[connection signal="activated" from="niveau/live/Levier_active2" to="niveau/plateforme_boite_2_2" method="disparaitre"]
+[connection signal="desactivated" from="niveau/live/Levier_active2" to="niveau/plateforme_boite_2_2" method="apparaitre"]
+[connection signal="activated" from="niveau/dead/Levier_active" to="niveau/plateforme_boite_2_1" method="disparaitre"]
+[connection signal="activated" from="niveau/dead/Levier_active" to="niveau/dead/plateforme_boite_1_1" method="disparaitre"]
+[connection signal="activated" from="niveau/dead/Levier_active" to="niveau/dead/plateforme_boite_1_2" method="disparaitre"]
+[connection signal="desactivated" from="niveau/dead/Levier_active" to="niveau/plateforme_boite_2_1" method="apparaitre"]
+[connection signal="desactivated" from="niveau/dead/Levier_active" to="niveau/dead/plateforme_boite_1_1" method="apparaitre"]
+[connection signal="desactivated" from="niveau/dead/Levier_active" to="niveau/dead/plateforme_boite_1_2" method="apparaitre"]

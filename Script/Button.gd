@@ -14,6 +14,11 @@ func _ready():
 func _process(delta):
 	pass
 
+func change_color():
+	if material == load("res://shader_inversion.tres"):
+		material = null
+	else:
+		material = load("res://shader_inversion.tres")
 
 func _on_Button_body_entered(body):
 	if body.is_in_group("tangible") and pushed <= 0:
