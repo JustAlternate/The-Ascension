@@ -21,7 +21,7 @@ func change_color():
 		material = load("res://shader_inversion.tres")
 
 func _on_Button_body_entered(body):
-	if body.is_in_group("tangible") and pushed <= 0:
+	if body.is_in_group("tangible"):
 		pushed += 1
 		if pushed >= 1:
 			$AnimatedSprite.animation = "activation"
@@ -30,7 +30,7 @@ func _on_Button_body_entered(body):
 
 
 func _on_Button_body_exited(body):
-	if body.is_in_group("tangible") and pushed > 0:
+	if body.is_in_group("tangible"):
 		pushed -= 1
 		if pushed == 0:
 			$AnimatedSprite.animation = "desactivation"

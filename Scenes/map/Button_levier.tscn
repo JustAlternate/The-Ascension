@@ -9,6 +9,11 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 2048, 2048 )
 
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 4096, 2048, 2048 )
+
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
@@ -28,11 +33,6 @@ region = Rect2( 0, 2048, 2048, 2048 )
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 2048, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 4096, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
@@ -61,6 +61,11 @@ animations = [ {
 "name": "active",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "desactive",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 4 ) ],
 "loop": false,
 "name": "switch_desactivation",
@@ -69,11 +74,6 @@ animations = [ {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 3 ) ],
 "loop": false,
 "name": "switch_activation",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 4 ) ],
-"loop": true,
-"name": "desactive",
 "speed": 5.0
 } ]
 
