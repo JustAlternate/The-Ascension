@@ -9,11 +9,13 @@ export var direction = 0 #0=ne bouge pas, 1 = vers l'arrivée, -1 = vers le dép
 var linear_velocity
 var etat = 1 # 1: à l'arrivée, -1: au départ, si la plateforme est en mouvement donne l'emplacement de départ 
 var movable_things:Array
+var dif
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$plateforme.collision_layer = choose_collision_layer
 	$plateforme.global_position = $"départ".global_position
+	dif = $enfant.global_position - $plateforme.global_position
 
 
 func _physics_process(delta):
@@ -21,7 +23,7 @@ func _physics_process(delta):
 	if direction!=0:
 		linear_velocity=($"arrivée".global_position - $"départ".global_position)*direction*delta*vitesse/100
 		$plateforme.global_position += linear_velocity 
-		$enfant.global_position += linear_velocity
+
 		"""
 		for thing in movable_things:
 			thing.global_position += linear_velocity
@@ -36,6 +38,7 @@ func _physics_process(delta):
 			emit_signal("path_finished")
 			$plateforme.global_position = $"départ".global_position
 			direction = 0
+		$enfant.global_position = $plateforme.global_position + dif
 
 func _on_movable_plateforme_path_finished():
 	pass

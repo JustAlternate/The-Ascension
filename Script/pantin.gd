@@ -9,7 +9,7 @@ var velocity = Vector2.ZERO
 var mort_velocity = 0
 var pushing = null
 
-var actions = [[0.5,"r",true],[2.5,"r",false]]
+export var actions = [[0.5,"r",true],[2.5,"r",false]]
 var temps = 0
 var stop = false
 

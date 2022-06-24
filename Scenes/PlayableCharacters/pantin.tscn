@@ -118,6 +118,31 @@ flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 2048, 4096, 2048, 2048 )
 
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2048, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 4096, 2048, 2048 )
+
 [sub_resource type="AtlasTexture" id=43]
 flags = 4
 atlas = ExtResource( 6 )
@@ -183,31 +208,6 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 4096, 6144, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 2048, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=28]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=29]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 2048, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=30]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 4096, 2048, 2048 )
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
@@ -225,6 +225,11 @@ animations = [ {
 "name": "echelle",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "saut",
+"speed": 8.0
+}, {
 "frames": [ SubResource( 43 ) ],
 "loop": true,
 "name": "mort",
@@ -234,11 +239,6 @@ animations = [ {
 "loop": true,
 "name": "course",
 "speed": 1.0
-}, {
-"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
-"loop": true,
-"name": "saut",
-"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=13]
@@ -252,10 +252,12 @@ stereo = true
 [node name="pantin" type="KinematicBody2D"]
 scale = Vector2( 0.03, 0.03 )
 script = ExtResource( 2 )
+actions = [ [ 0.5, "r", true ], [ 2.5, "l", false ] ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "course"
+frame = 11
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
