@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Sprites/objets/caisse.png" type="Texture" id=1]
 [ext_resource path="res://Script/Box_alive.gd" type="Script" id=2]
@@ -8,16 +8,6 @@
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 2048, 4096, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
@@ -29,26 +19,26 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 2048, 0, 2048, 2048 )
 
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 2048, 2048 )
+
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 2048, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 2048, 4096, 2048, 2048 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ SubResource( 7 ) ],
 "loop": true,
 "name": "2",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ) ],
-"loop": true,
-"name": "0",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 8 ) ],
-"loop": true,
-"name": "5",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
@@ -61,14 +51,28 @@ animations = [ {
 "name": "1",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
 "name": "3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ) ],
+"loop": true,
+"name": "5",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 32 )
+
+[sub_resource type="Curve" id=9]
+max_value = 3.0
+_data = [ Vector2( 0.0294118, 2.23636 ), 0.0, 0.142657, 0, 0, Vector2( 0.637255, 1.63636 ), -3.94839, -3.94839, 0, 0, Vector2( 0.985294, 0 ), -3.78972, 0.0, 0, 0 ]
 
 [node name="Box (alive)" type="KinematicBody2D" groups=["boxable", "destructible"]]
 script = ExtResource( 2 )
@@ -79,8 +83,25 @@ frames = SubResource( 1 )
 animation = "1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 1 )
 shape = SubResource( 2 )
 
 [node name="FallSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 bus = "Live/Die"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 100
+lifetime = 0.8
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+damping = 50.0
+scale_amount = 3.0
+scale_amount_curve = SubResource( 9 )
+color = Color( 0, 0, 0, 1 )

@@ -50,6 +50,9 @@ func pouf():
 
 
 func detruire():
+	$CPUParticles2D.emitting = true
+	yield(get_tree().create_timer(0.5),"timeout")
 	global_position = Vector2(-100,-100)
 	yield(get_tree().create_timer(vitesse_resurection),"timeout")
 	global_position = resurection_node.global_position
+	
