@@ -4,7 +4,7 @@ export var dialogue_npc:String
 var player_in_range = false
 signal interacted(instance)
 export var skin = 0
-
+var randompitch = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +25,7 @@ func _ready():
 			$AnimatedSprite.animation = "RobotNeutre"
 		7:
 			$AnimatedSprite.animation = "RobotVener"
+	
 
 
 func show_text(text):
@@ -35,8 +36,10 @@ func show_text(text):
 		$Sprite.show()
 		
 		for i in text:
+			randompitch = rand_range(0.8,1.2)
 			yield(get_tree().create_timer(.1),"timeout")
 			$Label.text = $Label.text + i
+			$AudioStreamPlayer.play()
 		
 		emit_signal("interacted",self)
 
