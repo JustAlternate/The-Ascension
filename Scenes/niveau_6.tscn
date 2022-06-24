@@ -259,13 +259,13 @@ offset = Vector2( -6040, -1120 )
 position = Vector2( 1660, 630 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 46 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 8420, 610 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 46 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="niveau/live/deco"]
