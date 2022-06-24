@@ -49,7 +49,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 99.625, 134.5 )
 
-[node name="main2" type="Node2D" groups=["main"]]
+[node name="main3" type="Node2D" groups=["main"]]
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 10 )
 
@@ -85,6 +85,7 @@ position = Vector2( 352.857, 108.571 )
 scale = Vector2( 1.99, 2 )
 collision_layer = 3
 collision_mask = 3
+resurection_node_path = NodePath("../live/chieur_de_caisse3")
 vitesse_resurection = 1.0
 
 [node name="Box (alive)4" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
