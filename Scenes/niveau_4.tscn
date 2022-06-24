@@ -16,7 +16,7 @@
 [ext_resource path="res://Scenes/plateforme_boite_2.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Sprites/objets/lance-caisse.png" type="Texture" id=15]
 [ext_resource path="res://Assets/map/live/flor.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/map/piege_vertical_centre.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/map/piege_vertical_centre_spé_droite.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Script/niveau_4.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Sprites/deco/aeration.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Sprites/deco/fenetre .png" type="Texture" id=20]
@@ -165,7 +165,6 @@ position = Vector2( -37.1429, 12.8571 )
 script = ExtResource( 18 )
 
 [node name="Node2D2" type="Node2D" parent="niveau"]
-scale = Vector2( 1, 1 )
 z_index = -2
 
 [node name="ColorRect" type="ColorRect" parent="niveau/Node2D2" groups=["grp_change_color"]]
@@ -181,7 +180,7 @@ scale = Vector2( 0.07, 0.07 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Box (alive)" parent="niveau" groups=["body_tue", "tangible"] instance=ExtResource( 2 )]
+[node name="Box (alive)" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
 light_mask = 3
 position = Vector2( 704.286, 111.429 )
 scale = Vector2( 1.99, 2 )
@@ -190,7 +189,7 @@ collision_mask = 3
 resurection_node_path = NodePath("../live/chieur_de_caisse2")
 vitesse_resurection = 1.0
 
-[node name="Box (alive)3" parent="niveau" groups=["body_tue", "tangible"] instance=ExtResource( 2 )]
+[node name="Box (alive)3" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
 light_mask = 3
 position = Vector2( 352.857, 108.571 )
 scale = Vector2( 1.99, 2 )
@@ -199,7 +198,7 @@ collision_mask = 3
 resurection_node_path = NodePath("../live/chieur_de_caisse3")
 vitesse_resurection = 1.0
 
-[node name="Box (alive)4" parent="niveau" groups=["body_tue", "tangible"] instance=ExtResource( 2 )]
+[node name="Box (alive)4" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
 light_mask = 3
 position = Vector2( 1017.14, 107.143 )
 scale = Vector2( 1.99, 2 )
@@ -265,8 +264,8 @@ shape = SubResource( 8 )
 [node name="Sprite_plateforme" type="Sprite" parent="niveau/plateforme_boite_2_2"]
 light_mask = 3
 use_parent_material = true
-position = Vector2( 20.3185, 20.0894 )
-scale = Vector2( 2.51795, 0.62779 )
+position = Vector2( 20.535, 20.37 )
+scale = Vector2( 2.518, 0.625 )
 texture = ExtResource( 16 )
 
 [node name="dead" type="Node2D" parent="niveau"]
@@ -349,13 +348,11 @@ frames = SubResource( 12 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/deco"]
 position = Vector2( 2842.86, 2800 )
 frames = SubResource( 15 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="niveau/deco"]
 position = Vector2( 4485.71, 2814.29 )
 frames = SubResource( 15 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="niveau/deco"]
@@ -387,24 +384,27 @@ position = Vector2( 4042.86, 7242.86 )
 scale = Vector2( 1.65207, 1.77762 )
 frames = SubResource( 25 )
 
-[node name="piege_vertical_centre" parent="." groups=["grp_change_color"] instance=ExtResource( 17 )]
-position = Vector2( 230, 758.571 )
+[node name="piege_vertical_centre2" parent="." groups=["grp_change_color"] instance=ExtResource( 17 )]
+position = Vector2( 255.713, 747.143 )
 scale = Vector2( 0.07, 0.1 )
 
-[node name="Tesla-polePetit" parent="." instance=ExtResource( 3 )]
-position = Vector2( 289.317, 668.422 )
-rotation = 1.57079
-scale = Vector2( 0.1, 0.1 )
-
 [node name="Tesla-poleSeul" parent="." instance=ExtResource( 8 )]
-position = Vector2( 232.857, 682.857 )
+use_parent_material = false
+position = Vector2( 232.857, 681.428 )
 rotation = 1.57079
 scale = Vector2( 0.3, 0.029 )
 
-[node name="Tesla-polePetit2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 257.303, 793.492 )
-rotation = 6.28318
-scale = Vector2( 0.1, 0.1 )
+[node name="Tesla-polePetit" parent="Tesla-poleSeul" instance=ExtResource( 3 )]
+use_parent_material = true
+position = Vector2( -43.353, -1946.9 )
+rotation = 5.45697e-12
+scale = Vector2( 0.32, 3.448 )
+
+[node name="Tesla-polePetit2" parent="Tesla-poleSeul" instance=ExtResource( 3 )]
+use_parent_material = true
+position = Vector2( 373.546, -842.944 )
+rotation = -1.5708
+scale = Vector2( 3.44828, 0.333333 )
 
 [connection signal="change_color" from="." to="niveau/fontaine" method="_on_main_change_color"]
 [connection signal="activated" from="niveau/dead/Levier_active2" to="niveau/plateforme_boite_2_2" method="disparaitre"]
