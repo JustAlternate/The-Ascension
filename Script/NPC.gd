@@ -71,8 +71,7 @@ func show_text(text):
 func _process(delta):
 	if player_in_range:
 		if Input.is_action_just_pressed("interact"):
-			if not autospeak:
-				show_text(dialogue_npc)
+			show_text(dialogue_npc)
 
 
 func _on_Bonhomme_body_entered(body):
