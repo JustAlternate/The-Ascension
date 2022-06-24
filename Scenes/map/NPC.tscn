@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Script/NPC.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/personnage/perssonnage-attente.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Sprites/personnage/PNJ.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sprites/mur2/robot/robot-enerver.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites/mur2/robot/robot-calin.png" type="Texture" id=10]
+[ext_resource path="res://Assets/sfx/voice.wav" type="AudioStream" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 50.0
@@ -109,30 +110,15 @@ flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 2048, 4096, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=33]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 6 )
 region = Rect2( 2048, 0, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=32]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 8 )
 region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 2048, 2048, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
@@ -154,15 +140,25 @@ flags = 4
 atlas = ExtResource( 10 )
 region = Rect2( 2048, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=24]
 flags = 4
-atlas = ExtResource( 8 )
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 6 )
 region = Rect2( 0, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=27]
 flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 2048, 0, 2048, 2048 )
+atlas = ExtResource( 6 )
+region = Rect2( 2048, 2048, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=34]
 flags = 4
@@ -173,6 +169,11 @@ region = Rect2( 0, 0, 2048, 2048 )
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 2048, 2048 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -186,19 +187,9 @@ animations = [ {
 "name": "RobotVener",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 23 ) ],
+"frames": [ SubResource( 33 ) ],
 "loop": true,
-"name": "PNJ1",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
-"loop": true,
-"name": "RobotNeutre",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
-"loop": true,
-"name": "RobotCalin",
+"name": "PNJ2",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 32 ) ],
@@ -206,14 +197,24 @@ animations = [ {
 "name": "PNJ3",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 33 ) ],
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
-"name": "PNJ2",
+"name": "RobotCalin",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "RobotNeutre",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 34 ), SubResource( 35 ) ],
 "loop": true,
 "name": "RobotInterrogation",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ) ],
+"loop": true,
+"name": "PNJ1",
 "speed": 5.0
 } ]
 
@@ -254,6 +255,10 @@ custom_styles/normal = SubResource( 14 )
 align = 1
 valign = 1
 autowrap = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+bus = "Voice"
 
 [connection signal="body_entered" from="." to="." method="_on_Bonhomme_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Bonhomme_body_exited"]
