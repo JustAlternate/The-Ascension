@@ -390,7 +390,6 @@ playing = true
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 2840.02, 880 )
 frames = SubResource( 26 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -415,17 +414,12 @@ scale = Vector2( 2, 2 )
 frames = SubResource( 29 )
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="niveau/live/deco"]
-position = Vector2( 7280, 6180 )
+position = Vector2( 13840, 5520 )
 scale = Vector2( 1.32031, 1.33985 )
 frames = SubResource( 30 )
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 3240, 10700 )
-scale = Vector2( 1.32031, 1.33985 )
-frames = SubResource( 30 )
-
-[node name="AnimatedSprite20" type="AnimatedSprite" parent="niveau/live/deco"]
-position = Vector2( 18220, 10780 )
 scale = Vector2( 1.32031, 1.33985 )
 frames = SubResource( 30 )
 
@@ -467,7 +461,7 @@ scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 37 )
 
 [node name="AnimatedSprite11" type="AnimatedSprite" parent="niveau/live/deco"]
-position = Vector2( 10080, 5840 )
+position = Vector2( 18580, 10320 )
 scale = Vector2( 1.58398, 1.55469 )
 frames = SubResource( 39 )
 
@@ -507,14 +501,6 @@ scale = Vector2( 0.2, 0.4 )
 [node name="live_TileMap" parent="niveau/live" instance=ExtResource( 2 )]
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 65536, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 131072, 0, 0, 131090, 0, 0, 131091, 0, 0, 196608, 0, 0, 196626, 0, 0, 196627, 0, 0, 262144, 0, 0, 262162, 0, 0, 262163, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327698, 0, 0, 327699, 0, 0, 393216, 0, 0, 393234, 0, 0, 393235, 0, 0, 458752, 0, 0, 458770, 0, 0, 458771, 0, 0, 524288, 0, 0, 524306, 0, 0, 524307, 0, 0, 589824, 0, 0, 589842, 0, 0, 589843, 0, 0, 655360, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 720896, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720906, 0, 0, 720907, 0, 0, 720910, 0, 0, 720911, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 786432, 0, 0, 786436, 0, 0, 786463, 0, 0, 851968, 0, 0, 851999, 0, 0, 917504, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 917538, 0, 0, 917539, 0, 0, 983040, 0, 0, 983075, 0, 0, 1048576, 0, 0, 1048611, 0, 0, 1114112, 0, 0, 1114147, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0, 1179680, 0, 0, 1179681, 0, 0, 1179682, 0, 0, 1179683, 0, 0 )
 
-[node name="NPC" parent="niveau/live" instance=ExtResource( 16 )]
-position = Vector2( 1342, 576 )
-scale = Vector2( 0.2, 0.2 )
-dialogue_npc = "it's good to take a break"
-skin = 2
-flip_horizontal = true
-autospeak = true
-
 [node name="NPC3" parent="niveau/live" instance=ExtResource( 16 )]
 position = Vector2( 1710, 578 )
 scale = Vector2( 0.2, 0.2 )
@@ -534,14 +520,6 @@ position = Vector2( 682, 1094 )
 scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "the lights have a bug!"
 skin = 3
-
-[node name="NPC2" parent="niveau/live" instance=ExtResource( 16 )]
-position = Vector2( 1922, 1106 )
-scale = Vector2( 0.2, 0.2 )
-dialogue_npc = "Pour ouvrir il faut mettre une boite sur le bouton"
-skin = 4
-font_size = 110
-flip_horizontal = true
 
 [node name="dead" type="Node2D" parent="niveau"]
 visible = false
