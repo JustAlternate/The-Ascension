@@ -219,6 +219,7 @@ position = Vector2( 51, -100 )
 scale = Vector2( 0.65, 0.65 )
 collision_layer = 2
 collision_mask = 2
+speed = 350
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]
 position = Vector2( 86, 336 )
@@ -306,6 +307,7 @@ frames = SubResource( 15 )
 position = Vector2( 1052, 121 )
 scale = Vector2( 0.075, 0.075 )
 frames = SubResource( 18 )
+frame = 1
 playing = true
 offset = Vector2( -1575, -138 )
 
@@ -313,7 +315,6 @@ offset = Vector2( -1575, -138 )
 position = Vector2( 986, 121 )
 scale = Vector2( 0.075, 0.075 )
 frames = SubResource( 18 )
-frame = 1
 playing = true
 offset = Vector2( -1575, -138 )
 
@@ -334,6 +335,7 @@ playing = true
 position = Vector2( 922, 121 )
 scale = Vector2( 0.075, 0.075 )
 frames = SubResource( 18 )
+frame = 1
 playing = true
 offset = Vector2( -1575, -138 )
 

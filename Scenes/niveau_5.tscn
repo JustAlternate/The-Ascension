@@ -218,3 +218,4 @@ shape = SubResource( 7 )
 [connection signal="unpushed" from="niveau/bt_fin" to="niveau/live/porte_fin" method="move_backward"]
 [connection signal="montage_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_montage_echelle"]
 [connection signal="pas_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_pas_echelle"]
+[connection signal="body_entered" from="niveau/fin" to="niveau" method="_on_fin_body_entered"]
