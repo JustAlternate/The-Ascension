@@ -167,7 +167,6 @@ script = ExtResource( 17 )
 z_index = -10
 
 [node name="ColorRect" type="ColorRect" parent="niveau/Node2D2" groups=["grp_change_color"]]
-visible = false
 show_behind_parent = true
 margin_left = -35.0
 margin_top = -35.0
@@ -322,7 +321,6 @@ frames = SubResource( 15 )
 position = Vector2( 1052, 121 )
 scale = Vector2( 0.075, 0.075 )
 frames = SubResource( 18 )
-frame = 1
 playing = true
 offset = Vector2( -1575, -138 )
 
@@ -330,6 +328,7 @@ offset = Vector2( -1575, -138 )
 position = Vector2( 986, 121 )
 scale = Vector2( 0.075, 0.075 )
 frames = SubResource( 18 )
+frame = 1
 playing = true
 offset = Vector2( -1575, -138 )
 
@@ -350,7 +349,6 @@ playing = true
 position = Vector2( 922, 121 )
 scale = Vector2( 0.075, 0.075 )
 frames = SubResource( 18 )
-frame = 1
 playing = true
 offset = Vector2( -1575, -138 )
 
