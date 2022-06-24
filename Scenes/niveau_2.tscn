@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Scenes/map/Button_levier.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/movable_plateforme_sticky.tscn" type="PackedScene" id=2]
@@ -15,6 +15,13 @@
 [ext_resource path="res://Scenes/map/Echelle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Script/niveau2.gd" type="Script" id=14]
 [ext_resource path="res://Script/niveau2_script_en_plus1.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Sprites/deco/armoir+arbre.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/deco/aeration.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/deco/distributeur-d'eau.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/deco/vnetilo2.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/deco/ventilo.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sprites/deco/distrituteur.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Sprites/deco/fenetre .png" type="Texture" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -45,10 +52,113 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 99.625, 134.5 )
 
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 20 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 20 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 22 )
+region = Rect2( 2048, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 22 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ SubResource( 24 ) ],
+"loop": true,
+"name": "montgolfiere",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ) ],
+"loop": true,
+"name": "helico",
+"speed": 5.0
+} ]
+
 [node name="main2" type="Node2D" groups=["main"]]
 script = ExtResource( 9 )
-
-[node name="ressources" type="Node2D" parent="."]
 
 [node name="niveau" type="Node2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -60,15 +170,6 @@ margin_top = -94.0
 margin_right = 2434.0
 margin_bottom = 1430.0
 script = ExtResource( 8 )
-
-[node name="live" type="Node2D" parent="niveau"]
-
-[node name="live_TileMap" parent="niveau/live" instance=ExtResource( 3 )]
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 65536, 0, 0, 65567, 0, 0, 131072, 0, 0, 131103, 0, 0, 196608, 0, 0, 196639, 0, 0, 262144, 0, 0, 262175, 0, 0, 327680, 0, 0, 327711, 0, 0, 393216, 0, 0, 393247, 0, 0, 458752, 0, 0, 458783, 0, 0, 524288, 0, 0, 524319, 0, 0, 589824, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 655360, 0, 0, 655395, 0, 0, 720896, 0, 0, 720931, 0, 0, 786432, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786467, 0, 0, 851968, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 851998, 0, 0, 851999, 0, 0, 852000, 0, 0, 852001, 0, 0, 852002, 0, 0, 852003, 0, 0, 917504, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 983040, 0, 0, 983062, 0, 0, 983063, 0, 0, 983064, 0, 0, 983065, 0, 0, 983066, 0, 0, 983067, 0, 0, 983068, 0, 0, 983069, 0, 0, 983070, 0, 0, 983071, 0, 0, 1048576, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1114112, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1114140, 0, 0, 1114141, 0, 0, 1114142, 0, 0, 1114143, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0 )
-
-[node name="Echelle" parent="niveau/live" instance=ExtResource( 13 )]
-position = Vector2( 528, 882 )
-scale = Vector2( 0.2, 0.4 )
 
 [node name="dead" type="Node2D" parent="niveau"]
 
@@ -93,6 +194,15 @@ position = Vector2( 1139.5, 355.25 )
 scale = Vector2( 0.1, 0.1 )
 collision_layer = 2
 collision_mask = 2
+
+[node name="live" type="Node2D" parent="niveau"]
+
+[node name="live_TileMap" parent="niveau/live" instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 65536, 0, 0, 65567, 0, 0, 131072, 0, 0, 131103, 0, 0, 196608, 0, 0, 196639, 0, 0, 262144, 0, 0, 262175, 0, 0, 327680, 0, 0, 327711, 0, 0, 393216, 0, 0, 393247, 0, 0, 458752, 0, 0, 458783, 0, 0, 524288, 0, 0, 524319, 0, 0, 589824, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 655360, 0, 0, 655395, 0, 0, 720896, 0, 0, 720931, 0, 0, 786432, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786467, 0, 0, 851968, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 851998, 0, 0, 851999, 0, 0, 852000, 0, 0, 852001, 0, 0, 852002, 0, 0, 852003, 0, 0, 917504, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 983040, 0, 0, 983062, 0, 0, 983063, 0, 0, 983064, 0, 0, 983065, 0, 0, 983066, 0, 0, 983067, 0, 0, 983068, 0, 0, 983069, 0, 0, 983070, 0, 0, 983071, 0, 0, 1048576, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1114112, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1114140, 0, 0, 1114141, 0, 0, 1114142, 0, 0, 1114143, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0 )
+
+[node name="Echelle" parent="niveau/live" instance=ExtResource( 13 )]
+position = Vector2( 528, 882 )
+scale = Vector2( 0.2, 0.4 )
 
 [node name="movable_plateforme2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 776, 714 )
@@ -167,10 +277,61 @@ vitesse_dechelage = 200
 position = Vector2( 2220, 722 )
 shape = SubResource( 7 )
 
-[connection signal="montage_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_montage_echelle"]
-[connection signal="pas_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_pas_echelle"]
+[node name="deco" type="Node2D" parent="niveau"]
+
+[node name="aeration" type="AnimatedSprite" parent="niveau/deco"]
+position = Vector2( 148, 104 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 10 )
+frame = 1
+playing = true
+
+[node name="armoire" type="Sprite" parent="niveau/deco"]
+position = Vector2( 1346, 1062 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 16 )
+
+[node name="mmmh_de_l_eau" type="AnimatedSprite" parent="niveau/deco"]
+position = Vector2( 934, 1074 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 15 )
+frame = 1
+
+[node name="mmmh_de_la_nourriture" type="Sprite" parent="niveau/deco"]
+position = Vector2( 810, 1030 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 21 )
+
+[node name="ventilateur" type="AnimatedSprite" parent="niveau/deco"]
+position = Vector2( 1888, 116 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 18 )
+frame = 1
+playing = true
+
+[node name="ventilo" type="AnimatedSprite" parent="niveau/deco"]
+position = Vector2( 1218, 1024 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 22 )
+frame = 2
+playing = true
+
+[node name="fenetre" type="AnimatedSprite" parent="niveau/deco"]
+position = Vector2( 1772, 582 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 25 )
+animation = "helico"
+
+[node name="fenetre2" type="AnimatedSprite" parent="niveau/deco"]
+position = Vector2( 318, 582 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 25 )
+animation = "montgolfiere"
+
 [connection signal="activated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_forward"]
 [connection signal="desactivated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_backward"]
 [connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/movable_plateforme3" method="move_forward"]
 [connection signal="desactivated" from="niveau/dead/Button_levier2" to="niveau/movable_plateforme3" method="move_backward"]
+[connection signal="montage_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_montage_echelle"]
+[connection signal="pas_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_pas_echelle"]
 [connection signal="body_entered" from="niveau/fin" to="niveau" method="_on_fin_body_entered"]
