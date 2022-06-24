@@ -11,7 +11,6 @@ func _ready():
 	pass # Replace with function body.
 
 func change_color():
-	print("coucou")
 	if material == load("res://shader_inversion.tres"):
 		material = null
 	else:

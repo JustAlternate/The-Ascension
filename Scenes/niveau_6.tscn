@@ -425,7 +425,7 @@ resurection_node_path = NodePath("../live/chieur_de_caisse")
 vitesse_resurection = 1.0
 
 [node name="Box (alive)2" parent="niveau" groups=["area_tue", "tangible"] instance=ExtResource( 13 )]
-position = Vector2( 1646, 210 )
+position = Vector2( 1350, 218 )
 rotation = -4.54747e-13
 scale = Vector2( 1.8, 1.8 )
 gravity = 170
@@ -475,7 +475,7 @@ scale = Vector2( 1, 1.11111 )
 [node name="fin" type="Area2D" parent="niveau"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
-position = Vector2( 2224, 720 )
+position = Vector2( 2204, 698 )
 shape = SubResource( 7 )
 
 [connection signal="pushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme6" method="move_forward"]
