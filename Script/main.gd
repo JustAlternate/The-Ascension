@@ -4,11 +4,17 @@ signal change_color
 export var state = 1 # 0 = dead, 1 = alive
 var backup_position 
 
+var music_bus_idx = AudioServer.get_bus_index("music")
+var lowpassfilter = AudioServer.get_bus_effect(music_bus_idx,0)
+
+
 func _ready():
 	change_state()
 	change_state()
 	$niveau/body/DeathSoundEffect.stop()
 	$niveau/Spirit/ReviveSFX.stop()
+	lowpassfilter.cutoff_hz = 20000
+
 
 
 func change_state():
@@ -19,6 +25,8 @@ func change_state():
 		$niveau/Spirit.dead()
 		$niveau/body.dead()
 		get_tree().call_group("grp_change_color","change_color")
+		lowpassfilter.cutoff_hz = 800
+
 
 		
 	else:
@@ -28,6 +36,7 @@ func change_state():
 		$niveau/Spirit.revive()
 		$niveau/body.revive()
 		get_tree().call_group("grp_change_color","change_color")
+		lowpassfilter.cutoff_hz = 20000
 
 
 func revive():
