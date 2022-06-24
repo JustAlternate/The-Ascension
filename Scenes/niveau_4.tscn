@@ -72,7 +72,7 @@ collision_mask = 3
 
 [node name="Box (alive)" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
 light_mask = 3
-position = Vector2( 705.714, 112.857 )
+position = Vector2( 704.286, 111.429 )
 scale = Vector2( 1.99, 2 )
 collision_layer = 3
 collision_mask = 3
@@ -216,12 +216,12 @@ jump_speed = -850
 position = Vector2( 1621.43, 255.714 )
 shape = SubResource( 9 )
 
-[node name="piege_vertical_centre" parent="." instance=ExtResource( 17 )]
+[node name="piege_vertical_centre" parent="." groups=["grp_change_color"] instance=ExtResource( 17 )]
 position = Vector2( 255.716, 747.143 )
-scale = Vector2( 0.08, 0.1 )
+scale = Vector2( 0.07, 0.1 )
 
 [node name="Tesla-polePetit" parent="." instance=ExtResource( 3 )]
-position = Vector2( 287.888, 668.422 )
+position = Vector2( 289.317, 668.422 )
 rotation = 1.57079
 scale = Vector2( 0.1, 0.1 )
 
