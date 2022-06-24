@@ -8,7 +8,7 @@ export var vitesse_dechelage:int = 50
 
 var velocity = Vector2.ZERO
 var mort_velocity = 0
-var pushing = null
+var pushing = []
 var interact
 var alive = false
 
@@ -25,7 +25,7 @@ func _ready():
 func get_input():
 	if alive:
 		
-		if sur_echelle:
+		if sur_echelle and not is_on_floor():
 			$AnimatedSprite.animation = "echelle"
 			
 		
@@ -50,7 +50,7 @@ func get_input():
 			
 			velocity.x += run_speed
 			if not sur_echelle:
-				if pushing != null and interact:
+				if not pushing.empty() and interact:
 					$AnimatedSprite.animation = "pousse"
 				else:
 					$AnimatedSprite.animation = "course"
@@ -66,7 +66,7 @@ func get_input():
 			
 			velocity.x -= run_speed
 			if not sur_echelle:
-				if pushing != null and interact:
+				if not pushing.empty() and interact:
 					$AnimatedSprite.animation = "pousse"
 				else:
 					$AnimatedSprite.animation = "course"
@@ -78,8 +78,10 @@ func get_input():
 					$AnimatedSprite.frame = 4
 					$AnimatedSprite.stop()
 			
-		elif is_on_floor():
+		elif is_on_floor() and not ( not pushing.empty() and interact) :
 			$AnimatedSprite.animation = "idle"
+		elif not pushing.empty() and interact:
+			$AnimatedSprite.animation = "pousse"
 	else:
 		pass
 
@@ -105,8 +107,9 @@ func kinematic_physics():
 
 func move_box():
 	interact = Input.is_action_pressed("interact")
-	if interact and pushing != null:
-		pushing.move_and_slide(velocity, Vector2(0, -1))
+	if interact and not pushing.empty():
+		for box in pushing:
+			box.move_and_slide(velocity, Vector2(0, -1))
 
 
 func _physics_process(delta):
@@ -194,11 +197,11 @@ func _on_AnimatedSprite_frame_changed():
 
 func _on_pousse_body_entered(body):
 	if body.is_in_group("boxable"):
-		pushing = body
+		pushing.append(body)
 
 
 
 
 func _on_pousse_body_exited(body):
 	if body.is_in_group("boxable"):
-		pushing = null
+		pushing.erase(body)
