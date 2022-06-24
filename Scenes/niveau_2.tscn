@@ -51,9 +51,6 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 99.625, 134.5 )
-
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 17 )
@@ -185,6 +182,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 99.625, 134.5 )
+
 [node name="main2" type="Node2D" groups=["main"]]
 script = ExtResource( 9 )
 
@@ -193,14 +193,14 @@ scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 14 )
 
 [node name="Node2D" type="Node2D" parent="niveau"]
-position = Vector2( -56, -94 )
 z_index = -2
 
 [node name="ColorRect" type="ColorRect" parent="niveau/Node2D" groups=["grp_change_color"]]
-margin_left = -26.0
-margin_top = 4.0
-margin_right = 2464.0
-margin_bottom = 1528.0
+show_behind_parent = true
+margin_left = -44.0
+margin_top = -88.0
+margin_right = 2446.0
+margin_bottom = 1436.0
 script = ExtResource( 8 )
 
 [node name="dead" type="Node2D" parent="niveau"]
@@ -235,12 +235,14 @@ position = Vector2( 1910, 770 )
 scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "Congratulations employ!"
 skin = 3
+font_size = 120
 
 [node name="NPC2" parent="niveau/live" instance=ExtResource( 23 )]
 position = Vector2( 1080, 1092 )
 scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "I'm missing $2 for my coffee!"
 skin = 2
+font_size = 100
 
 [node name="live_TileMap" parent="niveau/live" instance=ExtResource( 3 )]
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 65536, 0, 0, 65567, 0, 0, 131072, 0, 0, 131103, 0, 0, 196608, 0, 0, 196639, 0, 0, 262144, 0, 0, 262175, 0, 0, 327680, 0, 0, 327711, 0, 0, 393216, 0, 0, 393247, 0, 0, 458752, 0, 0, 458783, 0, 0, 524288, 0, 0, 524319, 0, 0, 589824, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 655360, 0, 0, 655395, 0, 0, 720896, 0, 0, 720931, 0, 0, 786432, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786467, 0, 0, 851968, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 851998, 0, 0, 851999, 0, 0, 852000, 0, 0, 852001, 0, 0, 852002, 0, 0, 852003, 0, 0, 917504, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 983040, 0, 0, 983062, 0, 0, 983063, 0, 0, 983064, 0, 0, 983065, 0, 0, 983066, 0, 0, 983067, 0, 0, 983068, 0, 0, 983069, 0, 0, 983070, 0, 0, 983071, 0, 0, 1048576, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1114112, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1114140, 0, 0, 1114141, 0, 0, 1114142, 0, 0, 1114143, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0 )
@@ -248,6 +250,93 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 [node name="Echelle" parent="niveau/live" instance=ExtResource( 13 )]
 position = Vector2( 528, 882 )
 scale = Vector2( 0.2, 0.4 )
+
+[node name="deco" type="Node2D" parent="niveau/live"]
+z_index = -1
+
+[node name="aeration" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 148, 104 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 10 )
+frame = 1
+playing = true
+
+[node name="aeration2" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 1244, 104 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 10 )
+frame = 1
+playing = true
+
+[node name="armoire" type="Sprite" parent="niveau/live/deco"]
+position = Vector2( 1346, 1062 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 16 )
+
+[node name="armoire2" type="Sprite" parent="niveau/live/deco"]
+position = Vector2( 222, 1064 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 16 )
+
+[node name="mmmh_de_l_eau" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 964, 1052 )
+scale = Vector2( 0.125195, 0.133008 )
+frames = SubResource( 15 )
+frame = 1
+
+[node name="mmmh_de_la_nourriture" type="Sprite" parent="niveau/live/deco"]
+position = Vector2( 810, 1030 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 21 )
+
+[node name="ventilateur" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 1888, 116 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 18 )
+frame = 1
+playing = true
+
+[node name="ventilateur2" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 288, 100 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 18 )
+speed_scale = 0.5
+playing = true
+
+[node name="ventilateur3" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 1380, 98.0001 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 18 )
+speed_scale = 2.0
+playing = true
+
+[node name="ventilo" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 1232, 1028 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 22 )
+playing = true
+
+[node name="fenetre" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 1772, 582 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 25 )
+animation = "helico"
+
+[node name="fenetre2" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 318, 582 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 25 )
+animation = "montgolfiere"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 1124, 576 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 27 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 1732, 738 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 29 )
 
 [node name="movable_plateforme2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 776, 714 )
@@ -321,91 +410,6 @@ vitesse_dechelage = 200
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
 position = Vector2( 2220, 722 )
 shape = SubResource( 7 )
-
-[node name="deco" type="Node2D" parent="niveau"]
-z_index = -1
-
-[node name="aeration" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 148, 104 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 10 )
-playing = true
-
-[node name="aeration2" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 1244, 104 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 10 )
-playing = true
-
-[node name="armoire" type="Sprite" parent="niveau/deco"]
-position = Vector2( 1346, 1062 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 16 )
-
-[node name="armoire2" type="Sprite" parent="niveau/deco"]
-position = Vector2( 222, 1064 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 16 )
-
-[node name="mmmh_de_l_eau" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 964, 1052 )
-scale = Vector2( 0.125195, 0.133008 )
-frames = SubResource( 15 )
-frame = 1
-
-[node name="mmmh_de_la_nourriture" type="Sprite" parent="niveau/deco"]
-position = Vector2( 810, 1030 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 21 )
-
-[node name="ventilateur" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 1888, 116 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 18 )
-playing = true
-
-[node name="ventilateur2" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 288, 100 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 18 )
-speed_scale = 0.5
-playing = true
-
-[node name="ventilateur3" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 1380, 98.0001 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 18 )
-speed_scale = 2.0
-playing = true
-
-[node name="ventilo" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 1232, 1028 )
-scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 22 )
-frame = 2
-playing = true
-
-[node name="fenetre" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 1772, 582 )
-scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 25 )
-animation = "helico"
-
-[node name="fenetre2" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 318, 582 )
-scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 25 )
-animation = "montgolfiere"
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 1124, 576 )
-scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 27 )
-
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 1732, 738 )
-scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 29 )
 
 [connection signal="activated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_forward"]
 [connection signal="desactivated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_backward"]

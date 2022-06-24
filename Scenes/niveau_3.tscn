@@ -347,7 +347,7 @@ scale = Vector2( 0.853833, 2.71166 )
 texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
-[node name="Box (alive)" parent="niveau" groups=["area_tue", "body_tue", "tangible"] instance=ExtResource( 13 )]
+[node name="Box (alive)" parent="niveau" groups=["area_tue", "tangible"] instance=ExtResource( 13 )]
 position = Vector2( 750, 212 )
 rotation = -4.54747e-13
 gravity = 170
@@ -387,6 +387,7 @@ z_index = -1
 position = Vector2( 70, 44 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 10 )
+frame = 1
 speed_scale = 0.1
 playing = true
 
@@ -394,7 +395,6 @@ playing = true
 position = Vector2( 972, 299 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 10 )
-frame = 1
 speed_scale = 0.1
 playing = true
 
