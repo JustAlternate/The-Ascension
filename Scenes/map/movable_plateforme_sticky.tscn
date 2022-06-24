@@ -30,6 +30,7 @@ frames = SubResource( 1 )
 [node name="Area2D" type="Area2D" parent="plateforme"]
 
 [node name="Area_shape" type="CollisionShape2D" parent="plateforme/Area2D"]
+visible = false
 position = Vector2( 0, -33 )
 shape = SubResource( 3 )
 
