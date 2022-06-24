@@ -146,11 +146,12 @@ offset = Vector2( -33.7499, -15.4172 )
 position = Vector2( 124, 1076 )
 collision_layer = 2
 collision_mask = 2
-speed = 450
+speed = 200
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
 position = Vector2( 130, 1082 )
 scale = Vector2( 0.1, 0.1 )
+run_speed = 300
 jump_speed = -700
 vitesse_dechelage = 200
 

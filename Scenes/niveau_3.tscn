@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/map/Button_levier.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/movable_plateforme_sticky.tscn" type="PackedScene" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://shader_inversion.tres" type="Material" id=12]
 [ext_resource path="res://Scenes/map/Box_alive.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/map/Button_tangible.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Sprites/white.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/map/Tesla-pole_petit.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Sprites/objets/lance-caisse.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/map/Echelle.tscn" type="PackedScene" id=18]
@@ -57,6 +56,7 @@ scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 19 )
 
 [node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
+visible = false
 margin_left = -56.0
 margin_top = -94.0
 margin_right = 2106.0
@@ -102,6 +102,17 @@ scale = Vector2( 0.1, 0.1 )
 collision_layer = 2
 collision_mask = 2
 
+[node name="movable_plateforme3" parent="niveau/dead" groups=["grp_change_color"] instance=ExtResource( 2 )]
+position = Vector2( 1504, 550 )
+scale = Vector2( 1, 4 )
+choose_collision_layer = 2
+
+[node name="arrivée" type="Position2D" parent="niveau/dead/movable_plateforme3"]
+position = Vector2( -0.00012207, -52.5 )
+
+[node name="enfant" type="Node2D" parent="niveau/dead/movable_plateforme3"]
+position = Vector2( 0, -4.57764e-05 )
+
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( -112, 604 )
 collision_layer = 2
@@ -121,7 +132,7 @@ scale = Vector2( 5, 1 )
 vitesse = 30
 
 [node name="arrivée" type="Position2D" parent="niveau/movable_plateforme2"]
-position = Vector2( 198.8, 1.99997 )
+position = Vector2( 176.8, -3.00407e-05 )
 
 [node name="enfant" type="Node2D" parent="niveau/movable_plateforme2"]
 
@@ -130,29 +141,6 @@ use_parent_material = true
 position = Vector2( 32.6933, 13.458 )
 scale = Vector2( 0.967678, 0.846774 )
 texture = ExtResource( 10 )
-offset = Vector2( -33.7499, -15.4172 )
-
-[node name="movable_plateforme3" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
-position = Vector2( 1503, 548.5 )
-scale = Vector2( 1, 4 )
-choose_collision_layer = 2
-
-[node name="arrivée" type="Position2D" parent="niveau/movable_plateforme3"]
-position = Vector2( -0.00012207, -52.5 )
-
-[node name="Sprite" type="Sprite" parent="niveau/movable_plateforme3"]
-use_parent_material = true
-position = Vector2( 0.00012207, -75.2293 )
-scale = Vector2( 1, 1.38737 )
-texture = ExtResource( 15 )
-
-[node name="enfant" type="Node2D" parent="niveau/movable_plateforme3"]
-position = Vector2( 0, -4.57764e-05 )
-
-[node name="Sprite" type="Sprite" parent="niveau/movable_plateforme3/enfant"]
-position = Vector2( 31.2501, -8.37039 )
-scale = Vector2( 0.917112, 2.35684 )
-texture = ExtResource( 15 )
 offset = Vector2( -33.7499, -15.4172 )
 
 [node name="fontaine" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 6 )]
@@ -215,8 +203,8 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 2206, 718 )
 shape = SubResource( 7 )
 
-[connection signal="pushed" from="niveau/live/Button_tangible" to="niveau/movable_plateforme3" method="move_forward"]
-[connection signal="unpushed" from="niveau/live/Button_tangible" to="niveau/movable_plateforme3" method="move_backward"]
+[connection signal="pushed" from="niveau/live/Button_tangible" to="niveau/dead/movable_plateforme3" method="move_forward"]
+[connection signal="unpushed" from="niveau/live/Button_tangible" to="niveau/dead/movable_plateforme3" method="move_backward"]
 [connection signal="pushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme4" method="move_forward"]
 [connection signal="unpushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme4" method="move_backward"]
 [connection signal="montage_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_montage_echelle"]
