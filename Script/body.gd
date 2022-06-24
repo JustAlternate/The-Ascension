@@ -156,11 +156,9 @@ func _on_bottom_body_exited(body):
 func _on_top_area_entered(area):
 	if area.is_in_group("area_tue"):
 		top_collide += 1
-		print("top_collide_area")
 func _on_top_body_entered(body):
 	if body != self and body.is_in_group("body_tue"):
 		top_collide += 1
-		print("top_collide_body")
 		if body.is_in_group("boxable"):
 			top_body = body
 			

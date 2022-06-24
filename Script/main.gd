@@ -6,7 +6,9 @@ var backup_position
 
 var music_bus_idx = AudioServer.get_bus_index("music")
 var lowpassfilter = AudioServer.get_bus_effect(music_bus_idx,0)
-
+export var lowpass_intensity = 800
+var reverb = AudioServer.get_bus_effect(music_bus_idx,1)
+export var reverb_intensity = 0.1
 
 func _ready():
 	change_state()
@@ -15,6 +17,8 @@ func _ready():
 	$niveau/Spirit/ReviveSFX.stop()
 	lowpassfilter.cutoff_hz = 20000
 	AudioServer.set_bus_effect_enabled(music_bus_idx,1,false)
+	reverb.room_size = reverb_intensity
+
 
 
 func change_state():
@@ -25,7 +29,7 @@ func change_state():
 		$niveau/Spirit.dead()
 		$niveau/body.dead()
 		get_tree().call_group("grp_change_color","change_color")
-		lowpassfilter.cutoff_hz = 800
+		lowpassfilter.cutoff_hz = lowpass_intensity
 		AudioServer.set_bus_effect_enabled(music_bus_idx,1,true)
 
 		
