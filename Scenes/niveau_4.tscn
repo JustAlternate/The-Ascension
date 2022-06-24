@@ -63,6 +63,9 @@ margin_top = -114.0
 margin_right = 1821.0
 margin_bottom = 1015.0
 script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="fontaine" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 7 )]
 position = Vector2( 127.143, 145.714 )
@@ -70,7 +73,7 @@ scale = Vector2( 0.07, 0.07 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Box (alive)" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
+[node name="Box (alive)" parent="niveau" groups=["body_tue", "tangible"] instance=ExtResource( 2 )]
 light_mask = 3
 position = Vector2( 704.286, 111.429 )
 scale = Vector2( 1.99, 2 )
@@ -79,7 +82,7 @@ collision_mask = 3
 resurection_node_path = NodePath("../live/chieur_de_caisse2")
 vitesse_resurection = 1.0
 
-[node name="Box (alive)3" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
+[node name="Box (alive)3" parent="niveau" groups=["body_tue", "tangible"] instance=ExtResource( 2 )]
 light_mask = 3
 position = Vector2( 352.857, 108.571 )
 scale = Vector2( 1.99, 2 )
@@ -88,7 +91,7 @@ collision_mask = 3
 resurection_node_path = NodePath("../live/chieur_de_caisse3")
 vitesse_resurection = 1.0
 
-[node name="Box (alive)4" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
+[node name="Box (alive)4" parent="niveau" groups=["body_tue", "tangible"] instance=ExtResource( 2 )]
 light_mask = 3
 position = Vector2( 1017.14, 107.143 )
 scale = Vector2( 1.99, 2 )
@@ -160,7 +163,6 @@ texture = ExtResource( 16 )
 
 [node name="dead" type="Node2D" parent="niveau"]
 position = Vector2( -3.8147e-06, 0 )
-scale = Vector2( 1, 1 )
 
 [node name="TileMap" type="TileMap" parent="niveau/dead"]
 tile_set = SubResource( 5 )
