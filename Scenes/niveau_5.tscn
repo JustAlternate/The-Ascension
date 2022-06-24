@@ -375,6 +375,7 @@ offset = Vector2( -6040, -1120 )
 [node name="AnimatedSprite25" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 25780, 2840 )
 frames = SubResource( 25 )
+frame = 1
 speed_scale = 0.1
 playing = true
 offset = Vector2( -6040, -1120 )
@@ -388,7 +389,6 @@ playing = true
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 2840.02, 880 )
 frames = SubResource( 26 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -512,6 +512,7 @@ scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "Rien"
 skin = 2
 flip_horizontal = true
+autospeak = true
 
 [node name="NPC3" parent="niveau/live" instance=ExtResource( 16 )]
 position = Vector2( 1710, 578 )
@@ -519,17 +520,20 @@ scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "Too many choices!"
 skin = 3
 flip_horizontal = true
+autospeak = true
 
 [node name="NPC4" parent="niveau/live" instance=ExtResource( 16 )]
 position = Vector2( 332, 268 )
 scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "It sucks to be an intern!"
+autospeak = true
 
 [node name="NPC5" parent="niveau/live" instance=ExtResource( 16 )]
 position = Vector2( 682, 1094 )
 scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "the lights have a bug!"
 skin = 3
+autospeak = true
 
 [node name="NPC2" parent="niveau/live" instance=ExtResource( 16 )]
 position = Vector2( 1922, 1106 )
