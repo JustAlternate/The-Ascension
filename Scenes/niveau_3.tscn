@@ -86,11 +86,11 @@ position = Vector2( 1860, 964 )
 scale = Vector2( 0.2, 0.28 )
 
 [node name="NPC" parent="niveau/live" instance=ExtResource( 15 )]
-position = Vector2( 150, 1082 )
+position = Vector2( 150, 1084 )
 scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "J'en ai marre de christine."
-skin = 3
-font_size = 100
+skin = 1
+font_size = 120
 
 [node name="dead" type="Node2D" parent="niveau"]
 

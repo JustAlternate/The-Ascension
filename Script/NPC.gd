@@ -5,9 +5,20 @@ var player_in_range = false
 signal interacted(instance)
 export var skin = 0
 var randompitch = 1.0
+export var font_size = 70
+export var flip_horizontal = false
+export var flip_vertical = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
+	$AnimatedSprite.flip_h = flip_horizontal
+	$AnimatedSprite.flip_v = flip_vertical
+	
+	var dynamic_font = DynamicFont.new()
+	dynamic_font.font_data = load("res://Scenes/UI/test.ttf")
+	dynamic_font.size = font_size
+	$"Label".set("custom_fonts/font", dynamic_font)
 	match skin:
 		0:
 			$AnimatedSprite.animation = "default"
@@ -46,6 +57,7 @@ func show_text(text):
 		yield(get_tree().create_timer(5),"timeout")
 		$Label.text = ""
 		$Sprite.visible = false
+		$Label.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

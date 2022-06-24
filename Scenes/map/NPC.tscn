@@ -5,11 +5,11 @@
 [ext_resource path="res://Assets/Sprites/white.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/font_for_button_in_menu.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/Sprites/personnage/boite_dialogue.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/mur2/robot/robot-normal.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/mur2/robot/robot-interogation.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/mur2/robot/robot-interogation.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/mur2/robot/robot-normal.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/personnage/PNJ.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/mur2/robot/robot-enerver.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/mur2/robot/robot-calin.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/mur2/robot/robot-calin.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/mur2/robot/robot-enerver.png" type="Texture" id=10]
 [ext_resource path="res://Assets/sfx/voice.wav" type="AudioStream" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -72,53 +72,38 @@ region = Rect2( 2048, 6144, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 2048, 2048 )
+atlas = ExtResource( 8 )
+region = Rect2( 2048, 0, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 2048, 0, 2048, 2048 )
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 4096, 0, 2048, 2048 )
+atlas = ExtResource( 6 )
+region = Rect2( 0, 2048, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 0, 2048, 2048, 2048 )
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 2048, 2048, 2048, 2048 )
+atlas = ExtResource( 7 )
+region = Rect2( 2048, 0, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 4096, 2048, 2048, 2048 )
+atlas = ExtResource( 7 )
+region = Rect2( 0, 2048, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 0, 4096, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 9 )
-region = Rect2( 2048, 4096, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=33]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 2048, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=32]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 0, 2048, 2048, 2048 )
+atlas = ExtResource( 7 )
+region = Rect2( 2048, 2048, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
@@ -133,47 +118,62 @@ region = Rect2( 2048, 0, 2048, 2048 )
 [sub_resource type="AtlasTexture" id=30]
 flags = 4
 atlas = ExtResource( 10 )
-region = Rect2( 0, 2048, 2048, 2048 )
+region = Rect2( 4096, 0, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 10 )
-region = Rect2( 2048, 2048, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 6 )
-region = Rect2( 2048, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 6 )
 region = Rect2( 0, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=32]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 10 )
 region = Rect2( 2048, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 4096, 2048, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=34]
 flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 2048, 2048 )
+atlas = ExtResource( 10 )
+region = Rect2( 0, 4096, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=35]
 flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 2048, 2048, 2048 )
+atlas = ExtResource( 10 )
+region = Rect2( 2048, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 8 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 2048, 2048, 2048, 2048 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -182,40 +182,40 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
-"loop": true,
-"name": "RobotVener",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 33 ) ],
+"frames": [ SubResource( 15 ) ],
 "loop": true,
 "name": "PNJ2",
-"speed": 5.0
+"speed": 1.0
 }, {
-"frames": [ SubResource( 32 ) ],
-"loop": true,
-"name": "PNJ3",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
-"loop": true,
-"name": "RobotCalin",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
-"loop": true,
-"name": "RobotNeutre",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "RobotInterrogation",
-"speed": 5.0
+"speed": 3.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "RobotNeutre",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "RobotVener",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 22 ) ],
+"loop": true,
+"name": "PNJ1",
+"speed": 1.0
 }, {
 "frames": [ SubResource( 23 ) ],
 "loop": true,
-"name": "PNJ1",
-"speed": 5.0
+"name": "PNJ3",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "RobotCalin",
+"speed": 3.0
 } ]
 
 [sub_resource type="StyleBoxTexture" id=14]
@@ -225,6 +225,7 @@ region_rect = Rect2( 0, 0, 64, 64 )
 [node name="NPC" type="Area2D"]
 script = ExtResource( 1 )
 dialogue_npc = "Bonjour Aventurier"
+skin = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 use_parent_material = true
@@ -234,7 +235,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
-animation = "PNJ3"
+animation = "PNJ1"
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -258,7 +259,6 @@ autowrap = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-bus = "Voice"
 
 [connection signal="body_entered" from="." to="." method="_on_Bonhomme_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Bonhomme_body_exited"]
