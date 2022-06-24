@@ -10,7 +10,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func show_text(text):
+func showtext(text):
 	
 	if $Sprite.visible == false:
 		
@@ -30,5 +30,8 @@ func show_text(text):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position = get_parent().get_parent().get_node("body").position
+	position = get_parent().get_parent().get_node("pantin").position
+
+
+
 
