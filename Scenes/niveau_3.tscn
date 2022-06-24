@@ -28,32 +28,31 @@
 [ext_resource path="res://Assets/Sprites/deco/plante.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Sprites/deco/distributeur-d'eau.png" type="Texture" id=27]
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=33]
 flags = 4
 atlas = ExtResource( 20 )
-region = Rect2( 0, 0, 2048, 2048 )
+region = Rect2( 0, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 20 )
-region = Rect2( 0, 2048, 2048, 2048 )
+region = Rect2( 0, 512, 512, 512 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
+[sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 24 )
-region = Rect2( 0, 0, 2048, 2048 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 11 ) ],
+"frames": [ SubResource( 32 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -267,28 +266,27 @@ scale = Vector2( 2, 2 )
 z_index = -1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/live/decor"]
-position = Vector2( 70, 44 )
-scale = Vector2( 0.05, 0.05 )
+position = Vector2( 91.6, 53.6 )
+scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 10 )
+frame = 1
 speed_scale = 0.1
 playing = true
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 972, 299 )
-scale = Vector2( 0.05, 0.05 )
+scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 10 )
 frame = 1
 speed_scale = 0.1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/live/decor"]
-position = Vector2( 98, 317 )
-scale = Vector2( 0.04, 0.04 )
+position = Vector2( 108.93, 324.68 )
 frames = SubResource( 12 )
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="niveau/live/decor"]
-position = Vector2( 614, 188 )
-scale = Vector2( 0.04, 0.04 )
+position = Vector2( 614, 196 )
 frames = SubResource( 12 )
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="niveau/live/decor"]

@@ -52,24 +52,6 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 17 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="SpriteFrames" id=10]
-animations = [ {
-"frames": [ SubResource( 8 ), SubResource( 9 ) ],
-"loop": true,
-"name": "default",
-"speed": 2.0
-} ]
-
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 18 )
@@ -196,6 +178,24 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 512, 512, 512 )
+
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [ SubResource( 32 ), SubResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 99.625, 134.5 )
 
@@ -268,20 +268,6 @@ scale = Vector2( 0.2, 0.4 )
 [node name="deco" type="Node2D" parent="niveau/live"]
 z_index = -1
 
-[node name="aeration" type="AnimatedSprite" parent="niveau/live/deco"]
-position = Vector2( 148, 104 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 10 )
-frame = 1
-playing = true
-
-[node name="aeration2" type="AnimatedSprite" parent="niveau/live/deco"]
-position = Vector2( 1244, 104 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 10 )
-frame = 1
-playing = true
-
 [node name="armoire" type="Sprite" parent="niveau/live/deco"]
 position = Vector2( 1346, 1062 )
 scale = Vector2( 0.1, 0.1 )
@@ -329,7 +315,7 @@ playing = true
 position = Vector2( 1232, 1028 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 22 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="fenetre" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -358,6 +344,20 @@ frames = SubResource( 29 )
 position = Vector2( 674, 404 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 31 )
+
+[node name="ventilation" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 128, 81 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 34 )
+speed_scale = 0.05
+playing = true
+
+[node name="ventilation2" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 1216, 81 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 34 )
+speed_scale = 0.05
+playing = true
 
 [node name="movable_plateforme2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 776, 714 )

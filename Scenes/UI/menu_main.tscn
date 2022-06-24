@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/button_form_in_menu.tres" type="StyleBox" id=2]
 [ext_resource path="res://Script/menu_main.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/UI/building_sprite.tscn" type="PackedScene" id=5]
-[ext_resource path="res://shader_inversion.tres" type="Material" id=6]
 
 [sub_resource type="DynamicFont" id=3]
 size = 64
@@ -48,11 +46,6 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Sprite" parent="." instance=ExtResource( 5 )]
-material = ExtResource( 6 )
-position = Vector2( 793.176, 2902.26 )
-scale = Vector2( 1.8, 1.8 )
-
 [node name="Button" type="Button" parent="."]
 anchor_left = 0.0839844
 anchor_top = 0.366667
@@ -73,6 +66,8 @@ text = "Play"
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="Sprite" type="Sprite" parent="."]
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 0.618164

@@ -139,19 +139,19 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=32]
 flags = 4
 atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 2048, 2048 )
+region = Rect2( 0, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=33]
 flags = 4
 atlas = ExtResource( 5 )
-region = Rect2( 0, 2048, 2048, 2048 )
+region = Rect2( 0, 512, 512, 512 )
 
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 32 ), SubResource( 33 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -339,7 +339,7 @@ frames = SubResource( 20 )
 
 [node name="ventilation" type="AnimatedSprite" parent="niveau/deco"]
 position = Vector2( 128, 81 )
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 23 )
 frame = 1
 speed_scale = 0.05

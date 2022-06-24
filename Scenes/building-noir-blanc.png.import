@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/armoir+arbre.png-fceac45f2c7b8c6a379b35d5ad5affde.stex"
+path="res://.import/building-noir-blanc.png-5d3d48257383b327be528814aade0349.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/deco/armoir+arbre.png"
-dest_files=[ "res://.import/armoir+arbre.png-fceac45f2c7b8c6a379b35d5ad5affde.stex" ]
+source_file="res://Scenes/building-noir-blanc.png"
+dest_files=[ "res://.import/building-noir-blanc.png-5d3d48257383b327be528814aade0349.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
