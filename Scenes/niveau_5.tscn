@@ -383,6 +383,7 @@ offset = Vector2( -6040, -1120 )
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 8020.01, 1400 )
 frames = SubResource( 26 )
+frame = 1
 speed_scale = 1.5
 playing = true
 
@@ -395,6 +396,7 @@ playing = true
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 13580, 1640 )
 frames = SubResource( 26 )
+frame = 1
 speed_scale = 3.0
 playing = true
 
