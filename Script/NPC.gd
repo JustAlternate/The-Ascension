@@ -9,6 +9,8 @@ export var font_size = 70
 export var flip_horizontal = false
 export var flip_vertical = false
 
+export var autospeak = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -36,7 +38,8 @@ func _ready():
 			$AnimatedSprite.animation = "RobotNeutre"
 		7:
 			$AnimatedSprite.animation = "RobotVener"
-	
+	if autospeak:
+		show_text(dialogue_npc)
 
 
 func show_text(text):
@@ -64,7 +67,8 @@ func show_text(text):
 func _process(delta):
 	if player_in_range:
 		if Input.is_action_just_pressed("interact"):
-			show_text(dialogue_npc)
+			if not autospeak:
+				show_text(dialogue_npc)
 
 
 func _on_Bonhomme_body_entered(body):
