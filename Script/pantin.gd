@@ -9,7 +9,7 @@ var velocity = Vector2.ZERO
 var mort_velocity = 0
 var pushing = null
 
-var actions = [[0.5,"r",true],[1.5,"j",true],[2,"j",false],[2,"r",false],[3,"s",true],[5,"f","coucou"]]
+var actions = [[0.5,"r",true],[1.5,"j",true],[2,"j",false],[2,"f","coucou"],[2,"r",false],[3,"s",true]]
 var temps = 0
 var stop = false
 
@@ -18,6 +18,8 @@ var left = false
 var jump = false
 
 var alive = false
+
+signal showtext(text)
 
 func _ready():
 	velocity.x = 0
@@ -90,7 +92,7 @@ func do_actions():
 				"f":
 					special(actions[0][2])
 				_:
-					print("attention analise d'action non comprise:\n",actions[0][1]," à ",actions[0][0])
+					print("attention analyse d'action non comprise:\n",actions[0][1]," à ",actions[0][0])
 			actions.pop_front()
 			do_actions()
 
@@ -98,7 +100,7 @@ func do_actions():
 func special(variable):
 	match variable:
 		"coucou":
-			pass
+			emit_signal("showtext","Bonjour aventurier, bien ou quoi ?")
 
 
 # Pour les bruits de pas

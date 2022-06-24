@@ -1,16 +1,13 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/body.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/map/NPC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/PlayableCharacters/Spirit.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/map/Button_tangible.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/map/Button_levier.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/map/fontaine.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/map/piege_horizontale_simple.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Script/main.gd" type="Script" id=10]
 [ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=11]
-[ext_resource path="res://Scenes/map/movable_plateforme.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Script/ColorRect.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/map/movable_plateforme_sticky.tscn" type="PackedScene" id=14]
 [ext_resource path="res://shader_inversion.tres" type="Material" id=15]
@@ -55,46 +52,6 @@ extents = Vector2( 57.25, 134.5 )
 script = ExtResource( 10 )
 
 [node name="ressources" type="Node2D" parent="."]
-
-[node name="NPC" parent="ressources" instance=ExtResource( 3 )]
-position = Vector2( -180, 130 )
-scale = Vector2( 0.2, 0.2 )
-collision_layer = 0
-collision_mask = 0
-
-[node name="piege_horizontale_simple" parent="ressources" instance=ExtResource( 8 )]
-position = Vector2( -135, 246 )
-scale = Vector2( 0.02, 0.02 )
-
-[node name="Button_tangible" parent="ressources" instance=ExtResource( 5 )]
-position = Vector2( -122, 300 )
-scale = Vector2( 0.333333, 0.1 )
-
-[node name="Button_levier" parent="ressources" instance=ExtResource( 6 )]
-position = Vector2( -116, 387 )
-scale = Vector2( 0.1, 0.1 )
-collision_layer = 0
-collision_mask = 0
-
-[node name="fontaine" parent="ressources" groups=["grp_change_color"] instance=ExtResource( 7 )]
-position = Vector2( -100, 500 )
-scale = Vector2( 0.05, 0.05 )
-
-[node name="movable_plateforme" parent="ressources" instance=ExtResource( 12 )]
-position = Vector2( -100, 600 )
-
-[node name="arrivée" type="Position2D" parent="ressources/movable_plateforme"]
-position = Vector2( -125, 7 )
-
-[node name="movable_plateforme_sticky" parent="ressources" groups=["grp_change_color"] instance=ExtResource( 14 )]
-position = Vector2( -100, 704 )
-vitesse = 75
-
-[node name="arrivée" type="Position2D" parent="ressources/movable_plateforme_sticky"]
-position = Vector2( 107, 3.74991 )
-
-[node name="enfant" type="Node2D" parent="ressources/movable_plateforme_sticky"]
-position = Vector2( 7, -6 )
 
 [node name="niveau" type="Node2D" parent="."]
 script = ExtResource( 17 )
@@ -186,7 +143,7 @@ position = Vector2( -69.3334, -0.000427246 )
 [node name="fin" type="Area2D" parent="niveau"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
-position = Vector2( 1051, 318 )
+position = Vector2( 1091, 315 )
 shape = SubResource( 7 )
 
 [node name="Node2D" type="Node2D" parent="niveau"]
@@ -210,7 +167,6 @@ scale = Vector2( 0.05, 0.05 )
 [node name="Tesla-poleSeul" parent="niveau/Node2D" instance=ExtResource( 21 )]
 use_parent_material = false
 
-[connection signal="change_color" from="." to="ressources/fontaine" method="_on_main_change_color"]
 [connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/piege_horizontale_simple" method="_on_Button_levier_activated"]
 [connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/Node2D/piege_horizontale_simple" method="activation"]
 [connection signal="desactivated" from="niveau/dead/Button_levier2" to="niveau/piege_horizontale_simple" method="_on_Button_levier_desactivated"]

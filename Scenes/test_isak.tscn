@@ -93,9 +93,6 @@ vitesse = 20
 [node name="départ" parent="movable_plateforme" index="1"]
 position = Vector2( 66, -52 )
 
-[node name="arrivé" parent="movable_plateforme" index="2"]
-position = Vector2( -315, -80 )
-
 [connection signal="death" from="live/piege_horizontale_simple" to="." method="_on_piege_horizontale_simple_death"]
 [connection signal="revive" from="dead/Fontaine" to="." method="_on_Fontaine_revive"]
 [connection signal="revive" from="dead/Fontaine" to="Spirit" method="_on_Fontaine_revive"]

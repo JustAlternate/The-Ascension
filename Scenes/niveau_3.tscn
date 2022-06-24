@@ -56,11 +56,10 @@ scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 19 )
 
 [node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
-visible = false
 margin_left = -56.0
 margin_top = -94.0
-margin_right = 2106.0
-margin_bottom = 1299.0
+margin_right = 2594.0
+margin_bottom = 1516.0
 script = ExtResource( 8 )
 
 [node name="live" type="Node2D" parent="niveau"]
@@ -178,7 +177,7 @@ resurection_node_path = NodePath("../live/chieur_de_caisse")
 vitesse_resurection = 1.0
 
 [node name="Button_levier" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 1 )]
-position = Vector2( 590, 1138 )
+position = Vector2( 590, 1140 )
 rotation = 5.07036e-06
 scale = Vector2( 0.1, 0.1 )
 collision_layer = 3
@@ -200,7 +199,7 @@ scale = Vector2( 0.1, 0.1 )
 [node name="fin" type="Area2D" parent="niveau"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
-position = Vector2( 2206, 718 )
+position = Vector2( 2222, 720 )
 shape = SubResource( 7 )
 
 [connection signal="pushed" from="niveau/live/Button_tangible" to="niveau/dead/movable_plateforme3" method="move_forward"]

@@ -37,9 +37,6 @@ func _process(delta):
 	position = get_parent().get_parent().get_node("body").position
 
 
-
-
-
 func _on_TextBubble_body_exited(body):
 	if body.is_in_group("playable"):
 		player_in_range = false
