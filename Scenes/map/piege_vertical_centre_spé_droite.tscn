@@ -1,0 +1,101 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Assets/sfx/tesla_off.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Sprites/objets/tesla-multi-centre.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sfx/tesla_on.wav" type="AudioStream" id=3]
+[ext_resource path="res://Script/piege_vertical_centre.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sprites/objets/Tesla-multi-centre-verticale.png" type="Texture" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 4096, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 2048, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 4096, 2048, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 2048, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 4096, 4096, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2048, 0, 2048, 1536 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "activate",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ) ],
+"loop": true,
+"name": "desactivate",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 1010.38, 15.875 )
+
+[node name="piege_vertical_centre" type="Node2D"]
+rotation = 1.57079
+scale = Vector2( 0.1, 0.1 )
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+use_parent_material = true
+position = Vector2( 0, -432 )
+frames = SubResource( 10 )
+animation = "activate"
+frame = 6
+playing = true
+
+[node name="right_area" type="Area2D" parent="."]
+
+[node name="right_shape" type="CollisionShape2D" parent="right_area"]
+position = Vector2( 0, -100 )
+rotation = 2.27374e-13
+shape = SubResource( 11 )
+
+[node name="on" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="off" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+
+[connection signal="body_entered" from="right_area" to="." method="_on_right_area_body_entered"]

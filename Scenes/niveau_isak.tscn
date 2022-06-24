@@ -1,0 +1,194 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scenes/PlayableCharacters/body.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/map/Box_alive.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/map/Echelle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/PlayableCharacters/Spirit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/map/Button_tangible.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/map/Tesla-pole_petit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/map/fontaine.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/map/piege_horizontale_milieu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Script/main.gd" type="Script" id=10]
+[ext_resource path="res://Assets/map/dead/flor.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/objets/lance-caisse.png" type="Texture" id=12]
+[ext_resource path="res://Script/ColorRect.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/map/movable_plateforme_sticky.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Script/scrip_niveau_isak.gd" type="Script" id=15]
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=5]
+0/name = "flor.png 0"
+0/texture = ExtResource( 11 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 6 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="main" type="Node2D" groups=["main"]]
+script = ExtResource( 10 )
+
+[node name="niveau" type="Node2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
+margin_left = -41.0
+margin_top = -33.0
+margin_right = 2342.0
+margin_bottom = 1294.0
+script = ExtResource( 13 )
+
+[node name="Box (alive)" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
+position = Vector2( 440, 154 )
+collision_layer = 3
+collision_mask = 3
+resurection_node_path = NodePath("../Lance-caisse")
+
+[node name="fontaine" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 7 )]
+position = Vector2( 1476, 1104 )
+scale = Vector2( 0.08, 0.08 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="bt_piege" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 5 )]
+position = Vector2( 576, 1144 )
+scale = Vector2( 0.1, 1 )
+
+[node name="bt_plateforme" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 5 )]
+position = Vector2( 832, 1144 )
+scale = Vector2( 0.1, 1 )
+
+[node name="bt_fin" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 5 )]
+position = Vector2( 1088, 1144 )
+scale = Vector2( 0.1, 1 )
+
+[node name="Lance-caisse" type="Sprite" parent="niveau"]
+position = Vector2( 440, 94 )
+scale = Vector2( 0.115, 0.1 )
+texture = ExtResource( 12 )
+
+[node name="Node2D" type="Node2D" parent="niveau" groups=["grp_change_color"]]
+position = Vector2( -48, 0 )
+scale = Vector2( 1.15, 1 )
+script = ExtResource( 15 )
+
+[node name="Tesla-polePetit" parent="niveau/Node2D" instance=ExtResource( 6 )]
+use_parent_material = true
+position = Vector2( 367.479, 808.261 )
+rotation = 1.57079
+scale = Vector2( 0.1, 0.097 )
+
+[node name="Tesla-polePetit2" parent="niveau/Node2D" instance=ExtResource( 6 )]
+use_parent_material = true
+position = Vector2( 1719.48, 806.522 )
+rotation = 4.71238
+scale = Vector2( 0.1, 0.097 )
+
+[node name="piege_horizontale_simple" parent="niveau/Node2D" instance=ExtResource( 8 )]
+use_parent_material = true
+position = Vector2( 480, 762 )
+scale = Vector2( 0.08, 0.08 )
+
+[node name="piege_horizontale_simple2" parent="niveau/Node2D" instance=ExtResource( 8 )]
+use_parent_material = true
+position = Vector2( 758, 762 )
+scale = Vector2( 0.08, 0.08 )
+
+[node name="piege_horizontale_simple3" parent="niveau/Node2D" instance=ExtResource( 8 )]
+use_parent_material = true
+position = Vector2( 1038, 762 )
+scale = Vector2( 0.08, 0.08 )
+
+[node name="piege_horizontale_simple4" parent="niveau/Node2D" instance=ExtResource( 8 )]
+use_parent_material = true
+position = Vector2( 1316, 762 )
+scale = Vector2( 0.08, 0.08 )
+
+[node name="piege_horizontale_simple5" parent="niveau/Node2D" instance=ExtResource( 8 )]
+use_parent_material = true
+position = Vector2( 1594, 762 )
+scale = Vector2( 0.08, 0.08 )
+
+[node name="porte_boite" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 14 )]
+position = Vector2( 608, 192 )
+scale = Vector2( 1, 4 )
+choose_collision_layer = 3
+
+[node name="arrivée" type="Position2D" parent="niveau/porte_boite"]
+position = Vector2( 0, -64 )
+
+[node name="enfant" type="Node2D" parent="niveau/porte_boite"]
+
+[node name="live" type="Node2D" parent="niveau"]
+
+[node name="porte_fin" parent="niveau/live" instance=ExtResource( 14 )]
+position = Vector2( 2016, 1056 )
+scale = Vector2( 1, 3 )
+
+[node name="enfant" type="Node2D" parent="niveau/live/porte_fin"]
+
+[node name="arrivée" type="Position2D" parent="niveau/live/porte_fin"]
+position = Vector2( 0, -64 )
+
+[node name="Echelle" parent="niveau/live" instance=ExtResource( 3 )]
+position = Vector2( 202, 902 )
+scale = Vector2( 0.2, 0.4 )
+
+[node name="live_TileMap" parent="niveau/live" instance=ExtResource( 9 )]
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 65536, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 131072, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 0, 0, 131097, 0, 0, 131098, 0, 0, 131099, 0, 0, 131100, 0, 0, 131101, 0, 0, 131102, 0, 0, 131103, 0, 0, 196608, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 196632, 0, 0, 196633, 0, 0, 196634, 0, 0, 196635, 0, 0, 196636, 0, 0, 196637, 0, 0, 196638, 0, 0, 196639, 0, 0, 262144, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262168, 0, 0, 262169, 0, 0, 262170, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262174, 0, 0, 262175, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 327707, 0, 0, 327708, 0, 0, 327709, 0, 0, 327710, 0, 0, 327711, 0, 0, 393216, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 393244, 0, 0, 393245, 0, 0, 393246, 0, 0, 393247, 0, 0, 458752, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 524288, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 524317, 0, 0, 524318, 0, 0, 524319, 0, 0, 589824, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 655360, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 720896, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720906, 0, 0, 720907, 0, 0, 720910, 0, 0, 720911, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 786432, 0, 0, 786436, 0, 0, 786463, 0, 0, 851968, 0, 0, 851999, 0, 0, 917504, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 917538, 0, 0, 917539, 0, 0, 983040, 0, 0, 983075, 0, 0, 1048576, 0, 0, 1048611, 0, 0, 1114112, 0, 0, 1114147, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0, 1179680, 0, 0, 1179681, 0, 0, 1179682, 0, 0, 1179683, 0, 0 )
+
+[node name="dead" type="Node2D" parent="niveau"]
+
+[node name="TileMap" type="TileMap" parent="niveau/dead"]
+tile_set = SubResource( 5 )
+collision_layer = 2
+collision_mask = 2
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 65536, 0, 0, 65567, 0, 0, 131072, 0, 0, 131103, 0, 0, 196608, 0, 0, 196639, 0, 0, 262144, 0, 0, 262175, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327711, 0, 0, 393216, 0, 0, 393247, 0, 0, 458752, 0, 0, 458783, 0, 0, 524288, 0, 0, 524319, 0, 0, 589824, 0, 0, 589855, 0, 0, 655360, 0, 0, 655391, 0, 0, 720896, 0, 0, 720927, 0, 0, 786432, 0, 0, 786463, 0, 0, 851968, 0, 0, 851999, 0, 0, 917504, 0, 0, 917535, 0, 0, 983040, 0, 0, 983071, 0, 0, 1048576, 0, 0, 1048607, 0, 0, 1114112, 0, 0, 1114143, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0 )
+
+[node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
+position = Vector2( 4, -240 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]
+position = Vector2( 374, 592 )
+scale = Vector2( 0.1, 0.1 )
+run_speed = 200
+jump_speed = -550
+vitesse_dechelage = 200
+
+[connection signal="change_color" from="." to="niveau/fontaine" method="_on_main_change_color"]
+[connection signal="pushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple" method="desactivation"]
+[connection signal="pushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple2" method="desactivation"]
+[connection signal="pushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple3" method="desactivation"]
+[connection signal="pushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple4" method="desactivation"]
+[connection signal="pushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple5" method="desactivation"]
+[connection signal="unpushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple" method="activation"]
+[connection signal="unpushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple2" method="activation"]
+[connection signal="unpushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple3" method="activation"]
+[connection signal="unpushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple4" method="activation"]
+[connection signal="unpushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple5" method="activation"]
+[connection signal="pushed" from="niveau/bt_plateforme" to="niveau/porte_boite" method="move_forward"]
+[connection signal="unpushed" from="niveau/bt_plateforme" to="niveau/porte_boite" method="move_backward"]
+[connection signal="pushed" from="niveau/bt_fin" to="niveau/live/porte_fin" method="move_forward"]
+[connection signal="unpushed" from="niveau/bt_fin" to="niveau/live/porte_fin" method="move_backward"]
+[connection signal="montage_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_montage_echelle"]
+[connection signal="pas_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_pas_echelle"]
