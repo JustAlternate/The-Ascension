@@ -8,6 +8,8 @@ var randompitch = 1.0
 export var font_size = 70
 export var flip_horizontal = false
 export var flip_vertical = false
+export var speed_between_letters = 0.1
+export var delay_before_speaking = 0
 
 export var autospeak = false
 
@@ -44,6 +46,8 @@ func _ready():
 
 func show_text(text):
 	
+	yield(get_tree().create_timer(delay_before_speaking),"timeout")
+	
 	if $Sprite.visible == false:
 		
 		$Label.show()
@@ -51,7 +55,7 @@ func show_text(text):
 		
 		for i in text:
 			randompitch = rand_range(0.8,1.2)
-			yield(get_tree().create_timer(.1),"timeout")
+			yield(get_tree().create_timer(speed_between_letters),"timeout")
 			$Label.text = $Label.text + i
 			$AudioStreamPlayer.play()
 		

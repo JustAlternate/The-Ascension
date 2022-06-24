@@ -270,7 +270,6 @@ z_index = -1
 position = Vector2( 70, 44 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 10 )
-frame = 1
 speed_scale = 0.1
 playing = true
 
@@ -278,6 +277,7 @@ playing = true
 position = Vector2( 972, 299 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 10 )
+frame = 1
 speed_scale = 0.1
 playing = true
 
@@ -310,32 +310,33 @@ frames = SubResource( 18 )
 position = Vector2( 330, 44 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 21 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 439, 45 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 21 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 802, 76 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 21 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 789, 298 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 21 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite10" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 612, 298 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 21 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite11" type="AnimatedSprite" parent="niveau/live/decor"]
@@ -406,7 +407,7 @@ position = Vector2( 0, -4.57764e-05 )
 position = Vector2( -112, 604 )
 collision_layer = 2
 collision_mask = 2
-speed = 450
+speed = 350
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
 position = Vector2( 118, 636 )

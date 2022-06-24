@@ -187,8 +187,9 @@ position = Vector2( 809, 532 )
 scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "Hello ! You are new right? I'm F1S-T Bot. You can use the arrows keys to move and E to interact with objects and people. Good luck!"
 skin = 6
-font_size = 60
+font_size = 65
 flip_horizontal = true
+delay_before_speaking = 1
 autospeak = true
 
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
@@ -233,6 +234,7 @@ position = Vector2( 780, 31 )
 scale = Vector2( 0.0876465, 0.0921631 )
 z_index = -1
 frames = SubResource( 13 )
+frame = 1
 playing = true
 
 [node name="ventilo2" type="AnimatedSprite" parent="niveau"]
@@ -262,6 +264,7 @@ position = Vector2( 157, 30 )
 scale = Vector2( 0.0820923, 0.0906677 )
 z_index = -1
 frames = SubResource( 13 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="niveau"]

@@ -175,7 +175,7 @@ margin_bottom = 1015.0
 script = ExtResource( 13 )
 
 [node name="fontaine" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 7 )]
-position = Vector2( 127.143, 145.714 )
+position = Vector2( 127.143, 150 )
 scale = Vector2( 0.07, 0.07 )
 collision_layer = 3
 collision_mask = 3
@@ -348,13 +348,11 @@ frames = SubResource( 12 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/deco"]
 position = Vector2( 2842.86, 2800 )
 frames = SubResource( 15 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="niveau/deco"]
 position = Vector2( 4485.71, 2814.29 )
 frames = SubResource( 15 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="niveau/deco"]

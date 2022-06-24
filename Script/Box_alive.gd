@@ -56,6 +56,6 @@ func detruire():
 	global_position = Vector2(-100,-100)
 	yield(get_tree().create_timer(vitesse_resurection),"timeout")
 	global_position = resurection_node.global_position
-	$AnimatedSprite.animation = randi()%5
+	$AnimatedSprite.animation = str(randi()%5)
 	
 	
