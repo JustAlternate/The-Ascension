@@ -93,7 +93,6 @@ func _on_Echelle_pas_echelle():
 
 # Pour l'instant permet de pousser la boîte
 func kinematic_physics():
-	print(top_collide)
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
 		if collision.collider is MovableBox:
