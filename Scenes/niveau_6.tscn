@@ -56,7 +56,10 @@ script = ExtResource( 9 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 19 )
 
-[node name="ColorRect" type="ColorRect" parent="niveau" groups=["grp_change_color"]]
+[node name="Node2D" type="Node2D" parent="niveau"]
+z_index = -2
+
+[node name="ColorRect" type="ColorRect" parent="niveau/Node2D" groups=["grp_change_color"]]
 visible = false
 margin_left = -56.0
 margin_top = -94.0
@@ -105,15 +108,11 @@ scale = Vector2( 0.2, 0.28 )
 position = Vector2( 110, 1138 )
 rotation = 5.07036e-06
 scale = Vector2( 0.1, 0.1 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="Button_levier2" parent="niveau/live" groups=["grp_change_color"] instance=ExtResource( 1 )]
 position = Vector2( 1490, 1140 )
 rotation = 5.07036e-06
 scale = Vector2( 0.1, 0.1 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="Button" parent="niveau/live" instance=ExtResource( 14 )]
 position = Vector2( 798, 1148 )

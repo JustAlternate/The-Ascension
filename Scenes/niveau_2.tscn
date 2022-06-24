@@ -258,14 +258,12 @@ z_index = -1
 position = Vector2( 148, 104 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="aeration2" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 1244, 104 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="armoire" type="Sprite" parent="niveau/live/deco"]
@@ -293,13 +291,13 @@ texture = ExtResource( 21 )
 position = Vector2( 1888, 116 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 18 )
-frame = 1
 playing = true
 
 [node name="ventilateur2" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 288, 100 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 18 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -307,6 +305,7 @@ playing = true
 position = Vector2( 1380, 98.0001 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 18 )
+frame = 1
 speed_scale = 2.0
 playing = true
 
@@ -314,6 +313,7 @@ playing = true
 position = Vector2( 1232, 1028 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 22 )
+frame = 1
 playing = true
 
 [node name="fenetre" type="AnimatedSprite" parent="niveau/live/deco"]

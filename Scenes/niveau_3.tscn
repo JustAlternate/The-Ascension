@@ -28,35 +28,6 @@
 [ext_resource path="res://Assets/Sprites/deco/plante.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Sprites/deco/distributeur-d'eau.png" type="Texture" id=27]
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-
-[sub_resource type="TileSet" id=5]
-0/name = "flor.png 0"
-0/texture = ExtResource( 11 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 64, 64 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 6 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 6 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 99.625, 134.5 )
-
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 20 )
@@ -210,6 +181,35 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=5]
+0/name = "flor.png 0"
+0/texture = ExtResource( 11 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 6 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 99.625, 134.5 )
+
 [node name="main" type="Node2D" groups=["main"]]
 script = ExtResource( 9 )
 
@@ -260,6 +260,118 @@ scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "this printer is still broken"
 font_size = 120
 flip_horizontal = true
+autospeak = true
+
+[node name="decor" type="Node2D" parent="niveau/live"]
+scale = Vector2( 2, 2 )
+z_index = -1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 70, 44 )
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 10 )
+frame = 1
+speed_scale = 0.1
+playing = true
+
+[node name="AnimatedSprite17" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 972, 299 )
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 10 )
+speed_scale = 0.1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 98, 317 )
+scale = Vector2( 0.04, 0.04 )
+frames = SubResource( 12 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 614, 188 )
+scale = Vector2( 0.04, 0.04 )
+frames = SubResource( 12 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 955, 167 )
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 14 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 728, 186 )
+scale = Vector2( 0.14624, 0.100586 )
+frames = SubResource( 16 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 856, 192 )
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 18 )
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 330, 44 )
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 21 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 439, 45 )
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 21 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 802, 76 )
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 21 )
+playing = true
+
+[node name="AnimatedSprite18" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 789, 298 )
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 21 )
+playing = true
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 612, 298 )
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 21 )
+playing = true
+
+[node name="AnimatedSprite11" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 168, 194 )
+scale = Vector2( 0.115, 0.115 )
+frames = SubResource( 23 )
+
+[node name="AnimatedSprite12" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 437, 465 )
+scale = Vector2( 0.115, 0.115 )
+frames = SubResource( 25 )
+
+[node name="AnimatedSprite13" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 195.55, 464.05 )
+scale = Vector2( 0.115, 0.115 )
+frames = SubResource( 27 )
+
+[node name="AnimatedSprite15" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 669, 467 )
+scale = Vector2( 0.115, 0.115 )
+frames = SubResource( 27 )
+
+[node name="AnimatedSprite14" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 417, 196 )
+scale = Vector2( 0.115, 0.115 )
+frames = SubResource( 29 )
+
+[node name="AnimatedSprite16" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 882, 468 )
+scale = Vector2( 0.115, 0.115 )
+frames = SubResource( 29 )
+
+[node name="AnimatedSprite19" type="AnimatedSprite" parent="niveau/live/decor"]
+position = Vector2( 786, 172 )
+scale = Vector2( 0.07, 0.07 )
+frames = SubResource( 31 )
 
 [node name="dead" type="Node2D" parent="niveau"]
 visible = false
@@ -353,6 +465,7 @@ rotation = -4.54747e-13
 gravity = 170
 resurection_node_path = NodePath("../live/chieur_de_caisse")
 vitesse_resurection = 1.0
+box_skin = "2"
 
 [node name="Button_levier" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 1 )]
 position = Vector2( 590, 1140 )
@@ -379,116 +492,6 @@ scale = Vector2( 0.1, 0.1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
 position = Vector2( 2222, 720 )
 shape = SubResource( 7 )
-
-[node name="decor" type="Node2D" parent="."]
-z_index = -1
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="decor"]
-position = Vector2( 70, 44 )
-scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 10 )
-frame = 1
-speed_scale = 0.1
-playing = true
-
-[node name="AnimatedSprite17" type="AnimatedSprite" parent="decor"]
-position = Vector2( 972, 299 )
-scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 10 )
-speed_scale = 0.1
-playing = true
-
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="decor"]
-position = Vector2( 98, 317 )
-scale = Vector2( 0.04, 0.04 )
-frames = SubResource( 12 )
-
-[node name="AnimatedSprite4" type="AnimatedSprite" parent="decor"]
-position = Vector2( 614, 188 )
-scale = Vector2( 0.04, 0.04 )
-frames = SubResource( 12 )
-
-[node name="AnimatedSprite3" type="AnimatedSprite" parent="decor"]
-position = Vector2( 955, 167 )
-scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 14 )
-
-[node name="AnimatedSprite5" type="AnimatedSprite" parent="decor"]
-position = Vector2( 728, 186 )
-scale = Vector2( 0.14624, 0.100586 )
-frames = SubResource( 16 )
-
-[node name="AnimatedSprite6" type="AnimatedSprite" parent="decor"]
-position = Vector2( 856, 192 )
-scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 18 )
-
-[node name="AnimatedSprite7" type="AnimatedSprite" parent="decor"]
-position = Vector2( 330, 44 )
-scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 21 )
-frame = 1
-playing = true
-
-[node name="AnimatedSprite8" type="AnimatedSprite" parent="decor"]
-position = Vector2( 439, 45 )
-scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 21 )
-frame = 1
-playing = true
-
-[node name="AnimatedSprite9" type="AnimatedSprite" parent="decor"]
-position = Vector2( 802, 76 )
-scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 21 )
-playing = true
-
-[node name="AnimatedSprite18" type="AnimatedSprite" parent="decor"]
-position = Vector2( 789, 298 )
-scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 21 )
-playing = true
-
-[node name="AnimatedSprite10" type="AnimatedSprite" parent="decor"]
-position = Vector2( 612, 298 )
-scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 21 )
-playing = true
-
-[node name="AnimatedSprite11" type="AnimatedSprite" parent="decor"]
-position = Vector2( 168, 194 )
-scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 23 )
-
-[node name="AnimatedSprite12" type="AnimatedSprite" parent="decor"]
-position = Vector2( 437, 465 )
-scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 25 )
-
-[node name="AnimatedSprite13" type="AnimatedSprite" parent="decor"]
-position = Vector2( 195.55, 464.05 )
-scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 27 )
-
-[node name="AnimatedSprite15" type="AnimatedSprite" parent="decor"]
-position = Vector2( 669, 467 )
-scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 27 )
-
-[node name="AnimatedSprite14" type="AnimatedSprite" parent="decor"]
-position = Vector2( 417, 196 )
-scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 29 )
-
-[node name="AnimatedSprite16" type="AnimatedSprite" parent="decor"]
-position = Vector2( 882, 468 )
-scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 29 )
-
-[node name="AnimatedSprite19" type="AnimatedSprite" parent="decor"]
-position = Vector2( 786, 172 )
-scale = Vector2( 0.07, 0.07 )
-frames = SubResource( 31 )
 
 [connection signal="pushed" from="niveau/live/Button_tangible" to="niveau/dead/movable_plateforme3" method="move_forward"]
 [connection signal="unpushed" from="niveau/live/Button_tangible" to="niveau/dead/movable_plateforme3" method="move_backward"]
