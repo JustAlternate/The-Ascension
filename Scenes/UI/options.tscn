@@ -104,9 +104,9 @@ custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area_highlight = SubResource( 6 )
 custom_styles/grabber_area = SubResource( 7 )
 min_value = 0.001
-max_value = 1.0
+max_value = 1.5
 step = 0.001
-value = 0.5
+value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -138,9 +138,9 @@ custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area_highlight = SubResource( 6 )
 custom_styles/grabber_area = SubResource( 7 )
 min_value = 0.001
-max_value = 1.0
+max_value = 1.5
 step = 0.001
-value = 0.5
+value = 1.0
 
 [node name="Button2" type="Button" parent="."]
 margin_left = 8.0
@@ -184,9 +184,9 @@ custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area_highlight = SubResource( 6 )
 custom_styles/grabber_area = SubResource( 7 )
 min_value = 0.001
-max_value = 1.0
+max_value = 1.5
 step = 0.001
-value = 0.5
+value = 1.0
 
 [connection signal="value_changed" from="music/musicVolume" to="." method="_on_musicVolume_value_changed"]
 [connection signal="value_changed" from="sfx/sfxVolume" to="." method="_on_sfxVolume_value_changed"]
