@@ -13,6 +13,7 @@ var dif
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print((choose_collision_layer))
 	$plateforme.set_collision_layer(choose_collision_layer)
 	$plateforme.set_collision_mask(choose_collision_layer)
 	$plateforme.global_position = $"départ".global_position
