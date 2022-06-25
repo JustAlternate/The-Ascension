@@ -48,7 +48,7 @@ __meta__ = {
 }
 
 [node name="Credits" type="Node2D" parent="."]
-position = Vector2( 110, 532 )
+position = Vector2( 129, 532 )
 
 [node name="Line1" type="Label" parent="Credits"]
 anchor_left = 0.5
@@ -84,12 +84,12 @@ Pascal Isak : Lead Developpeur / Sound Designer
 
 Lepin Sammuel : Artist
 
-Remerciements :
+Thanks to :
 
 - Trehoust Emmanuelle
 - Polytech Grenoble
 
-Testeurs :
+Testers :
 
 - Becaert Elisa
 - Lepez Gomez Andréa
@@ -108,9 +108,10 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 0.999023
+anchor_bottom = 0.005
 margin_bottom = 204.0
 custom_fonts/font = SubResource( 1 )
-text = "The Ascension"
+text = "Ascension"
 align = 1
 valign = 1
 __meta__ = {

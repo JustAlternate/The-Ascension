@@ -21,12 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Ascension"
-run/main_scene="res://Scenes/UI/menu_main.tscn"
+run/main_scene="res://Scenes/UI/intro_menu.tscn"
+boot_splash/image="res://Assets/loading_screen.png"
 config/icon="res://icon.png"
 
 [autoload]
 
 Music="*res://Scenes/UI/music.tscn"
+GlobalVariables="*res://Scenes/UI/global_variables.gd"
 
 [display]
 

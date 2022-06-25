@@ -7,17 +7,15 @@ var lowpassfilter = AudioServer.get_bus_effect(music_bus_idx,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
 	randomize()
 	lowpassfilter.cutoff_hz = 20000
 	AudioServer.set_bus_effect_enabled(music_bus_idx,1,false)
-	
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"), log(0.5)*20)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), log(0.5)*20)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), log(0.5)*20)
+
 
 
 func _process(_delta):
-	if $Sprite.position.y > -1700:
+	if $Sprite.position.y > -1320:
 		$Sprite.position.y -= 1
 		
 func _on_Button_button_up():
