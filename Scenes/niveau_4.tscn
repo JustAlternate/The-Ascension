@@ -327,13 +327,11 @@ frames = SubResource( 12 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 2842.86, 2800 )
 frames = SubResource( 15 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 4485.71, 2814.29 )
 frames = SubResource( 15 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="niveau/live/deco"]
