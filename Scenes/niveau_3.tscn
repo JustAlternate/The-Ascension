@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Scenes/map/Button_levier.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/movable_plateforme_sticky.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://Assets/Sprites/deco/canape.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Sprites/deco/plante.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Sprites/deco/distributeur-d'eau.png" type="Texture" id=27]
+[ext_resource path="res://Scenes/map/symbole_plateform.tscn" type="PackedScene" id=28]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -209,9 +210,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 99.625, 134.5 )
 
-[node name="main" type="Node2D" groups=[
-"main",
-]]
+[node name="main" type="Node2D" groups=["main"]]
 script = ExtResource( 9 )
 
 [node name="niveau" type="Node2D" parent="."]
@@ -222,9 +221,7 @@ script = ExtResource( 19 )
 position = Vector2( -56, -94 )
 z_index = -2
 
-[node name="ColorRect" type="ColorRect" parent="niveau/Node2D" groups=[
-"grp_change_color",
-]]
+[node name="ColorRect" type="ColorRect" parent="niveau/Node2D" groups=["grp_change_color"]]
 margin_right = 2650.0
 margin_bottom = 1610.0
 script = ExtResource( 8 )
@@ -376,7 +373,6 @@ scale = Vector2( 0.07, 0.07 )
 frames = SubResource( 24 )
 
 [node name="dead" type="Node2D" parent="niveau"]
-visible = false
 
 [node name="TileMap" type="TileMap" parent="niveau/dead"]
 tile_set = SubResource( 26 )
@@ -393,9 +389,7 @@ scale = Vector2( 0.1, 0.1 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="movable_plateforme3" parent="niveau/dead" groups=[
-"grp_change_color",
-] instance=ExtResource( 2 )]
+[node name="movable_plateforme3" parent="niveau/dead" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 1504, 550 )
 scale = Vector2( 1, 4 )
 choose_collision_layer = 2
@@ -406,30 +400,28 @@ position = Vector2( -0.00012207, -52.5 )
 [node name="enfant" type="Node2D" parent="niveau/dead/movable_plateforme3"]
 position = Vector2( 0, -4.57764e-05 )
 
-[node name="Spirit" parent="niveau" groups=[
-"playable",
-] instance=ExtResource( 4 )]
+[node name="AnimatedSprite" parent="niveau/dead/movable_plateforme3/enfant" instance=ExtResource( 28 )]
+rotation = -1.57079
+scale = Vector2( 0.03, 0.05 )
+
+[node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( -112, 604 )
 collision_layer = 2
 collision_mask = 2
 speed = 350
 
-[node name="body" parent="niveau" groups=[
-"playable",
-"tangible",
-] instance=ExtResource( 7 )]
+[node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
 position = Vector2( 118, 636 )
 scale = Vector2( 0.1, 0.1 )
 run_speed = 200
 jump_speed = -700
 vitesse_dechelage = 100
 
-[node name="movable_plateforme2" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 2 )]
+[node name="movable_plateforme2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 423.999, 736 )
 scale = Vector2( 5, 1 )
 vitesse = 30
+choose_collision_layer = 3
 
 [node name="arrivée" type="Position2D" parent="niveau/movable_plateforme2"]
 position = Vector2( 176.8, -3.00407e-05 )
@@ -443,41 +435,36 @@ scale = Vector2( 0.967678, 0.846774 )
 texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
-[node name="fontaine" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 6 )]
+[node name="AnimatedSprite" parent="niveau/movable_plateforme2/enfant" instance=ExtResource( 28 )]
+scale = Vector2( 0.02, 0.05 )
+
+[node name="fontaine" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 6 )]
 position = Vector2( 294, 1092 )
 scale = Vector2( 0.1, 0.1 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="movable_plateforme4" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 2 )]
+[node name="porte fin" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 2017, 692.5 )
 scale = Vector2( 1, 3 )
+choose_collision_layer = 3
 
-[node name="arrivée" type="Position2D" parent="niveau/movable_plateforme4"]
+[node name="arrivée" type="Position2D" parent="niveau/porte fin"]
 position = Vector2( -0.00012207, -73.833 )
 
-[node name="enfant" type="Node2D" parent="niveau/movable_plateforme4"]
+[node name="enfant" type="Node2D" parent="niveau/porte fin"]
 
-[node name="Sprite2" type="Sprite" parent="niveau/movable_plateforme4/enfant"]
-use_parent_material = true
-position = Vector2( 0.00012207, -141.833 )
-scale = Vector2( 1, 3.42708 )
-texture = ExtResource( 10 )
-
-[node name="Sprite" type="Sprite" parent="niveau/movable_plateforme4/enfant"]
-position = Vector2( 29.1394, -14.9209 )
-scale = Vector2( 0.853833, 2.71166 )
+[node name="Sprite" type="Sprite" parent="niveau/porte fin/enfant"]
+position = Vector2( 29.1394, 14.4445 )
+scale = Vector2( 0.853833, 0.940823 )
 texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
-[node name="Box (alive)" parent="niveau" groups=[
-"area_tue",
-"tangible",
-] instance=ExtResource( 13 )]
+[node name="AnimatedSprite" parent="niveau/porte fin/enfant" instance=ExtResource( 28 )]
+rotation = -1.57079
+scale = Vector2( 0.03, 0.05 )
+
+[node name="Box (alive)" parent="niveau" groups=["area_tue", "tangible"] instance=ExtResource( 13 )]
 position = Vector2( 750, 212 )
 rotation = -4.54747e-13
 gravity = 170
@@ -485,9 +472,7 @@ resurection_node_path = NodePath("../live/chieur_de_caisse")
 vitesse_resurection = 1.0
 box_skin = "2"
 
-[node name="Button_levier" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 1 )]
+[node name="Button_levier" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 1 )]
 position = Vector2( 590, 1140 )
 rotation = 5.07036e-06
 scale = Vector2( 0.1, 0.1 )
@@ -498,9 +483,7 @@ collision_mask = 3
 position = Vector2( 1098, 1102 )
 scale = Vector2( 0.1, 0.1 )
 
-[node name="piege_vertical_centre" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 5 )]
+[node name="piege_vertical_centre" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 5 )]
 position = Vector2( 1096, 992 )
 scale = Vector2( 0.13, 0.1 )
 
@@ -517,8 +500,8 @@ shape = SubResource( 27 )
 
 [connection signal="pushed" from="niveau/live/Button_tangible" to="niveau/dead/movable_plateforme3" method="move_forward"]
 [connection signal="unpushed" from="niveau/live/Button_tangible" to="niveau/dead/movable_plateforme3" method="move_backward"]
-[connection signal="pushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme4" method="move_forward"]
-[connection signal="unpushed" from="niveau/live/Button_tangible2" to="niveau/movable_plateforme4" method="move_backward"]
+[connection signal="pushed" from="niveau/live/Button_tangible2" to="niveau/porte fin" method="move_forward"]
+[connection signal="unpushed" from="niveau/live/Button_tangible2" to="niveau/porte fin" method="move_backward"]
 [connection signal="montage_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_montage_echelle"]
 [connection signal="pas_echelle" from="niveau/live/Echelle" to="niveau/body" method="_on_Echelle_pas_echelle"]
 [connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/piege_vertical_centre" method="_on_Button_levier2_desactivated"]
