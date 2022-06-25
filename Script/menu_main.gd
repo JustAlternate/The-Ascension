@@ -16,7 +16,7 @@ func _ready():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), log(0.5)*20)
 
 
-func _process(delta):
+func _process(_delta):
 	if $Sprite.position.y > -1700:
 		$Sprite.position.y -= 1
 		

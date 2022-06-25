@@ -56,12 +56,12 @@ func revive():
 	$ReviveSFX.play()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if alive:
 		global_position = Vector2(-100,-100)
 	else:
 		get_input()
-		move_and_slide(velocity)
+		velocity = move_and_slide(velocity)
 		move_box()
 
 

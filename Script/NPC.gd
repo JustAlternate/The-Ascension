@@ -68,7 +68,7 @@ func show_text(text):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if player_in_range:
 		if Input.is_action_just_pressed("interact"):
 			show_text(dialogue_npc)

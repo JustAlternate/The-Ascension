@@ -9,7 +9,7 @@ extends Node
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	$Credits.global_position.y -= 0.4
 
 func _on_Button2_button_up():

@@ -27,35 +27,6 @@
 [ext_resource path="res://Scenes/map/NPC.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scenes/map/symbole_plateform.tscn" type="PackedScene" id=26]
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-
-[sub_resource type="TileSet" id=5]
-0/name = "flor.png 0"
-0/texture = ExtResource( 11 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 64, 64 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 6 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 6 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 57.25, 134.5 )
-
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 3 )
@@ -157,6 +128,35 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=5]
+0/name = "flor.png 0"
+0/texture = ExtResource( 11 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 6 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 57.25, 134.5 )
+
 [node name="main3" type="Node2D" groups=["main"]]
 script = ExtResource( 10 )
 
@@ -180,10 +180,74 @@ script = ExtResource( 13 )
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65551, 0, 0, 131072, 0, 0, 131087, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
 
 [node name="NPC" parent="niveau/live" instance=ExtResource( 25 )]
-position = Vector2( 391, 338 )
+position = Vector2( 391, 347 )
 scale = Vector2( 0.15, 0.15 )
-dialogue_npc = "I've been stuck here for a week because of this trap that prevents me from enjoying this incredible sofa!... "
-skin = 3
+dialogue_npc = "You can use the fontain to resurect, only if your body is no more in danger !"
+skin = 4
+font_size = 80
+flip_horizontal = true
+
+[node name="deco" type="Node2D" parent="niveau/live"]
+z_index = -1
+
+[node name="canzap" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 564, 511 )
+scale = Vector2( 0.200317, 0.172592 )
+z_index = -1
+frames = SubResource( 9 )
+
+[node name="eau" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 644, 488 )
+scale = Vector2( 0.118896, 0.116943 )
+z_index = -1
+frames = SubResource( 11 )
+
+[node name="Plante" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 735, 487 )
+scale = Vector2( 0.134, 0.134 )
+frames = SubResource( 13 )
+
+[node name="fenette" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 419, 273 )
+scale = Vector2( 0.134, 0.134 )
+z_index = -1
+frames = SubResource( 15 )
+
+[node name="Ventilo" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 1052, 121 )
+scale = Vector2( 0.075, 0.075 )
+frames = SubResource( 18 )
+frame = 1
+playing = true
+offset = Vector2( -1575, -138 )
+
+[node name="Ventilo2" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 986, 121 )
+scale = Vector2( 0.075, 0.075 )
+frames = SubResource( 18 )
+playing = true
+offset = Vector2( -1575, -138 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 669, 275 )
+scale = Vector2( 0.134, 0.134 )
+frames = SubResource( 20 )
+
+[node name="ventilation" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 128, 81 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 23 )
+frame = 1
+speed_scale = 0.05
+playing = true
+
+[node name="Ventilo3" type="AnimatedSprite" parent="niveau/live/deco"]
+position = Vector2( 922, 121 )
+scale = Vector2( 0.075, 0.075 )
+frames = SubResource( 18 )
+frame = 1
+playing = true
+offset = Vector2( -1575, -138 )
 
 [node name="dead" type="Node2D" parent="niveau"]
 
@@ -221,19 +285,6 @@ position = Vector2( 162, 344 )
 scale = Vector2( 0.065, 0.065 )
 collision_layer = 3
 collision_mask = 3
-
-[node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
-position = Vector2( 51, -100 )
-scale = Vector2( 0.65, 0.65 )
-collision_layer = 2
-collision_mask = 2
-speed = 350
-
-[node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]
-position = Vector2( 86, 336 )
-scale = Vector2( 0.07, 0.07 )
-run_speed = 320
-jump_speed = -700
 
 [node name="piege_horizontale_simple" parent="niveau" groups=["grp_change_color", "grp_piege"] instance=ExtResource( 8 )]
 position = Vector2( 262, 340 )
@@ -291,66 +342,18 @@ scale = Vector2( 0.05, 0.05 )
 [node name="Tesla-poleSeul" parent="niveau/Node2D" instance=ExtResource( 21 )]
 use_parent_material = false
 
-[node name="deco" type="Node2D" parent="niveau"]
-z_index = -1
+[node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
+position = Vector2( 51, -100 )
+scale = Vector2( 0.65, 0.65 )
+collision_layer = 2
+collision_mask = 2
+speed = 350
 
-[node name="canzap" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 564, 511 )
-scale = Vector2( 0.200317, 0.172592 )
-z_index = -1
-frames = SubResource( 9 )
-
-[node name="eau" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 644, 488 )
-scale = Vector2( 0.118896, 0.116943 )
-z_index = -1
-frames = SubResource( 11 )
-
-[node name="Plante" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 735, 487 )
-scale = Vector2( 0.134, 0.134 )
-frames = SubResource( 13 )
-
-[node name="fenette" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 419, 273 )
-scale = Vector2( 0.134, 0.134 )
-z_index = -1
-frames = SubResource( 15 )
-
-[node name="Ventilo" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 1052, 121 )
-scale = Vector2( 0.075, 0.075 )
-frames = SubResource( 18 )
-playing = true
-offset = Vector2( -1575, -138 )
-
-[node name="Ventilo2" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 986, 121 )
-scale = Vector2( 0.075, 0.075 )
-frames = SubResource( 18 )
-frame = 1
-playing = true
-offset = Vector2( -1575, -138 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 669, 275 )
-scale = Vector2( 0.134, 0.134 )
-frames = SubResource( 20 )
-
-[node name="ventilation" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 128, 81 )
-scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 23 )
-frame = 1
-speed_scale = 0.05
-playing = true
-
-[node name="Ventilo3" type="AnimatedSprite" parent="niveau/deco"]
-position = Vector2( 922, 121 )
-scale = Vector2( 0.075, 0.075 )
-frames = SubResource( 18 )
-playing = true
-offset = Vector2( -1575, -138 )
+[node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]
+position = Vector2( 86, 336 )
+scale = Vector2( 0.07, 0.07 )
+run_speed = 320
+jump_speed = -700
 
 [connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/piege_horizontale_simple" method="_on_Button_levier_activated"]
 [connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/Node2D/piege_horizontale_simple" method="activation"]

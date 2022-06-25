@@ -44,7 +44,7 @@ func get_input():
 
 			velocity.y = jump_speed
 			if not sur_echelle:
-				$AnimatedSprite.animation = 'saut'
+				$AnimatedSprite.animation = 'saut2'
 		
 		elif right:
 			
@@ -143,13 +143,14 @@ func revive():
 
 # booléens pour savoir si le joueur risque d'être écrasé
 
-func _on_bottom_area_entered(area):
+func _on_bottom_area_entered(_area):
 	bottom_collide += 1
+	
 func _on_bottom_body_entered(body):
 	if body != self:
 		bottom_collide += 1
 		
-func _on_bottom_area_exited(area):
+func _on_bottom_area_exited(_area):
 	bottom_collide -= 1
 func _on_bottom_body_exited(body):
 	if body != self:

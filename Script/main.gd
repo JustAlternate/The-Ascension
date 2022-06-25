@@ -1,6 +1,6 @@
 extends Node2D
 
-signal change_color 
+#signal change_color 
 export var state = 1 # 0 = dead, 1 = alive
 var backup_position 
 
@@ -57,11 +57,6 @@ func dont_revive():
 func death():
 	if state == 1:
 		change_state()
-
-func _input(event):
-	if event.is_action_pressed("test"):
-		change_state()
-
 
 func _on_piege_horizontale_simple_death():
 	change_state()

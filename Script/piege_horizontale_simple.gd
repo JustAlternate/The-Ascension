@@ -5,7 +5,7 @@ extends Area2D
 # var a = 2
 # var b = "text"
 
-signal death
+#signal death
 
 var body_in = false
 export var activate = true

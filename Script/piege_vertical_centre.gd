@@ -1,7 +1,7 @@
 extends Node2D
 
 
-signal death
+#signal death
 
 export var activate = true
 

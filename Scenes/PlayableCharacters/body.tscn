@@ -66,6 +66,50 @@ region = Rect2( 0, 0, 64, 64 )
 atlas = ExtResource( 4 )
 region = Rect2( 0, 64, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=99]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 64, 64, 64 )
+
 [sub_resource type="AtlasTexture" id=67]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 64, 64 )
@@ -114,74 +158,25 @@ region = Rect2( 64, 192, 64, 64 )
 atlas = ExtResource( 3 )
 region = Rect2( 128, 192, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=99]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 64, 64 )
-
 [sub_resource type="AtlasTexture" id=81]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=82]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=83]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=84]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 64, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=85]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 128, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=59]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=60]
-atlas = ExtResource( 12 )
-region = Rect2( 64, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=61]
-atlas = ExtResource( 12 )
-region = Rect2( 128, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=62]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=63]
-atlas = ExtResource( 12 )
-region = Rect2( 64, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=64]
-atlas = ExtResource( 12 )
-region = Rect2( 128, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=65]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 128, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=66]
-atlas = ExtResource( 12 )
-region = Rect2( 64, 128, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=86]
-atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=87]
-atlas = ExtResource( 13 )
-region = Rect2( 0, 64, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -195,34 +190,34 @@ animations = [ {
 "name": "pousse",
 "speed": 4.0
 }, {
+"frames": [ SubResource( 99 ) ],
+"loop": true,
+"name": "mort",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ) ],
+"loop": true,
+"name": "echelle",
+"speed": 4.0
+}, {
+"frames": [ SubResource( 86 ), SubResource( 87 ) ],
+"loop": false,
+"name": "saut2",
+"speed": 4.0
+}, {
 "frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ) ],
 "loop": true,
 "name": "course",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 99 ) ],
-"loop": true,
-"name": "mort",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ) ],
 "loop": true,
 "name": "saut",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ) ],
-"loop": true,
-"name": "echelle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 86 ), SubResource( 87 ) ],
-"loop": true,
-"name": "saut2",
-"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 301.472, 674.068 )
+extents = Vector2( 301.472, 633.333 )
 
 [sub_resource type="RectangleShape2D" id=44]
 extents = Vector2( 266.667, 25.0003 )
@@ -236,7 +231,7 @@ format = 1
 stereo = true
 
 [sub_resource type="RectangleShape2D" id=55]
-extents = Vector2( 154.479, 497.5 )
+extents = Vector2( 154.479, 600 )
 
 [node name="Node2D" type="KinematicBody2D"]
 scale = Vector2( 0.03, 0.03 )
@@ -245,25 +240,26 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 30, 30 )
 frames = SubResource( 1 )
-animation = "mort"
+animation = "pousse"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -5.84299, 3.56323 )
+position = Vector2( -5.84299, -3.97364e-06 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 13 )
 
 [node name="bottom" type="Area2D" parent="."]
 position = Vector2( 0, 660 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom"]
-position = Vector2( 0, 0.000671387 )
+position = Vector2( 0, -33.3325 )
 shape = SubResource( 44 )
 
 [node name="top" type="Area2D" parent="."]
 position = Vector2( 0, -650 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
-position = Vector2( 0, -0.000610352 )
+position = Vector2( 0, 33.3327 )
 shape = SubResource( 45 )
 
 [node name="DeathSoundEffect" type="AudioStreamPlayer2D" parent="."]
@@ -297,7 +293,8 @@ bus = "Step"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pousse"]
 modulate = Color( 0.984314, 0.984314, 0.984314, 1 )
 self_modulate = Color( 0.917647, 0.345098, 0.345098, 1 )
-position = Vector2( 500, 0 )
+position = Vector2( 466.666, -2.38419e-05 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 55 )
 
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
