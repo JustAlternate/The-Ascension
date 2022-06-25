@@ -11,6 +11,9 @@ func _ready():
 	$music/musicVolume.set_value(GlobalVariables.music_volume)
 	$sfx/sfxVolume.set_value(GlobalVariables.sfx_volume)
 	$master/masterVolume.set_value(GlobalVariables.master_volume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"), log(GlobalVariables.music_volume) * 20)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), log(GlobalVariables.sfx_volume) * 20)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), log(GlobalVariables.master_volume) * 20)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
