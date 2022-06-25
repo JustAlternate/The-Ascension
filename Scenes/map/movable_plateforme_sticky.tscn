@@ -22,7 +22,18 @@ use_parent_material = true
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="plateforme"]
+[node name="colision up" type="CollisionShape2D" parent="plateforme"]
+rotation = -3.14159
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="colision left" type="CollisionShape2D" parent="plateforme"]
+rotation = -1.5708
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="colision right" type="CollisionShape2D" parent="plateforme"]
+rotation = 1.5708
 shape = SubResource( 1 )
 one_way_collision = true
 
@@ -35,7 +46,6 @@ frames = SubResource( 2 )
 [node name="Area_shape" type="CollisionShape2D" parent="plateforme/Area2D"]
 position = Vector2( 0, -33 )
 shape = SubResource( 1 )
-one_way_collision = true
 
 [node name="départ" type="Position2D" parent="."]
 
