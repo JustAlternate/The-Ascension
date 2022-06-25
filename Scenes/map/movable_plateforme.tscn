@@ -3,10 +3,10 @@
 [ext_resource path="res://Script/movable_plateforme.gd" type="Script" id=1]
 [ext_resource path="res://Assets/map/live/flor.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -21,11 +21,12 @@ script = ExtResource( 1 )
 use_parent_material = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plateforme"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
+one_way_collision = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="plateforme"]
 use_parent_material = true
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 
 [node name="départ" type="Position2D" parent="."]
 

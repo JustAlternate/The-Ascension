@@ -28,44 +28,88 @@
 [ext_resource path="res://Assets/Sprites/deco/plante.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Sprites/deco/distributeur-d'eau.png" type="Texture" id=27]
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 0, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 0, 512, 512, 512 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 33 ), SubResource( 34 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 24 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 35 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 22 )
 region = Rect2( 0, 0, 2048, 2048 )
 
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 25 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 21 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 13 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -73,8 +117,8 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 25 )
-region = Rect2( 0, 0, 2048, 2048 )
+atlas = ExtResource( 23 )
+region = Rect2( 2048, 4096, 2048, 2048 )
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
@@ -86,7 +130,7 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 26 )
+atlas = ExtResource( 23 )
 region = Rect2( 0, 2048, 2048, 2048 )
 
 [sub_resource type="SpriteFrames" id=18]
@@ -99,91 +143,47 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 21 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 21 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="SpriteFrames" id=21]
-animations = [ {
-"frames": [ SubResource( 19 ), SubResource( 20 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 23 )
-region = Rect2( 2048, 4096, 2048, 2048 )
-
-[sub_resource type="SpriteFrames" id=23]
-animations = [ {
-"frames": [ SubResource( 22 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 23 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="SpriteFrames" id=25]
-animations = [ {
-"frames": [ SubResource( 24 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
 atlas = ExtResource( 23 )
 region = Rect2( 2048, 0, 2048, 2048 )
 
-[sub_resource type="SpriteFrames" id=27]
+[sub_resource type="SpriteFrames" id=20]
 animations = [ {
-"frames": [ SubResource( 26 ) ],
+"frames": [ SubResource( 19 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 23 )
 region = Rect2( 2048, 2048, 2048, 2048 )
 
-[sub_resource type="SpriteFrames" id=29]
+[sub_resource type="SpriteFrames" id=22]
 animations = [ {
-"frames": [ SubResource( 28 ) ],
+"frames": [ SubResource( 21 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 27 )
 region = Rect2( 2048, 0, 2048, 2048 )
 
-[sub_resource type="SpriteFrames" id=31]
+[sub_resource type="SpriteFrames" id=24]
 animations = [ {
-"frames": [ SubResource( 30 ) ],
+"frames": [ SubResource( 23 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=25]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
-[sub_resource type="TileSet" id=5]
+[sub_resource type="TileSet" id=26]
 0/name = "flor.png 0"
 0/texture = ExtResource( 11 )
 0/tex_offset = Vector2( 0, 0 )
@@ -194,22 +194,24 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 6 )
+0/shape = SubResource( 25 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 25 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 99.625, 134.5 )
 
-[node name="main" type="Node2D" groups=["main"]]
+[node name="main" type="Node2D" groups=[
+"main",
+]]
 script = ExtResource( 9 )
 
 [node name="niveau" type="Node2D" parent="."]
@@ -220,7 +222,9 @@ script = ExtResource( 19 )
 position = Vector2( -56, -94 )
 z_index = -2
 
-[node name="ColorRect" type="ColorRect" parent="niveau/Node2D" groups=["grp_change_color"]]
+[node name="ColorRect" type="ColorRect" parent="niveau/Node2D" groups=[
+"grp_change_color",
+]]
 margin_right = 2650.0
 margin_bottom = 1610.0
 script = ExtResource( 8 )
@@ -250,7 +254,7 @@ scale = Vector2( 0.2, 0.28 )
 [node name="NPC" parent="niveau/live" instance=ExtResource( 15 )]
 position = Vector2( 154, 1110 )
 scale = Vector2( 0.2, 0.2 )
-dialogue_npc = "You can use the E key to push and pull boxes"
+dialogue_npc = "You can use the E key to push and pull boxes."
 skin = 5
 font_size = 120
 
@@ -269,115 +273,113 @@ z_index = -1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 91.6, 55.6 )
 scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 10 )
-frame = 1
+frames = SubResource( 3 )
 speed_scale = 0.1
 playing = true
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 972, 299 )
 scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 10 )
-frame = 1
+frames = SubResource( 3 )
 speed_scale = 0.1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 108.93, 323.68 )
-frames = SubResource( 12 )
+frames = SubResource( 5 )
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 615, 196 )
-frames = SubResource( 12 )
+frames = SubResource( 5 )
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 955, 167 )
 scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 14 )
+frames = SubResource( 7 )
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 728, 186 )
 scale = Vector2( 0.14624, 0.100586 )
-frames = SubResource( 16 )
+frames = SubResource( 9 )
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 856, 192 )
 scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 18 )
+frames = SubResource( 11 )
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 330, 44 )
 scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 21 )
+frames = SubResource( 14 )
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 439, 45 )
 scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 21 )
+frames = SubResource( 14 )
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 802, 76 )
 scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 21 )
+frames = SubResource( 14 )
 frame = 1
 playing = true
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 789, 298 )
 scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 21 )
+frames = SubResource( 14 )
 frame = 1
 playing = true
 
 [node name="AnimatedSprite10" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 612, 298 )
 scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 21 )
+frames = SubResource( 14 )
 frame = 1
 playing = true
 
 [node name="AnimatedSprite11" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 168, 194 )
 scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 23 )
+frames = SubResource( 16 )
 
 [node name="AnimatedSprite12" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 437, 465 )
 scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 25 )
+frames = SubResource( 18 )
 
 [node name="AnimatedSprite13" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 195.55, 464.05 )
 scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 27 )
+frames = SubResource( 20 )
 
 [node name="AnimatedSprite15" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 669, 467 )
 scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 27 )
+frames = SubResource( 20 )
 
 [node name="AnimatedSprite14" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 417, 196 )
 scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 29 )
+frames = SubResource( 22 )
 
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 882, 468 )
 scale = Vector2( 0.115, 0.115 )
-frames = SubResource( 29 )
+frames = SubResource( 22 )
 
 [node name="AnimatedSprite19" type="AnimatedSprite" parent="niveau/live/decor"]
 position = Vector2( 786, 172 )
 scale = Vector2( 0.07, 0.07 )
-frames = SubResource( 31 )
+frames = SubResource( 24 )
 
 [node name="dead" type="Node2D" parent="niveau"]
 visible = false
 
 [node name="TileMap" type="TileMap" parent="niveau/dead"]
-tile_set = SubResource( 5 )
+tile_set = SubResource( 26 )
 collision_layer = 2
 collision_mask = 2
 format = 1
@@ -391,7 +393,9 @@ scale = Vector2( 0.1, 0.1 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="movable_plateforme3" parent="niveau/dead" groups=["grp_change_color"] instance=ExtResource( 2 )]
+[node name="movable_plateforme3" parent="niveau/dead" groups=[
+"grp_change_color",
+] instance=ExtResource( 2 )]
 position = Vector2( 1504, 550 )
 scale = Vector2( 1, 4 )
 choose_collision_layer = 2
@@ -402,20 +406,27 @@ position = Vector2( -0.00012207, -52.5 )
 [node name="enfant" type="Node2D" parent="niveau/dead/movable_plateforme3"]
 position = Vector2( 0, -4.57764e-05 )
 
-[node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
+[node name="Spirit" parent="niveau" groups=[
+"playable",
+] instance=ExtResource( 4 )]
 position = Vector2( -112, 604 )
 collision_layer = 2
 collision_mask = 2
 speed = 350
 
-[node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
+[node name="body" parent="niveau" groups=[
+"playable",
+"tangible",
+] instance=ExtResource( 7 )]
 position = Vector2( 118, 636 )
 scale = Vector2( 0.1, 0.1 )
 run_speed = 200
 jump_speed = -700
 vitesse_dechelage = 100
 
-[node name="movable_plateforme2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
+[node name="movable_plateforme2" parent="niveau" groups=[
+"grp_change_color",
+] instance=ExtResource( 2 )]
 position = Vector2( 423.999, 736 )
 scale = Vector2( 5, 1 )
 vitesse = 30
@@ -432,13 +443,17 @@ scale = Vector2( 0.967678, 0.846774 )
 texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
-[node name="fontaine" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 6 )]
+[node name="fontaine" parent="niveau" groups=[
+"grp_change_color",
+] instance=ExtResource( 6 )]
 position = Vector2( 294, 1092 )
 scale = Vector2( 0.1, 0.1 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="movable_plateforme4" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
+[node name="movable_plateforme4" parent="niveau" groups=[
+"grp_change_color",
+] instance=ExtResource( 2 )]
 position = Vector2( 2017, 692.5 )
 scale = Vector2( 1, 3 )
 
@@ -459,7 +474,10 @@ scale = Vector2( 0.853833, 2.71166 )
 texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
-[node name="Box (alive)" parent="niveau" groups=["area_tue", "tangible"] instance=ExtResource( 13 )]
+[node name="Box (alive)" parent="niveau" groups=[
+"area_tue",
+"tangible",
+] instance=ExtResource( 13 )]
 position = Vector2( 750, 212 )
 rotation = -4.54747e-13
 gravity = 170
@@ -467,7 +485,9 @@ resurection_node_path = NodePath("../live/chieur_de_caisse")
 vitesse_resurection = 1.0
 box_skin = "2"
 
-[node name="Button_levier" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 1 )]
+[node name="Button_levier" parent="niveau" groups=[
+"grp_change_color",
+] instance=ExtResource( 1 )]
 position = Vector2( 590, 1140 )
 rotation = 5.07036e-06
 scale = Vector2( 0.1, 0.1 )
@@ -478,7 +498,9 @@ collision_mask = 3
 position = Vector2( 1098, 1102 )
 scale = Vector2( 0.1, 0.1 )
 
-[node name="piege_vertical_centre" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 5 )]
+[node name="piege_vertical_centre" parent="niveau" groups=[
+"grp_change_color",
+] instance=ExtResource( 5 )]
 position = Vector2( 1096, 992 )
 scale = Vector2( 0.13, 0.1 )
 
@@ -491,7 +513,7 @@ scale = Vector2( 0.1, 0.1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
 position = Vector2( 2222, 720 )
-shape = SubResource( 7 )
+shape = SubResource( 27 )
 
 [connection signal="pushed" from="niveau/live/Button_tangible" to="niveau/dead/movable_plateforme3" method="move_forward"]
 [connection signal="unpushed" from="niveau/live/Button_tangible" to="niveau/dead/movable_plateforme3" method="move_backward"]

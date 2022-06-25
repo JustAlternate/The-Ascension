@@ -23,13 +23,13 @@
 [ext_resource path="res://Assets/Sprites/deco/distrituteur.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/map/NPC.tscn" type="PackedScene" id=22]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 80.8036, 19.6429 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
-[sub_resource type="TileSet" id=5]
+[sub_resource type="TileSet" id=3]
 0/name = "flor.png 0"
 0/texture = ExtResource( 11 )
 0/tex_offset = Vector2( 0, 0 )
@@ -40,26 +40,70 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 6 )
+0/shape = SubResource( 2 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 19 )
 region = Rect2( 0, 512, 512, 512 )
 
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 20 )
+region = Rect2( 2048, 0, 2048, 2048 )
+
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 27 ) ],
+"frames": [ SubResource( 11 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -67,91 +111,49 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
-atlas = ExtResource( 12 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 12 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="SpriteFrames" id=15]
-animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 20 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="SpriteFrames" id=17]
-animations = [ {
-"frames": [ SubResource( 16 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=18]
-flags = 4
-atlas = ExtResource( 20 )
-region = Rect2( 2048, 0, 2048, 2048 )
-
-[sub_resource type="SpriteFrames" id=19]
-animations = [ {
-"frames": [ SubResource( 18 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 0, 4096, 2048, 2048 )
 
-[sub_resource type="SpriteFrames" id=21]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 20 ) ],
+"frames": [ SubResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 2048, 2048, 2048 )
 
-[sub_resource type="SpriteFrames" id=23]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 22 ) ],
+"frames": [ SubResource( 15 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 0, 0, 2048, 2048 )
 
-[sub_resource type="SpriteFrames" id=25]
+[sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ SubResource( 24 ) ],
+"frames": [ SubResource( 17 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 99.625, 134.5 )
 
-[node name="main3" type="Node2D" groups=["main"]]
+[node name="main3" type="Node2D" groups=[
+"main",
+]]
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 10 )
 
@@ -162,20 +164,26 @@ script = ExtResource( 18 )
 [node name="Node2D2" type="Node2D" parent="niveau"]
 z_index = -2
 
-[node name="ColorRect" type="ColorRect" parent="niveau/Node2D2" groups=["grp_change_color"]]
+[node name="ColorRect" type="ColorRect" parent="niveau/Node2D2" groups=[
+"grp_change_color",
+]]
 margin_left = -53.0
 margin_top = -114.0
 margin_right = 1821.0
 margin_bottom = 1015.0
 script = ExtResource( 13 )
 
-[node name="fontaine" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 7 )]
+[node name="fontaine" parent="niveau" groups=[
+"grp_change_color",
+] instance=ExtResource( 7 )]
 position = Vector2( 127.143, 150 )
 scale = Vector2( 0.07, 0.07 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="Box (alive)" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
+[node name="Box (alive)" parent="niveau" groups=[
+"tangible",
+] instance=ExtResource( 2 )]
 light_mask = 3
 position = Vector2( 704.286, 111.429 )
 scale = Vector2( 1.99, 2 )
@@ -184,7 +192,9 @@ collision_mask = 3
 resurection_node_path = NodePath("../live/chieur_de_caisse2")
 vitesse_resurection = 1.0
 
-[node name="Box (alive)3" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
+[node name="Box (alive)3" parent="niveau" groups=[
+"tangible",
+] instance=ExtResource( 2 )]
 light_mask = 3
 position = Vector2( 352.857, 108.571 )
 scale = Vector2( 1.99, 2 )
@@ -193,7 +203,9 @@ collision_mask = 3
 resurection_node_path = NodePath("../live/chieur_de_caisse3")
 vitesse_resurection = 1.0
 
-[node name="Box (alive)4" parent="niveau" groups=["tangible"] instance=ExtResource( 2 )]
+[node name="Box (alive)4" parent="niveau" groups=[
+"tangible",
+] instance=ExtResource( 2 )]
 light_mask = 3
 position = Vector2( 1017.14, 107.143 )
 scale = Vector2( 1.99, 2 )
@@ -202,7 +214,9 @@ collision_mask = 3
 resurection_node_path = NodePath("../live/chieur_de_caisse4")
 vitesse_resurection = 1.0
 
-[node name="plateforme_boite_2_3" type="StaticBody2D" parent="niveau" groups=["grp_change_color"]]
+[node name="plateforme_boite_2_3" type="StaticBody2D" parent="niveau" groups=[
+"grp_change_color",
+]]
 light_mask = 3
 position = Vector2( 992.858, 191.428 )
 scale = Vector2( 1.6, 1.6 )
@@ -213,7 +227,7 @@ script = ExtResource( 14 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/plateforme_boite_2_3"]
 light_mask = 3
 position = Vector2( 20.0893, 19.6429 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="Sprite_plateforme" type="Sprite" parent="niveau/plateforme_boite_2_3"]
 light_mask = 3
@@ -222,7 +236,9 @@ position = Vector2( 20.3185, 20.0894 )
 scale = Vector2( 2.51795, 0.62779 )
 texture = ExtResource( 16 )
 
-[node name="plateforme_boite_2_4" type="StaticBody2D" parent="niveau" groups=["grp_change_color"]]
+[node name="plateforme_boite_2_4" type="StaticBody2D" parent="niveau" groups=[
+"grp_change_color",
+]]
 light_mask = 3
 position = Vector2( 1090, 158.571 )
 rotation = -1.57079
@@ -234,7 +250,7 @@ script = ExtResource( 14 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/plateforme_boite_2_4"]
 light_mask = 3
 position = Vector2( 20.0893, 19.6429 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="Sprite_plateforme" type="Sprite" parent="niveau/plateforme_boite_2_4"]
 light_mask = 3
@@ -243,7 +259,9 @@ position = Vector2( 20.3185, 20.0894 )
 scale = Vector2( 2.51795, 0.62779 )
 texture = ExtResource( 16 )
 
-[node name="plateforme_boite_2_2" type="StaticBody2D" parent="niveau" groups=["grp_change_color"]]
+[node name="plateforme_boite_2_2" type="StaticBody2D" parent="niveau" groups=[
+"grp_change_color",
+]]
 light_mask = 3
 position = Vector2( 671.429, 191.428 )
 scale = Vector2( 1.6, 1.6 )
@@ -254,7 +272,7 @@ script = ExtResource( 14 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/plateforme_boite_2_2"]
 light_mask = 3
 position = Vector2( 20.0893, 19.6429 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="Sprite_plateforme" type="Sprite" parent="niveau/plateforme_boite_2_2"]
 light_mask = 3
@@ -267,13 +285,15 @@ texture = ExtResource( 16 )
 position = Vector2( -3.8147e-06, 0 )
 
 [node name="TileMap" type="TileMap" parent="niveau/dead"]
-tile_set = SubResource( 5 )
+tile_set = SubResource( 3 )
 collision_layer = 2
 collision_mask = 2
 format = 1
 tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, 0, 0, 0, 13, 0, 0, 23, 0, 0, 65536, 0, 0, 65549, 0, 0, 65559, 0, 0, 131072, 0, 0, 131085, 0, 0, 131095, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196621, 0, 0, 196631, 0, 0, 262144, 0, 0, 262167, 0, 0, 327680, 0, 0, 327703, 0, 0, 393216, 0, 0, 393239, 0, 0, 458752, 0, 0, 458775, 0, 0, 524288, 0, 0, 524311, 0, 0, 589824, 0, 0, 589847, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655383, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720919, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786455, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0 )
 
-[node name="Levier_active2" parent="niveau/dead" groups=["grp_change_color"] instance=ExtResource( 6 )]
+[node name="Levier_active2" parent="niveau/dead" groups=[
+"grp_change_color",
+] instance=ExtResource( 6 )]
 position = Vector2( 1297.14, 12.8572 )
 rotation = 3.14159
 scale = Vector2( 0.1, 0.1 )
@@ -285,7 +305,7 @@ collision_mask = 2
 [node name="NPC" parent="niveau/live" instance=ExtResource( 22 )]
 position = Vector2( 1404.29, 324.286 )
 scale = Vector2( 0.2, 0.2 )
-dialogue_npc = "That's a lot of box"
+dialogue_npc = "There are a lot of boxes!"
 
 [node name="live_TileMap" parent="niveau/live" instance=ExtResource( 9 )]
 tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, 0, 0, 0, 23, 0, 0, 65536, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 131072, 0, 0, 131099, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196635, 0, 0, 262144, 0, 0, 262171, 0, 0, 327680, 0, 0, 327707, 0, 0, 393216, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 458752, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 524288, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 589824, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0 )
@@ -305,7 +325,9 @@ position = Vector2( 1017.71, 2.28566 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 15 )
 
-[node name="Levier_active3" parent="niveau/live" groups=["grp_change_color"] instance=ExtResource( 6 )]
+[node name="Levier_active3" parent="niveau/live" groups=[
+"grp_change_color",
+] instance=ExtResource( 6 )]
 position = Vector2( 77.1429, 507.143 )
 rotation = 1.57079
 scale = Vector2( 0.1, 0.1 )
@@ -317,64 +339,71 @@ z_index = -1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 14400, 228.574 )
 scale = Vector2( 5, 5 )
-frames = SubResource( 12 )
+frames = SubResource( 5 )
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 1342.85, 171.429 )
 scale = Vector2( 5, 5 )
-frames = SubResource( 12 )
+frames = SubResource( 5 )
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 2842.86, 2800 )
-frames = SubResource( 15 )
+frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 4485.71, 2814.29 )
-frames = SubResource( 15 )
+frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 6742.86, 4642.86 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 17 )
+frames = SubResource( 10 )
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 11371.4, 4600 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 19 )
+frames = SubResource( 12 )
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 2742.86, 4614.29 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 19 )
+frames = SubResource( 12 )
 
 [node name="AnimatedSprite11" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 5714.29, 600.002 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 19 )
+frames = SubResource( 12 )
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 13514.3, 1871.43 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 21 )
+frames = SubResource( 14 )
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 9414.29, 6371.43 )
-frames = SubResource( 23 )
+frames = SubResource( 16 )
 
 [node name="AnimatedSprite10" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 4042.86, 7242.86 )
 scale = Vector2( 1.65207, 1.77762 )
-frames = SubResource( 25 )
+frames = SubResource( 18 )
 
-[node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
+[node name="Spirit" parent="niveau" groups=[
+"playable",
+] instance=ExtResource( 4 )]
 position = Vector2( 4, -240 )
 collision_layer = 2
 collision_mask = 2
 speed = 350
 
-[node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]
+[node name="body" parent="niveau" groups=[
+"playable",
+"tangible",
+] instance=ExtResource( 1 )]
 position = Vector2( 107.143, 570 )
 scale = Vector2( 0.1, 0.1 )
 run_speed = 250
@@ -384,9 +413,11 @@ jump_speed = -850
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
 position = Vector2( 1630, 255.714 )
-shape = SubResource( 9 )
+shape = SubResource( 19 )
 
-[node name="piege_vertical_centre2" parent="." groups=["grp_change_color"] instance=ExtResource( 17 )]
+[node name="piege_vertical_centre2" parent="." groups=[
+"grp_change_color",
+] instance=ExtResource( 17 )]
 position = Vector2( 255.713, 747.143 )
 scale = Vector2( 0.07, 0.1 )
 
