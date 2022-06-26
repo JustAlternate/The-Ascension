@@ -11,7 +11,7 @@ export var flip_horizontal = false
 export var flip_vertical = false
 export var speed_between_letters = 0.1
 export var delay_before_speaking = 0
-
+export var delay_after_speaking = 5
 export var autospeak = false
 
 # Called when the node enters the scene tree for the first time.
@@ -62,7 +62,7 @@ func show_text(text):
 		
 		emit_signal("interacted",self)
 
-		yield(get_tree().create_timer(5),"timeout")
+		yield(get_tree().create_timer(delay_after_speaking),"timeout")
 		$Label.text = ""
 		$Sprite.visible = false
 		$Label.visible = false
