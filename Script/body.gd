@@ -56,7 +56,7 @@ func get_input():
 					$AnimatedSprite.animation = "course"
 					if $AnimatedSprite.flip_h == true:
 						$AnimatedSprite.flip_h = false
-						$pousse/CollisionShape2D.position.x = 500
+						$pousse/CollisionShape2D.position.x = 420
 				
 				if not is_on_floor():
 					$AnimatedSprite.frame = 4
@@ -72,7 +72,7 @@ func get_input():
 					$AnimatedSprite.animation = "course"
 					if $AnimatedSprite.flip_h == false:
 						$AnimatedSprite.flip_h = true
-						$pousse/CollisionShape2D.position.x = -500
+						$pousse/CollisionShape2D.position.x = -420
 			
 				if not is_on_floor():
 					$AnimatedSprite.frame = 4
