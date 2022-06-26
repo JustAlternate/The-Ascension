@@ -9,7 +9,7 @@ export var friction = 0.05
 var interact
 var _on_fontaine = false
 var alive = true
-var pushing = null
+var pushing = []
 
 func get_input():
 	input_velocity = Vector2.ZERO
