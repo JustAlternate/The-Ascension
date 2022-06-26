@@ -1,5 +1,9 @@
 extends Node
 
+var music_bus_idx = AudioServer.get_bus_index("music")
+
+func _ready():
+	AudioServer.set_bus_effect_enabled(music_bus_idx,1,false)
 
 func _process(_delta):
 	if $Sprite.position.y > -1320:
