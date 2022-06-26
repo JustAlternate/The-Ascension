@@ -1,8 +1,10 @@
 extends Node
 
 var music_bus_idx = AudioServer.get_bus_index("music")
+var lowpassfilter = AudioServer.get_bus_effect(music_bus_idx,0)
 
 func _ready():
+	lowpassfilter.cutoff_hz = 20000
 	AudioServer.set_bus_effect_enabled(music_bus_idx,1,false)
 
 func _process(_delta):
