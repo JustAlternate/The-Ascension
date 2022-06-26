@@ -24,9 +24,9 @@
 [ext_resource path="res://Script/script_de_base.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Sprites/deco/vnetilo2.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Sprites/deco/fenetre .png" type="Texture" id=24]
-[ext_resource path="res://Scenes/map/NPC.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scenes/map/symbole_plateform.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/UI/button_exit.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/map/NPC_multi_sentences.tscn" type="PackedScene" id=28]
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
@@ -180,13 +180,14 @@ script = ExtResource( 13 )
 [node name="live_TileMap" parent="niveau/live" instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65551, 0, 0, 131072, 0, 0, 131087, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
 
-[node name="NPC" parent="niveau/live" instance=ExtResource( 25 )]
-position = Vector2( 391, 353 )
+[node name="NPC_multi_centences" parent="niveau/live" instance=ExtResource( 28 )]
+position = Vector2( 400, 352 )
 scale = Vector2( 0.15, 0.15 )
-dialogue_npc = "You can use the fontain to resurect, only if your body is no longer in danger !"
+dialogue_npc = [ "You can use the fontain to resurect, only if your body is no longer in danger !", "this sofa looks so cosy", "I've been stuck here for a week because of these trap" ]
+default_dialogue = "I can't relax in this sofa
+ :("
 skin = 4
 font_size = 80
-flip_horizontal = true
 
 [node name="deco" type="Node2D" parent="niveau/live"]
 z_index = -1
@@ -238,7 +239,6 @@ frames = SubResource( 20 )
 position = Vector2( 128, 81 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 23 )
-frame = 1
 speed_scale = 0.05
 playing = true
 
