@@ -41,7 +41,7 @@ __meta__ = {
 }
 
 [node name="pantin" parent="." instance=ExtResource( 3 )]
-position = Vector2( -102, 491 )
+position = Vector2( -80, 493 )
 scale = Vector2( 0.15, 0.15 )
 run_speed = 150
 gravity = 0

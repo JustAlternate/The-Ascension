@@ -239,6 +239,7 @@ frames = SubResource( 20 )
 position = Vector2( 128, 81 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 23 )
+frame = 1
 speed_scale = 0.05
 playing = true
 
@@ -292,8 +293,7 @@ scale = Vector2( 0.03, 0.03 )
 
 [node name="movable_plateforme" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 14 )]
 position = Vector2( 928, 288 )
-rotation = 1.57079
-scale = Vector2( 3, 1 )
+scale = Vector2( 1, 3 )
 vitesse = 75
 
 [node name="enfant" type="Node2D" parent="niveau/movable_plateforme"]
@@ -301,7 +301,8 @@ use_parent_material = true
 position = Vector2( 7.62939e-06, -8 )
 
 [node name="Sprite" type="Sprite" parent="niveau/movable_plateforme/enfant"]
-position = Vector2( 32.6933, 21.4575 )
+position = Vector2( -12.9734, 40.4575 )
+rotation = 1.57079
 scale = Vector2( 0.967678, 0.846774 )
 texture = ExtResource( 16 )
 offset = Vector2( -33.7499, -15.4172 )
@@ -309,11 +310,11 @@ offset = Vector2( -33.7499, -15.4172 )
 [node name="AnimatedSprite" parent="niveau/movable_plateforme/enfant" instance=ExtResource( 26 )]
 use_parent_material = true
 position = Vector2( 0.23438, 8.16618 )
-rotation = 3.14159
+rotation = 4.71238
 scale = Vector2( 0.0189246, 0.0480008 )
 
 [node name="arrivée" type="Position2D" parent="niveau/movable_plateforme"]
-position = Vector2( -69.3334, -0.000427246 )
+position = Vector2( -2.28882e-05, -50.6667 )
 
 [node name="fin" type="Area2D" parent="niveau"]
 
@@ -345,8 +346,6 @@ use_parent_material = false
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( 40.0001, -93.9999 )
 scale = Vector2( 0.8, 0.8 )
-collision_layer = 2
-collision_mask = 2
 speed = 350
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]

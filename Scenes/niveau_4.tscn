@@ -190,8 +190,6 @@ box_skin = "2"
 light_mask = 3
 position = Vector2( 352.857, 108.571 )
 scale = Vector2( 1.99, 2 )
-collision_layer = 3
-collision_mask = 3
 resurection_node_path = NodePath("../live/chieur_de_caisse3")
 vitesse_resurection = 1.0
 box_skin = "3"
@@ -331,13 +329,11 @@ frames = SubResource( 5 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 2842.86, 2800 )
 frames = SubResource( 8 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 4485.71, 2814.29 )
 frames = SubResource( 8 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -376,8 +372,6 @@ frames = SubResource( 18 )
 
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( 4, -240 )
-collision_layer = 2
-collision_mask = 2
 speed = 350
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]

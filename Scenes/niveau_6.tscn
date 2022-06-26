@@ -227,7 +227,7 @@ position = Vector2( -798, 1300 )
 scale = Vector2( 0.2, 0.28 )
 
 [node name="Button_levier" parent="niveau/live" groups=["grp_change_color"] instance=ExtResource( 1 )]
-position = Vector2( 110, 1140 )
+position = Vector2( 284, 1142 )
 rotation = 5.07036e-06
 scale = Vector2( 0.1, 0.1 )
 
@@ -278,13 +278,13 @@ offset = Vector2( -6040, -1120 )
 position = Vector2( 1660, 630 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 12 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 8420, 610 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 12 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -297,13 +297,13 @@ scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 16 )
 
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
-position = Vector2( -112, 604 )
+position = Vector2( -140, 730 )
 collision_layer = 2
 collision_mask = 2
 speed = 450
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
-position = Vector2( 2050, 702 )
+position = Vector2( 148, 1088 )
 scale = Vector2( 0.1, 0.1 )
 run_speed = 200
 jump_speed = -700
@@ -515,7 +515,7 @@ position = Vector2( 0, -4.57764e-05 )
 [node name="fin" type="Area2D" parent="niveau"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
-position = Vector2( 2204, 698 )
+position = Vector2( 2204, 688 )
 shape = SubResource( 19 )
 
 [node name="Button" parent="." instance=ExtResource( 25 )]

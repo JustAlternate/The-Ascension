@@ -45,15 +45,6 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="CircleShape2D" id=9]
-radius = 71.8053
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 119.688, 71.0625 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 57.25, 134.5 )
-
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 12 )
@@ -132,6 +123,15 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CircleShape2D" id=9]
+radius = 71.8053
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 119.688, 71.0625 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 57.25, 134.5 )
+
 [node name="main" type="Node2D" groups=["main"]]
 script = ExtResource( 10 )
 
@@ -190,10 +190,53 @@ flip_horizontal = true
 delay_before_speaking = 1
 autospeak = true
 
+[node name="Deco" type="Node2D" parent="niveau/live"]
+
+[node name="ventilo1" type="AnimatedSprite" parent="niveau/live/Deco"]
+position = Vector2( 780, 31 )
+scale = Vector2( 0.0876465, 0.0921631 )
+z_index = -1
+frames = SubResource( 13 )
+frame = 1
+playing = true
+
+[node name="ventilo2" type="AnimatedSprite" parent="niveau/live/Deco"]
+position = Vector2( 907, 481 )
+scale = Vector2( 0.146301, 0.147339 )
+z_index = -1
+frames = SubResource( 17 )
+playing = true
+
+[node name="distri" type="AnimatedSprite" parent="niveau/live/Deco"]
+position = Vector2( 974, 467 )
+scale = Vector2( 0.146027, 0.17717 )
+z_index = -1
+frames = SubResource( 19 )
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/live/Deco"]
+position = Vector2( 327.998, 502 )
+scale = Vector2( 0.0555495, 0.0804254 )
+z_index = -1
+frames = SubResource( 21 )
+
+[node name="ventilo1-1" type="AnimatedSprite" parent="niveau/live/Deco"]
+position = Vector2( 157, 30 )
+scale = Vector2( 0.0820923, 0.0906677 )
+z_index = -1
+frames = SubResource( 13 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/live/Deco"]
+position = Vector2( 268, 207 )
+scale = Vector2( 0.2, 0.2 )
+z_index = -1
+frames = SubResource( 23 )
+
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( -159, -210 )
-collision_layer = 2
-collision_mask = 2
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]
 position = Vector2( 462, 509 )
@@ -226,48 +269,6 @@ color = Color( 0, 0, 0, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
 position = Vector2( -126, 123 )
 shape = SubResource( 10 )
-
-[node name="ventilo1" type="AnimatedSprite" parent="niveau"]
-position = Vector2( 780, 31 )
-scale = Vector2( 0.0876465, 0.0921631 )
-z_index = -1
-frames = SubResource( 13 )
-playing = true
-
-[node name="ventilo2" type="AnimatedSprite" parent="niveau"]
-position = Vector2( 907, 481 )
-scale = Vector2( 0.146301, 0.147339 )
-z_index = -1
-frames = SubResource( 17 )
-frame = 2
-playing = true
-
-[node name="distri" type="AnimatedSprite" parent="niveau"]
-position = Vector2( 974, 467 )
-scale = Vector2( 0.146027, 0.17717 )
-z_index = -1
-frames = SubResource( 19 )
-playing = true
-flip_h = true
-
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau"]
-position = Vector2( 327.998, 502 )
-scale = Vector2( 0.0555495, 0.0804254 )
-z_index = -1
-frames = SubResource( 21 )
-
-[node name="ventilo1-1" type="AnimatedSprite" parent="niveau"]
-position = Vector2( 157, 30 )
-scale = Vector2( 0.0820923, 0.0906677 )
-z_index = -1
-frames = SubResource( 13 )
-playing = true
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau"]
-position = Vector2( 268, 207 )
-scale = Vector2( 0.2, 0.2 )
-z_index = -1
-frames = SubResource( 23 )
 
 [node name="Button" parent="." groups=["grp_change_color"] instance=ExtResource( 16 )]
 margin_left = 948.0

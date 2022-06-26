@@ -22,7 +22,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	velocity.y += gravity
-	velocity = move_and_slide(velocity,Vector2(0, -1))
+	velocity = move_and_slide(velocity)
 	if poufing > 0:
 		poufing -= delta
 		velocity.y += -300 * poufing

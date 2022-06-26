@@ -40,38 +40,41 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=10]
-radius = 264.77
-height = 855.179
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 331.126, 510.72 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 42.6443, 49.4688 )
+extents = Vector2( 27.5003, 49.5286 )
 
 [node name="Spirit" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 6
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.52304, 0.235901 )
+position = Vector2( 3.72922, -0.287249 )
 scale = Vector2( 0.1, 0.1 )
-shape = SubResource( 10 )
+shape = SubResource( 19 )
 
 [node name="ReviveSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 bus = "Live/Die"
 
 [node name="pousse" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pousse"]
 modulate = Color( 0.984314, 0.984314, 0.984314, 1 )
 self_modulate = Color( 0.917647, 0.345098, 0.345098, 1 )
-position = Vector2( 42.6443, -10 )
+position = Vector2( 60.1329, -1.55001 )
 shape = SubResource( 11 )
 
 [connection signal="body_entered" from="pousse" to="." method="_on_pousse_body_entered"]

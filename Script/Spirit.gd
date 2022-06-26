@@ -4,7 +4,7 @@ var velocity = Vector2.ZERO
 var input_velocity = Vector2.ZERO
 export var speed = 500
 export var acceleration = 0.1
-export var friction = 0.05
+export var friction = 1
 
 var interact
 var _on_fontaine = false
