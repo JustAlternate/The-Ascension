@@ -1,7 +1,7 @@
 extends Area2D
 
-export(Array,String) var dialogue_npc
-export var default_dialogue:String
+export(Array,String, MULTILINE) var dialogue_npc
+export(String, MULTILINE) var default_dialogue
 signal interacted(instance)
 export var skin = 0
 var randompitch = 1.0

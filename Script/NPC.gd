@@ -1,6 +1,6 @@
 extends Area2D
 
-export var dialogue_npc:String
+export(String, MULTILINE) var dialogue_npc
 var player_in_range = false
 signal interacted(instance)
 export var skin = 0
