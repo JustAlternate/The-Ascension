@@ -297,7 +297,6 @@ playing = true
 position = Vector2( 288, 100 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 9 )
-frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -313,6 +312,7 @@ playing = true
 position = Vector2( 1232, 1028 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 13 )
+frame = 1
 playing = true
 
 [node name="fenetre" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -346,7 +346,6 @@ frames = SubResource( 22 )
 position = Vector2( 128, 81 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 25 )
-frame = 1
 speed_scale = 0.05
 playing = true
 
@@ -354,7 +353,6 @@ playing = true
 position = Vector2( 1216, 81 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 25 )
-frame = 1
 speed_scale = 0.05
 playing = true
 
@@ -439,11 +437,11 @@ vitesse_dechelage = 200
 position = Vector2( 2220, 722 )
 shape = SubResource( 26 )
 
-[node name="Button" parent="." groups=["grp_change_color"] instance=ExtResource( 16 )]
-margin_left = 977.0
-margin_top = -11.0
-margin_right = 1030.0
-margin_bottom = 51.0
+[node name="Button" parent="." instance=ExtResource( 16 )]
+margin_left = 979.0
+margin_top = -12.1
+margin_right = 1010.0
+margin_bottom = 49.9
 rect_pivot_offset = Vector2( -750, 85 )
 
 [connection signal="activated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_forward"]

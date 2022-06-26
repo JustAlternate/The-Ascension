@@ -355,9 +355,9 @@ scale = Vector2( 0.07, 0.07 )
 run_speed = 320
 jump_speed = -700
 
-[node name="Button" parent="niveau" instance=ExtResource( 27 )]
-margin_left = 979.0
-margin_top = -11.0
+[node name="Button" parent="." instance=ExtResource( 27 )]
+margin_left = 956.0
+margin_top = 0.0
 margin_right = 1032.0
 margin_bottom = 51.0
 rect_pivot_offset = Vector2( -750, 85 )

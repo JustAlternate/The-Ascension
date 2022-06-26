@@ -272,6 +272,7 @@ z_index = -1
 position = Vector2( 91.6, 55.6 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.1
 playing = true
 
@@ -279,6 +280,7 @@ playing = true
 position = Vector2( 972, 299 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.1
 playing = true
 
@@ -498,11 +500,11 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 2222, 720 )
 shape = SubResource( 27 )
 
-[node name="Button" parent="." groups=["grp_change_color"] instance=ExtResource( 29 )]
+[node name="Button" parent="." instance=ExtResource( 29 )]
 margin_left = 973.0
-margin_top = -9.0
+margin_top = -1.0
 margin_right = 1026.0
-margin_bottom = 53.0
+margin_bottom = 61.0
 rect_pivot_offset = Vector2( -750, 85 )
 
 [connection signal="pushed" from="niveau/live/Button_tangible" to="niveau/dead/movable_plateforme3" method="move_forward"]

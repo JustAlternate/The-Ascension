@@ -11,7 +11,7 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-[node name="Button" type="Button" groups=["grp_change_color"]]
+[node name="Button" type="Button"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -57.0
