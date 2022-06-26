@@ -269,6 +269,7 @@ frames = SubResource( 6 )
 position = Vector2( 4390, 1380 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 9 )
+frame = 1
 speed_scale = 0.1
 playing = true
 offset = Vector2( -6040, -1120 )
@@ -517,7 +518,7 @@ position = Vector2( 0, -4.57764e-05 )
 position = Vector2( 2204, 698 )
 shape = SubResource( 19 )
 
-[node name="Button" parent="." groups=["grp_change_color"] instance=ExtResource( 25 )]
+[node name="Button" parent="." instance=ExtResource( 25 )]
 margin_left = 978.0
 margin_top = -9.0
 margin_right = 1031.0

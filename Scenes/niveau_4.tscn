@@ -386,35 +386,35 @@ scale = Vector2( 0.1, 0.1 )
 run_speed = 250
 jump_speed = -850
 
+[node name="piege_vertical_centre2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 17 )]
+position = Vector2( 292.856, 734.286 )
+scale = Vector2( 0.07, 0.1 )
+
+[node name="Tesla-poleSeul" parent="niveau" instance=ExtResource( 8 )]
+use_parent_material = false
+position = Vector2( 270, 668.571 )
+rotation = 1.57079
+scale = Vector2( 0.3, 0.029 )
+
+[node name="Tesla-polePetit" parent="niveau/Tesla-poleSeul" instance=ExtResource( 3 )]
+use_parent_material = true
+position = Vector2( -43.353, -1946.9 )
+rotation = 5.45697e-12
+scale = Vector2( 0.32, 3.448 )
+
+[node name="Tesla-polePetit2" parent="niveau/Tesla-poleSeul" instance=ExtResource( 3 )]
+use_parent_material = true
+position = Vector2( 373.546, -842.944 )
+rotation = -1.5708
+scale = Vector2( 3.44828, 0.333333 )
+
 [node name="fin" type="Area2D" parent="niveau"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
 position = Vector2( 1630, 255.714 )
 shape = SubResource( 19 )
 
-[node name="piege_vertical_centre2" parent="." groups=["grp_change_color"] instance=ExtResource( 17 )]
-position = Vector2( 255.713, 747.143 )
-scale = Vector2( 0.07, 0.1 )
-
-[node name="Tesla-poleSeul" parent="." instance=ExtResource( 8 )]
-use_parent_material = false
-position = Vector2( 232.857, 681.428 )
-rotation = 1.57079
-scale = Vector2( 0.3, 0.029 )
-
-[node name="Tesla-polePetit" parent="Tesla-poleSeul" instance=ExtResource( 3 )]
-use_parent_material = true
-position = Vector2( -43.353, -1946.9 )
-rotation = 5.45697e-12
-scale = Vector2( 0.32, 3.448 )
-
-[node name="Tesla-polePetit2" parent="Tesla-poleSeul" instance=ExtResource( 3 )]
-use_parent_material = true
-position = Vector2( 373.546, -842.944 )
-rotation = -1.5708
-scale = Vector2( 3.44828, 0.333333 )
-
-[node name="Button" parent="." groups=["grp_change_color"] instance=ExtResource( 23 )]
+[node name="Button" parent="." instance=ExtResource( 23 )]
 margin_left = 1414.29
 margin_top = -8.57143
 margin_right = 1467.29

@@ -455,13 +455,11 @@ playing = true
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 2840.02, 880 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 13580, 1640 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 3.0
 playing = true
 
@@ -581,7 +579,7 @@ vitesse_dechelage = 200
 position = Vector2( 2172, 1028 )
 shape = SubResource( 35 )
 
-[node name="Button" parent="." groups=["grp_change_color"] instance=ExtResource( 27 )]
+[node name="Button" parent="." instance=ExtResource( 27 )]
 margin_left = 972.0
 margin_top = -2.0
 margin_right = 1025.0
