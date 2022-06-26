@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scenes/map/piege_horizontale_milieu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=2]
@@ -27,6 +27,20 @@
 [ext_resource path="res://Assets/Sprites/deco/carton.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Sprites/deco/distributeur-d'eau.png" type="Texture" id=26]
 [ext_resource path="res://Scenes/UI/button_exit.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Assets/Sprites/objets/platforme.png" type="Texture" id=28]
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 28 )
+region = Rect2( 0, 1024, 1024, 1024 )
+
+[sub_resource type="SpriteFrames" id=37]
+animations = [ {
+"frames": [ SubResource( 36 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -359,6 +373,11 @@ position = Vector2( 0, -64 )
 
 [node name="enfant" type="Node2D" parent="niveau/porte_boite"]
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/porte_boite/enfant"]
+rotation = -1.5708
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 37 )
+
 [node name="live" type="Node2D" parent="niveau"]
 
 [node name="porte_fin" parent="niveau/live" instance=ExtResource( 8 )]
@@ -366,6 +385,11 @@ position = Vector2( 2016, 1056 )
 scale = Vector2( 1, 3 )
 
 [node name="enfant" type="Node2D" parent="niveau/live/porte_fin"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/live/porte_fin/enfant"]
+rotation = -1.5708
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 37 )
 
 [node name="arrivée" type="Position2D" parent="niveau/live/porte_fin"]
 position = Vector2( 0, -64 )
@@ -431,11 +455,13 @@ playing = true
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 2840.02, 880 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 13580, 1640 )
 frames = SubResource( 6 )
+frame = 1
 speed_scale = 3.0
 playing = true
 

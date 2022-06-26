@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scenes/map/Button_levier.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/movable_plateforme_sticky.tscn" type="PackedScene" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Assets/Sprites/deco/fenetre .png" type="Texture" id=23]
 [ext_resource path="res://Assets/Sprites/deco/armoir+arbre.png" type="Texture" id=24]
 [ext_resource path="res://Scenes/UI/button_exit.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Assets/Sprites/objets/platforme.png" type="Texture" id=26]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -126,6 +127,19 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 0, 1024, 1024, 1024 )
+
+[sub_resource type="SpriteFrames" id=37]
+animations = [ {
+"frames": [ SubResource( 36 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="ConvexPolygonShape2D" id=17]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
@@ -171,6 +185,9 @@ margin_top = -94.0
 margin_right = 2254.0
 margin_bottom = 1352.0
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="live" type="Node2D" parent="niveau"]
 
@@ -351,6 +368,11 @@ scale = Vector2( 0.965802, 0.867561 )
 texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/movable_plateforme6/enfant"]
+rotation = 3.14159
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 37 )
+
 [node name="bas_porte_sortie" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 2016, 720 )
 scale = Vector2( 1, 1.5 )
@@ -366,6 +388,11 @@ scale = Vector2( 0.853833, 0.95124 )
 texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/bas_porte_sortie/enfant"]
+rotation = 1.5708
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 37 )
+
 [node name="haut_porte_sortie" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 2016, 624 )
 scale = Vector2( 1, 1.5 )
@@ -380,6 +407,11 @@ position = Vector2( 29.1394, 14.2718 )
 scale = Vector2( 0.853833, 0.95124 )
 texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/haut_porte_sortie/enfant"]
+rotation = -1.5708
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 37 )
 
 [node name="movable_plateforme8" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 1379, 1274.5 )
@@ -397,6 +429,11 @@ position = Vector2( 29.1394, 14.4123 )
 scale = Vector2( 0.853833, 0.942766 )
 texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/movable_plateforme8/enfant"]
+rotation = 1.5708
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 37 )
 
 [node name="Box (alive)" parent="niveau" groups=["area_tue", "tangible"] instance=ExtResource( 13 )]
 position = Vector2( 1118, 206 )

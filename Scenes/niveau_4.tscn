@@ -288,7 +288,7 @@ collision_mask = 2
 [node name="NPC" parent="niveau/live" instance=ExtResource( 22 )]
 position = Vector2( 524.29, 790.001 )
 scale = Vector2( 0.2, 0.2 )
-dialogue_npc = "If you get stuck u can always make a box respawn by throwing it in a trap"
+dialogue_npc = "If you get stuck, you can always make a box respawn by throwing it into a trap."
 skin = 5
 
 [node name="live_TileMap" parent="niveau/live" instance=ExtResource( 9 )]
@@ -331,11 +331,13 @@ frames = SubResource( 5 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 2842.86, 2800 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 4485.71, 2814.29 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="niveau/live/deco"]

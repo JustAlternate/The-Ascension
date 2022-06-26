@@ -305,6 +305,7 @@ playing = true
 position = Vector2( 1380, 98.0001 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 9 )
+frame = 1
 speed_scale = 2.0
 playing = true
 
@@ -312,7 +313,6 @@ playing = true
 position = Vector2( 1232, 1028 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 13 )
-frame = 1
 playing = true
 
 [node name="fenetre" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -346,6 +346,7 @@ frames = SubResource( 22 )
 position = Vector2( 128, 81 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 25 )
+frame = 1
 speed_scale = 0.05
 playing = true
 
@@ -353,6 +354,7 @@ playing = true
 position = Vector2( 1216, 81 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 25 )
+frame = 1
 speed_scale = 0.05
 playing = true
 
