@@ -3,7 +3,7 @@ extends Node2D
 signal path_finished
 
 export var vitesse = 50
-export var choose_collision_layer = 1
+export(int, FLAGS, "1", "2") var choose_collision_layer = 1
 
 export var direction = 0 #0=ne bouge pas, 1 = vers l'arrivée, -1 = vers le départ
 var linear_velocity
