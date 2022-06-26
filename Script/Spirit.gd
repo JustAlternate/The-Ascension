@@ -21,12 +21,12 @@ func get_input():
 		if Input.is_action_pressed("move_down"):
 			input_velocity.y += 1
 		if Input.is_action_pressed("move_left"):
-			if $AnimatedSprite.flip_h == false and not (pushing != null and interact):
+			if $AnimatedSprite.flip_h == false and not (not pushing.empty() and interact):
 				$AnimatedSprite.flip_h = true
 				$pousse/CollisionShape2D.position.x = -50
 			input_velocity.x -= 1
 		if Input.is_action_pressed("move_right"):
-			if $AnimatedSprite.flip_h == true and not (pushing != null and interact):
+			if $AnimatedSprite.flip_h == true and not (not pushing.empty() and interact):
 				$AnimatedSprite.flip_h = false
 				$pousse/CollisionShape2D.position.x = 50
 			input_velocity.x += 1
@@ -39,8 +39,9 @@ func get_input():
 
 func move_box():
 	interact = Input.is_action_pressed("interact")
-	if interact and pushing != null:
-		pushing.move_and_slide(velocity, Vector2(0, -1))
+	if interact and not pushing.empty():
+		for box in pushing:
+			box.move_and_slide(velocity, Vector2(0, -1))
 
 
 # revivre/mourire
@@ -73,11 +74,11 @@ func _on_Fontaine_revive():
 
 func _on_pousse_body_entered(body):
 	if body.is_in_group("boxable"):
-		pushing = body
+		pushing.append(body)
 
 
 
 
 func _on_pousse_body_exited(body):
 	if body.is_in_group("boxable"):
-		pushing = null
+		pushing.erase(body)
