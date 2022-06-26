@@ -5,6 +5,7 @@ var player_in_range = false
 signal interacted(instance)
 export var skin = 0
 var randompitch = 1.0
+var state = 1
 export var font_size = 70
 export var flip_horizontal = false
 export var flip_vertical = false
@@ -67,10 +68,13 @@ func show_text(text):
 		$Label.visible = false
 
 
+func get_state():
+	state = not state
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if player_in_range:
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("interact") and get_parent().visible == true:
 			show_text(dialogue_npc)
 
 

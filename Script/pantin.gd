@@ -10,7 +10,7 @@ var mort_velocity = 0
 var pushing = null
 
 export var actions = [[0.5,"r",true],[2.5,"r",false]]
-export var spirit = false
+export var spirite = false
 var temps = 0
 var stop = false
 
@@ -23,7 +23,7 @@ var alive = true
 func _ready():
 	velocity.x = 0
 	velocity.y = 0
-	if spirit:
+	if spirite:
 		$AnimatedSprite.visible = false
 		$AnimatedSprite2.visible = true
 
@@ -109,7 +109,7 @@ func special(variable):
 
 # Pour les bruits de pas
 func _on_AnimatedSprite_frame_changed():
-	if $AnimatedSprite.animation == "course" and not spirit:
+	if $AnimatedSprite.animation == "course" and not spirite:
 		match $AnimatedSprite.frame:
 			0, 6:
 				var rand = (randi() % 5) + 1

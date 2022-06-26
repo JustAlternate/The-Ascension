@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/UI/button_exit.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="Button" type="Button"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -57.0
+margin_top = 2.0
+margin_right = -4.0
+margin_bottom = 64.0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+text = "X"
+script = ExtResource( 2 )
+
+[connection signal="button_up" from="." to="." method="_on_Button_button_up"]

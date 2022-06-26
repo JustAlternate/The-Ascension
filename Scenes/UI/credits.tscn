@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/credits.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UI/button_exit.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -10,31 +11,6 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=6]
 size = 30
 font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 20
-extra_spacing_space = 18
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxLine" id=3]
-grow_begin = -20.0
-grow_end = -20.0
-thickness = 4
-vertical = true
-
-[sub_resource type="StyleBoxLine" id=4]
-color = Color( 1, 1, 1, 1 )
-grow_begin = -20.0
-grow_end = -20.0
-thickness = 4
-vertical = true
-
-[sub_resource type="StyleBoxLine" id=5]
-color = Color( 1, 1, 1, 1 )
-grow_begin = -20.0
-grow_end = -20.0
-thickness = 4
-vertical = true
 
 [node name="credits" type="Node"]
 script = ExtResource( 2 )
@@ -48,7 +24,7 @@ __meta__ = {
 }
 
 [node name="Credits" type="Node2D" parent="."]
-position = Vector2( 129, 532 )
+position = Vector2( 137, 532 )
 
 [node name="Line1" type="Label" parent="Credits"]
 anchor_left = 0.5
@@ -74,13 +50,13 @@ margin_top = 199.333
 margin_right = 789.0
 margin_bottom = 766.333
 custom_fonts/font = SubResource( 6 )
-text = "Weber Loïc : Chef de projet / Developpeur
+text = "Weber Loïc : Project Director / Developper
 
 Gaulmin Rémi : Game Designer / Composer
 
-Toureille Gregory : Developpeur / Lead Sound Designer
+Toureille Gregory : Developper / Lead Sound Designer
 
-Pascal Isak : Lead Developpeur / Sound Designer
+Pascal Isak : Lead Developper / Sound Designer
 
 Lepin Sammuel : Artist
 
@@ -118,19 +94,8 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Button2" type="Button" parent="."]
-margin_left = 8.0
-margin_right = 78.0
-margin_bottom = 68.0
-focus_mode = 0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
-text = "Back"
-
-[connection signal="button_up" from="Button2" to="." method="_on_Button2_button_up"]
+[node name="Button" parent="." instance=ExtResource( 3 )]
+margin_left = -59.0
+margin_top = -5.0
+margin_right = -6.0
+margin_bottom = 57.0
