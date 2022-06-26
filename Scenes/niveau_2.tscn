@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Scenes/map/Button_levier.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/movable_plateforme_sticky.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/map/Echelle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Script/niveau2.gd" type="Script" id=14]
 [ext_resource path="res://Script/niveau2_script_en_plus1.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/UI/button_exit.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Sprites/deco/aeration.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Sprites/deco/distributeur-d'eau.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Sprites/deco/vnetilo2.png" type="Texture" id=19]
@@ -115,26 +116,26 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 22 )
-region = Rect2( 2048, 4096, 2048, 2048 )
-
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 22 )
 region = Rect2( 0, 2048, 2048, 2048 )
 
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 22 )
+region = Rect2( 2048, 4096, 2048, 2048 )
+
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 14 ) ],
-"loop": true,
-"name": "montgolfiere",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 15 ) ],
 "loop": true,
 "name": "helico",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ) ],
+"loop": true,
+"name": "montgolfiere",
 "speed": 5.0
 } ]
 
@@ -198,9 +199,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 99.625, 134.5 )
 
-[node name="main2" type="Node2D" groups=[
-"main",
-]]
+[node name="main2" type="Node2D" groups=["main"]]
 script = ExtResource( 9 )
 
 [node name="niveau" type="Node2D" parent="."]
@@ -210,9 +209,7 @@ script = ExtResource( 14 )
 [node name="Node2D" type="Node2D" parent="niveau"]
 z_index = -2
 
-[node name="ColorRect" type="ColorRect" parent="niveau/Node2D" groups=[
-"grp_change_color",
-]]
+[node name="ColorRect" type="ColorRect" parent="niveau/Node2D" groups=["grp_change_color"]]
 show_behind_parent = true
 margin_left = -44.0
 margin_top = -88.0
@@ -248,7 +245,7 @@ collision_mask = 2
 [node name="live" type="Node2D" parent="niveau"]
 
 [node name="NPC" parent="niveau/live" instance=ExtResource( 23 )]
-position = Vector2( 1910, 770 )
+position = Vector2( 1910, 772 )
 scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "Congratulations, employee!"
 skin = 3
@@ -315,6 +312,7 @@ playing = true
 position = Vector2( 1232, 1028 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 13 )
+frame = 1
 playing = true
 
 [node name="fenetre" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -358,9 +356,7 @@ frames = SubResource( 25 )
 speed_scale = 0.05
 playing = true
 
-[node name="movable_plateforme2" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 2 )]
+[node name="movable_plateforme2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 776, 714 )
 scale = Vector2( 6, 1 )
 vitesse = 75
@@ -370,18 +366,13 @@ position = Vector2( 121.333, -10 )
 
 [node name="enfant" type="Node2D" parent="niveau/movable_plateforme2"]
 
-[node name="enfant1" parent="niveau/movable_plateforme2/enfant" groups=[
-"grp_change_color",
-] instance=ExtResource( 6 )]
+[node name="enfant1" parent="niveau/movable_plateforme2/enfant" groups=["grp_change_color"] instance=ExtResource( 6 )]
 position = Vector2( -21.3989, -92 )
 scale = Vector2( 0.016, 0.1 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="enfant2" parent="niveau/movable_plateforme2/enfant" groups=[
-"grp_change_color",
-"grp_piege",
-] instance=ExtResource( 5 )]
+[node name="enfant2" parent="niveau/movable_plateforme2/enfant" groups=["grp_change_color", "grp_piege"] instance=ExtResource( 5 )]
 position = Vector2( 21.3145, -98.75 )
 rotation = 3.14159
 scale = Vector2( 0.007, -0.046 )
@@ -397,9 +388,7 @@ offset = Vector2( -33.7499, -15.4172 )
 position = Vector2( 0, -4.17233e-06 )
 scale = Vector2( 0.01, 0.0546875 )
 
-[node name="Sprite3" type="Sprite" parent="niveau" groups=[
-"grp_change_color",
-]]
+[node name="Sprite3" type="Sprite" parent="niveau" groups=["grp_change_color"]]
 position = Vector2( 1473, 210 )
 scale = Vector2( 1, 4.5625 )
 texture = ExtResource( 10 )
@@ -410,9 +399,7 @@ position = Vector2( 1473, 207 )
 scale = Vector2( 0.843749, 4.46875 )
 texture = ExtResource( 10 )
 
-[node name="movable_plateforme3" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 2 )]
+[node name="movable_plateforme3" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 1473, 514.5 )
 scale = Vector2( 1, 5 )
 
@@ -431,18 +418,13 @@ offset = Vector2( -33.7499, -15.4172 )
 rotation = -1.57079
 scale = Vector2( 0.02, 0.05 )
 
-[node name="Spirit" parent="niveau" groups=[
-"playable",
-] instance=ExtResource( 4 )]
+[node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( 124, 1076 )
 collision_layer = 2
 collision_mask = 2
 speed = 200
 
-[node name="body" parent="niveau" groups=[
-"playable",
-"tangible",
-] instance=ExtResource( 7 )]
+[node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
 position = Vector2( 130, 1082 )
 scale = Vector2( 0.1, 0.1 )
 run_speed = 280
@@ -454,6 +436,13 @@ vitesse_dechelage = 200
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
 position = Vector2( 2220, 722 )
 shape = SubResource( 26 )
+
+[node name="Button" parent="." groups=["grp_change_color"] instance=ExtResource( 16 )]
+margin_left = 977.0
+margin_top = -11.0
+margin_right = 1030.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( -750, 85 )
 
 [connection signal="activated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_forward"]
 [connection signal="desactivated" from="niveau/dead/Button_levier" to="niveau/movable_plateforme2" method="move_backward"]

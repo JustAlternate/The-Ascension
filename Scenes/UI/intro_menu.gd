@@ -1,13 +1,14 @@
 extends Node
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
 	
+var music_bus_idx = AudioServer.get_bus_index("music")
+var lowpassfilter = AudioServer.get_bus_effect(music_bus_idx,0)
+
+func _ready():
+	randomize()
+	lowpassfilter.cutoff_hz = 20000
+	AudioServer.set_bus_effect_enabled(music_bus_idx,1,false)
 	yield(get_tree().create_timer(14), "timeout")
 	var scene_name = "menu_main"
 	var path = "res://Scenes/UI/{scene_name}.tscn".format({"scene_name":scene_name})

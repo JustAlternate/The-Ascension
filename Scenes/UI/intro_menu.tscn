@@ -41,9 +41,9 @@ __meta__ = {
 }
 
 [node name="pantin" parent="." instance=ExtResource( 3 )]
-position = Vector2( -74, 471 )
+position = Vector2( -102, 491 )
 scale = Vector2( 0.15, 0.15 )
 run_speed = 150
 gravity = 0
-actions = [ [ 3.0, "r", true ], [ 0.1, "s", true ], [ 3.0, "s", true ] ]
-spirit = true
+actions = [ [ 0.0, "r", true ], [ 4.0, "r", false ], [ 6.0, "r", true ] ]
+spirite = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Sprites/objets/caisse.png" type="Texture" id=1]
 [ext_resource path="res://Script/Box_alive.gd" type="Script" id=2]
@@ -14,10 +14,10 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 2048, 2048, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 2048, 0, 2048, 2048 )
+region = Rect2( 2048, 4096, 2048, 2048 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
@@ -29,46 +29,36 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 2048, 2048 )
 
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 2048, 4096, 2048, 2048 )
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ SubResource( 7 ) ],
 "loop": true,
-"name": "2",
+"name": "1",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "3",
+"name": "2",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ) ],
+"frames": [ SubResource( 8 ) ],
 "loop": true,
-"name": "1",
+"name": "4",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
-"name": "4",
+"name": "3",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "0",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 8 ) ],
-"loop": true,
-"name": "5",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 31.9814, 32.0133 )
+extents = Vector2( 31.9814, 31.9806 )
 
 [sub_resource type="Curve" id=9]
 max_value = 3.0
@@ -80,10 +70,10 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.08, 0.08 )
 frames = SubResource( 1 )
-animation = "1"
+animation = "4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.26856, 1.27892 )
+position = Vector2( -1.26856, -1.28455 )
 shape = SubResource( 2 )
 
 [node name="FallSFX" type="AudioStreamPlayer2D" parent="."]

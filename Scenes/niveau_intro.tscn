@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://shader_inversion.tres" type="Material" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Script/ColorRect.gd" type="Script" id=13]
 [ext_resource path="res://Assets/Sprites/deco/ventilo.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Sprites/deco/distrituteur.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/UI/button_exit.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Sprites/deco/fenetre .png" type="Texture" id=17]
 [ext_resource path="res://Scenes/map/NPC.tscn" type="PackedScene" id=18]
 
@@ -180,7 +181,7 @@ collision_mask = 2
 tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 16, 0, 0, 131069, 0, 0, 65552, 0, 0, 196605, 0, 0, 131088, 0, 0, 262141, 0, 0, 196624, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262160, 0, 0, 327680, 0, 0, 327696, 0, 0, 393216, 0, 0, 393220, 0, 0, 393232, 0, 0, 458752, 0, 0, 458756, 0, 0, 458768, 0, 0, 524288, 0, 0, 524292, 0, 0, 524304, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0 )
 
 [node name="NPC" parent="niveau/live" instance=ExtResource( 18 )]
-position = Vector2( 809, 532 )
+position = Vector2( 809, 533 )
 scale = Vector2( 0.2, 0.2 )
 dialogue_npc = "Hello ! You are new right? I'm F1S-T Bot. You can use the arrows keys to move and E to interact with objects and people. Good luck!"
 skin = 6
@@ -238,6 +239,7 @@ position = Vector2( 907, 481 )
 scale = Vector2( 0.146301, 0.147339 )
 z_index = -1
 frames = SubResource( 17 )
+frame = 2
 playing = true
 
 [node name="distri" type="AnimatedSprite" parent="niveau"]
@@ -267,7 +269,13 @@ scale = Vector2( 0.2, 0.2 )
 z_index = -1
 frames = SubResource( 23 )
 
-[connection signal="change_color" from="." to="niveau/fontaine" method="_on_main_change_color"]
+[node name="Button" parent="." groups=["grp_change_color"] instance=ExtResource( 16 )]
+margin_left = 948.0
+margin_top = -2.0
+margin_right = 1001.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( -750, 85 )
+
 [connection signal="activated" from="niveau/dead/Button_levier" to="niveau/piege_horizontale_simple" method="_on_Button_levier_activated"]
 [connection signal="activated" from="niveau/dead/Button_levier" to="niveau/le braiiiin" method="_on_Button_levier_activated"]
 [connection signal="desactivated" from="niveau/dead/Button_levier" to="niveau/piege_horizontale_simple" method="_on_Button_levier_desactivated"]
