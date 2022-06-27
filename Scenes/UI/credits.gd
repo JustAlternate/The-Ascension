@@ -10,7 +10,7 @@ func _ready():
 	pass
 
 func _process(_delta):
-	$Credits.global_position.y -= 0.4
+	$Credits.global_position.y -= 1
 
 func _on_Button2_button_up():
 	var scene_name = "menu_main"

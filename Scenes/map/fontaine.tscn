@@ -4,19 +4,16 @@
 [ext_resource path="res://Script/fontaine.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=10]
-flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 2048, 2048 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=11]
-flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 2048, 0, 2048, 2048 )
+region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=12]
-flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 2048, 2048, 2048 )
+region = Rect2( 0, 64, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
@@ -34,6 +31,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 use_parent_material = true
+scale = Vector2( 35, 35 )
 frames = SubResource( 9 )
 playing = true
 

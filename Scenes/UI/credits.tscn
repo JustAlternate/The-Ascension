@@ -1,54 +1,59 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/credits.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/UI/button_exit.tscn" type="PackedScene" id=3]
 
-[sub_resource type="DynamicFont" id=1]
-size = 64
+[sub_resource type="DynamicFont" id=7]
+size = 80
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 30
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=1]
+size = 150
+font_data = ExtResource( 1 )
+
 [node name="credits" type="Node"]
 script = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2( 3, 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Credits" type="Node2D" parent="."]
-position = Vector2( 137, 532 )
+position = Vector2( 949, 969 )
+scale = Vector2( 2, 2 )
 
 [node name="Line1" type="Label" parent="Credits"]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 262.0
-margin_top = -7.62939e-06
-margin_right = 490.0
-margin_bottom = 204.0
-custom_fonts/font = SubResource( 1 )
+anchor_bottom = 1.0
+margin_left = -142.5
+margin_top = -4.0
+margin_right = 142.5
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 7 )
 text = "Credits"
 align = 1
 valign = 1
 
 [node name="Line2" type="Label" parent="Credits"]
-anchor_left = 4.0
-anchor_top = 0.616667
-anchor_right = 23.775
-anchor_bottom = 11.8167
-margin_left = -2.0
-margin_top = 199.333
-margin_right = 789.0
-margin_bottom = 766.333
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -448.0
+margin_top = 170.5
+margin_right = 448.0
+margin_bottom = 797.5
 custom_fonts/font = SubResource( 6 )
 text = "Weber Loïc : Project Director / Developper
 
@@ -73,26 +78,25 @@ Testers :
 - Gayet Benjamin"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-margin_right = 1016.0
-margin_bottom = 197.0
+margin_right = 1927.0
+margin_bottom = 218.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
-anchor_right = 0.999023
-anchor_bottom = 0.005
-margin_bottom = 204.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -536.5
+margin_right = 960.0
+margin_bottom = -327.5
 custom_fonts/font = SubResource( 1 )
 text = "Ascension"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
 margin_left = -59.0

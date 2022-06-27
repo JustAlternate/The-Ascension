@@ -5,8 +5,12 @@
 [ext_resource path="res://Assets/Sprites/building/building-noir-blanc.png" type="Texture" id=3]
 [ext_resource path="res://Script/menu_main.gd" type="Script" id=4]
 
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=3]
-size = 64
+size = 100
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxLine" id=5]
@@ -15,12 +19,8 @@ grow_end = -20.0
 thickness = 4
 vertical = true
 
-[sub_resource type="DynamicFont" id=1]
-size = 64
-font_data = ExtResource( 1 )
-
 [sub_resource type="DynamicFont" id=4]
-size = 64
+size = 100
 extra_spacing_space = 18
 font_data = ExtResource( 1 )
 
@@ -40,20 +40,41 @@ vertical = true
 script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 1.00208
+anchor_bottom = 1.01111
+margin_right = -4.0
+margin_bottom = -12.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1577, 3221 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -937.437
+margin_top = 104.0
+margin_right = 249.438
+margin_bottom = 308.0
+custom_fonts/font = SubResource( 1 )
+text = "The Ascension"
+align = 1
+valign = 1
 
 [node name="Button" type="Button" parent="."]
 anchor_left = 0.0839844
 anchor_top = 0.366667
 anchor_right = 0.287109
 anchor_bottom = 0.526667
-margin_top = -32.0
-margin_bottom = -32.0
+margin_left = -56.0
+margin_top = 101.0
+margin_right = -56.0
+margin_bottom = 101.0
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -68,29 +89,15 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 831, 2477 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="Label" type="Label" parent="."]
-anchor_right = 0.618164
-margin_bottom = 204.0
-custom_fonts/font = SubResource( 1 )
-text = "The Ascension"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [node name="Button2" type="Button" parent="."]
-anchor_left = 0.0839844
-anchor_top = 0.54
-anchor_right = 0.383789
+anchor_left = 0.0838542
+anchor_top = 0.539815
+anchor_right = 0.369271
 anchor_bottom = 0.7
-margin_top = -40.0
-margin_bottom = -40.0
+margin_left = -56.0
+margin_top = 117.0
+margin_right = -56.0
+margin_bottom = 117.0
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -106,12 +113,14 @@ __meta__ = {
 }
 
 [node name="Button3" type="Button" parent="."]
-anchor_left = 0.0839844
-anchor_top = 0.711667
-anchor_right = 0.276367
-anchor_bottom = 0.871667
-margin_top = 48.0
-margin_bottom = 48.0
+anchor_left = 0.0838542
+anchor_top = 0.712037
+anchor_right = 0.286458
+anchor_bottom = 0.872222
+margin_left = 552.0
+margin_top = -88.0
+margin_right = 552.0
+margin_bottom = -88.0
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -127,12 +136,14 @@ __meta__ = {
 }
 
 [node name="Button4" type="Button" parent="."]
-anchor_left = 0.0839844
-anchor_top = 0.711667
-anchor_right = 0.276367
-anchor_bottom = 0.871667
-margin_top = -48.0
-margin_bottom = -48.0
+anchor_left = 0.0838542
+anchor_top = 0.712037
+anchor_right = 0.310612
+anchor_bottom = 0.872222
+margin_left = 552.0
+margin_top = -272.0
+margin_right = 604.625
+margin_bottom = -272.0
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )

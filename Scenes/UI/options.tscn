@@ -4,11 +4,11 @@
 [ext_resource path="res://Scenes/UI/options.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 64
+size = 120
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 40
+size = 80
 font_data = ExtResource( 1 )
 
 [sub_resource type="Gradient" id=3]
@@ -30,30 +30,16 @@ thickness = 10
 color = Color( 1, 1, 1, 1 )
 thickness = 10
 
-[sub_resource type="StyleBoxLine" id=8]
-grow_begin = -20.0
-grow_end = -20.0
-thickness = 4
-vertical = true
-
-[sub_resource type="StyleBoxLine" id=9]
-color = Color( 1, 1, 1, 1 )
-grow_begin = -20.0
-grow_end = -20.0
-thickness = 4
-vertical = true
-
-[sub_resource type="StyleBoxLine" id=10]
-color = Color( 1, 1, 1, 1 )
-grow_begin = -20.0
-grow_end = -20.0
-thickness = 4
-vertical = true
-
 [sub_resource type="DynamicFont" id=11]
-size = 20
+size = 50
 extra_spacing_space = 18
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
 
 [node name="options" type="Node"]
 script = ExtResource( 2 )
@@ -68,7 +54,8 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 0.995117
-margin_bottom = 204.0
+margin_top = 8.0
+margin_bottom = 212.0
 custom_fonts/font = SubResource( 1 )
 text = "The Ascension"
 align = 1
@@ -79,24 +66,21 @@ __meta__ = {
 
 [node name="music" type="Label" parent="."]
 anchor_right = 0.995117
-margin_top = 248.0
-margin_bottom = 452.0
+margin_top = 488.0
+margin_bottom = 692.0
 rect_pivot_offset = Vector2( 60.7288, 138.835 )
 custom_fonts/font = SubResource( 2 )
 text = "Music"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="musicVolume" type="HSlider" parent="music"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -141.5
-margin_top = 97.0
+margin_top = 113.0
 margin_right = 146.5
-margin_bottom = 161.0
+margin_bottom = 177.0
 rect_pivot_offset = Vector2( -283.138, -85.5943 )
 custom_icons/grabber_highlight = SubResource( 4 )
 custom_icons/grabber = SubResource( 4 )
@@ -107,30 +91,24 @@ min_value = 0.001
 max_value = 1.5
 step = 0.001
 value = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="sfx" type="Label" parent="."]
 anchor_right = 0.995117
-margin_top = 344.0
-margin_bottom = 548.0
+margin_top = 648.0
+margin_bottom = 852.0
 rect_pivot_offset = Vector2( 60.7288, 138.835 )
 custom_fonts/font = SubResource( 2 )
 text = "Sfx"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="sfxVolume" type="HSlider" parent="sfx"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -141.5
-margin_top = 97.0
+margin_top = 113.0
 margin_right = 146.5
-margin_bottom = 161.0
+margin_bottom = 177.0
 rect_pivot_offset = Vector2( -283.138, -85.5943 )
 custom_icons/grabber_highlight = SubResource( 4 )
 custom_icons/grabber = SubResource( 4 )
@@ -143,40 +121,38 @@ step = 0.001
 value = 1.0
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 8.0
-margin_right = 78.0
-margin_bottom = 68.0
+margin_left = 1831.0
+margin_top = 12.0
+margin_right = 1901.0
+margin_bottom = 80.0
 focus_mode = 0
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
-custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 enabled_focus_mode = 0
-text = "Back"
+text = "X"
 
 [node name="master" type="Label" parent="."]
 anchor_right = 0.995117
-margin_top = 152.0
-margin_bottom = 356.0
+margin_top = 328.0
+margin_bottom = 532.0
 rect_pivot_offset = Vector2( 60.7288, 138.835 )
 custom_fonts/font = SubResource( 2 )
 text = "Master"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="masterVolume" type="HSlider" parent="master"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -141.5
-margin_top = 97.0
+margin_top = 113.0
 margin_right = 146.5
-margin_bottom = 161.0
+margin_bottom = 177.0
 rect_pivot_offset = Vector2( -283.138, -85.5943 )
 custom_icons/grabber_highlight = SubResource( 4 )
 custom_icons/grabber = SubResource( 4 )

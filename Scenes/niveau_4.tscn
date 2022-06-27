@@ -153,7 +153,8 @@ animations = [ {
 extents = Vector2( 99.625, 134.5 )
 
 [node name="main3" type="Node2D" groups=["main"]]
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 45, 34 )
+scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 10 )
 
 [node name="niveau" type="Node2D" parent="."]
@@ -182,6 +183,7 @@ position = Vector2( 704.286, 111.429 )
 scale = Vector2( 1.99, 2 )
 collision_layer = 3
 collision_mask = 3
+gravity = 700
 resurection_node_path = NodePath("../live/chieur_de_caisse2")
 vitesse_resurection = 1.0
 box_skin = "2"
@@ -190,6 +192,9 @@ box_skin = "2"
 light_mask = 3
 position = Vector2( 352.857, 108.571 )
 scale = Vector2( 1.99, 2 )
+collision_layer = 3
+collision_mask = 3
+gravity = 700
 resurection_node_path = NodePath("../live/chieur_de_caisse3")
 vitesse_resurection = 1.0
 box_skin = "3"
@@ -200,6 +205,7 @@ position = Vector2( 1017.14, 107.143 )
 scale = Vector2( 1.99, 2 )
 collision_layer = 3
 collision_mask = 3
+gravity = 700
 resurection_node_path = NodePath("../live/chieur_de_caisse4")
 vitesse_resurection = 1.0
 
@@ -372,13 +378,14 @@ frames = SubResource( 18 )
 
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( 4, -240 )
-speed = 350
+speed = 550
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]
 position = Vector2( 27.1429, 575.715 )
 scale = Vector2( 0.1, 0.1 )
-run_speed = 250
-jump_speed = -850
+run_speed = 400
+jump_speed = -1200
+vitesse_dechelage = 100
 
 [node name="piege_vertical_centre2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 17 )]
 position = Vector2( 292.856, 734.286 )
@@ -405,7 +412,7 @@ scale = Vector2( 3.44828, 0.333333 )
 [node name="fin" type="Area2D" parent="niveau"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
-position = Vector2( 1630, 255.714 )
+position = Vector2( 1730, 255.714 )
 shape = SubResource( 19 )
 
 [node name="Button" parent="." instance=ExtResource( 23 )]

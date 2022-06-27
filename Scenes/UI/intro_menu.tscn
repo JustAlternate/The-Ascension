@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/PlayableCharacters/pantin.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 50
+size = 80
 font_data = ExtResource( 1 )
 
 [node name="intro_menu" type="Node"]
@@ -19,16 +19,12 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_right = 1016.0
-margin_bottom = 197.0
-color = Color( 0, 0, 0, 1 )
-
 [node name="Label" type="Label" parent="."]
-anchor_left = 0.0439453
-anchor_right = 0.972656
-anchor_bottom = 0.268333
-margin_bottom = 204.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -891.562
+margin_right = 891.562
+margin_bottom = 493.8
 custom_fonts/font = SubResource( 1 )
 text = "This game was created by 5 students from Polytech Grenoble.
 
@@ -36,14 +32,11 @@ And made in 1 week during the Black and White Jam #0.(9) game jam."
 align = 1
 valign = 1
 autowrap = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="pantin" parent="." instance=ExtResource( 3 )]
-position = Vector2( -80, 493 )
-scale = Vector2( 0.15, 0.15 )
-run_speed = 150
+position = Vector2( -147, 801 )
+scale = Vector2( 0.3, 0.3 )
+run_speed = 280
 gravity = 0
 actions = [ [ 0.0, "r", true ], [ 4.0, "r", false ], [ 6.0, "r", true ] ]
 spirite = true

@@ -200,6 +200,8 @@ animations = [ {
 extents = Vector2( 99.625, 134.5 )
 
 [node name="main2" type="Node2D" groups=["main"]]
+position = Vector2( -1, 0 )
+scale = Vector2( 1.8, 1.8 )
 script = ExtResource( 9 )
 
 [node name="niveau" type="Node2D" parent="."]
@@ -211,9 +213,9 @@ z_index = -2
 
 [node name="ColorRect" type="ColorRect" parent="niveau/Node2D" groups=["grp_change_color"]]
 show_behind_parent = true
-margin_left = -44.0
+margin_left = -36.2222
 margin_top = -88.0
-margin_right = 2446.0
+margin_right = 2453.78
 margin_bottom = 1436.0
 script = ExtResource( 8 )
 
@@ -312,7 +314,6 @@ playing = true
 position = Vector2( 1232, 1028 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 13 )
-frame = 1
 playing = true
 
 [node name="fenetre" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -420,14 +421,13 @@ scale = Vector2( 0.02, 0.05 )
 
 [node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( 124, 1076 )
-speed = 200
 
 [node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 7 )]
 position = Vector2( 130, 1082 )
 scale = Vector2( 0.1, 0.1 )
-run_speed = 280
-jump_speed = -700
-vitesse_dechelage = 200
+run_speed = 400
+jump_speed = -900
+vitesse_dechelage = 350
 
 [node name="fin" type="Area2D" parent="niveau"]
 
