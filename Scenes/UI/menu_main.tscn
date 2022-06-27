@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/UI/test.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/UI/button_form_in_menu.tres" type="StyleBox" id=2]
@@ -35,6 +35,8 @@ grow_begin = -20.0
 grow_end = -20.0
 thickness = 4
 vertical = true
+
+[sub_resource type="StyleBoxEmpty" id=8]
 
 [node name="menu_main" type="Node"]
 script = ExtResource( 4 )
@@ -168,13 +170,16 @@ margin_top = 111.502
 margin_right = -54.6627
 margin_bottom = 111.502
 focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = SubResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/disabled = SubResource( 6 )
 custom_styles/normal = ExtResource( 2 )
 disabled = true
 enabled_focus_mode = 0
@@ -193,6 +198,7 @@ margin_top = -425.0
 margin_right = 604.625
 margin_bottom = -425.0
 focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
