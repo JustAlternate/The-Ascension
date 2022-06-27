@@ -271,7 +271,6 @@ frames = SubResource( 6 )
 position = Vector2( 4390, 1380 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 9 )
-frame = 1
 speed_scale = 0.1
 playing = true
 offset = Vector2( -6040, -1120 )
@@ -280,13 +279,13 @@ offset = Vector2( -6040, -1120 )
 position = Vector2( 1660, 630 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 12 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 8420, 610 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 12 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="niveau/live/deco"]
@@ -355,9 +354,9 @@ collision_mask = 3
 
 [node name="movable_plateforme6" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
 position = Vector2( 1248, 192 )
-rotation = 1.57079
-scale = Vector2( 4, 1 )
+scale = Vector2( 1, 4 )
 vitesse = 30
+choose_collision_layer = 3
 
 [node name="arrivée" type="Position2D" parent="niveau/movable_plateforme6"]
 position = Vector2( -60.4, -0.000244141 )
@@ -372,9 +371,8 @@ texture = ExtResource( 10 )
 offset = Vector2( -33.7499, -15.4172 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/movable_plateforme6/enfant"]
-position = Vector2( 1.89966, 0 )
-rotation = 3.14159
-scale = Vector2( 0.0147901, 0.05 )
+rotation = -1.5708
+scale = Vector2( 0.05, 0.055 )
 frames = SubResource( 18 )
 
 [node name="bas_porte_sortie" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 2 )]
