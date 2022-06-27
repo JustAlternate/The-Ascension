@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Sprites/personnage/perso-esprit.png" type="Texture" id=1]
 [ext_resource path="res://Script/Spirit.gd" type="Script" id=2]
@@ -41,10 +41,13 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 331.126, 510.72 )
+extents = Vector2( 331.126, 505.36 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 27.5003, 49.5286 )
+extents = Vector2( 37.3166, 50.5393 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 2.5, 50.5 )
 
 [node name="Spirit" type="KinematicBody2D"]
 collision_layer = 2
@@ -55,11 +58,11 @@ script = ExtResource( 2 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 5
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3.72922, -0.287249 )
+position = Vector2( 0, -0.536003 )
 scale = Vector2( 0.1, 0.1 )
 shape = SubResource( 19 )
 
@@ -74,8 +77,16 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pousse"]
 modulate = Color( 0.984314, 0.984314, 0.984314, 1 )
 self_modulate = Color( 0.917647, 0.345098, 0.345098, 1 )
-position = Vector2( 60.1329, -1.55001 )
+position = Vector2( 50.3166, -0.539306 )
 shape = SubResource( 11 )
+
+[node name="chaud!" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chaud!"]
+position = Vector2( 33, -0.5 )
+shape = SubResource( 20 )
 
 [connection signal="body_entered" from="pousse" to="." method="_on_pousse_body_entered"]
 [connection signal="body_exited" from="pousse" to="." method="_on_pousse_body_exited"]
+[connection signal="body_entered" from="chaud!" to="." method="_on_chaud_body_entered"]
+[connection signal="body_exited" from="chaud!" to="." method="_on_chaud_body_exited"]
