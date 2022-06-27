@@ -13,6 +13,5 @@ func _process(_delta):
 	$Credits.global_position.y -= 1
 
 func _on_Button2_button_up():
-	var scene_name = "menu_main"
-	var path = "res://Scenes/UI/{scene_name}.tscn".format({"scene_name":scene_name})
-	get_tree().change_scene(path)
+	var next_scene = preload("res://Scenes/UI/menu_main.tscn")
+	get_tree().change_scene_to(next_scene)

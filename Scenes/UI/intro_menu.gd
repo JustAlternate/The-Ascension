@@ -10,9 +10,8 @@ func _ready():
 	lowpassfilter.cutoff_hz = 20000
 	AudioServer.set_bus_effect_enabled(music_bus_idx,1,false)
 	yield(get_tree().create_timer(11), "timeout")
-	var scene_name = "menu_main"
-	var path = "res://Scenes/UI/{scene_name}.tscn".format({"scene_name":scene_name})
-	get_tree().change_scene(path)
+	var next_scene = preload("res://Scenes/UI/menu_main.tscn")
+	get_tree().change_scene_to(next_scene)
 	load_game()
 	
 func load_game():
