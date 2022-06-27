@@ -9,28 +9,28 @@
 size = 120
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 100
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxLine" id=5]
+[sub_resource type="StyleBoxLine" id=2]
 grow_begin = -20.0
 grow_end = -20.0
 thickness = 4
 vertical = true
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxLine" id=4]
+grow_begin = -20.0
+grow_end = -20.0
+thickness = 4
+vertical = true
+
+[sub_resource type="DynamicFont" id=5]
 size = 100
 extra_spacing_space = 18
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxLine" id=6]
-grow_begin = -20.0
-grow_end = -20.0
-thickness = 4
-vertical = true
-
-[sub_resource type="StyleBoxLine" id=7]
 grow_begin = -20.0
 grow_end = -20.0
 thickness = 4
@@ -72,19 +72,19 @@ anchor_top = 0.366667
 anchor_right = 0.287109
 anchor_bottom = 0.526667
 margin_left = -56.0
-margin_top = 101.0
-margin_right = -56.0
-margin_bottom = 101.0
+margin_top = 151.0
+margin_right = -56.0001
+margin_bottom = 151.0
 focus_mode = 0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/normal = ExtResource( 2 )
 enabled_focus_mode = 0
-text = "Play"
+text = "Start"
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -92,20 +92,20 @@ __meta__ = {
 [node name="Button2" type="Button" parent="."]
 anchor_left = 0.0838542
 anchor_top = 0.539815
-anchor_right = 0.369271
+anchor_right = 0.334
 anchor_bottom = 0.7
-margin_left = -56.0
-margin_top = 117.0
-margin_right = -56.0
-margin_bottom = 117.0
+margin_left = -56.0001
+margin_top = 150.0
+margin_right = -56.0001
+margin_bottom = 150.0
 focus_mode = 0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/normal = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Options"
 __meta__ = {
@@ -115,20 +115,20 @@ __meta__ = {
 [node name="Button3" type="Button" parent="."]
 anchor_left = 0.0838542
 anchor_top = 0.712037
-anchor_right = 0.286458
+anchor_right = 0.286
 anchor_bottom = 0.872222
 margin_left = 552.0
-margin_top = -88.0
+margin_top = -38.0
 margin_right = 552.0
-margin_bottom = -88.0
+margin_bottom = -38.0
 focus_mode = 0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/normal = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Exit"
 __meta__ = {
@@ -138,22 +138,72 @@ __meta__ = {
 [node name="Button4" type="Button" parent="."]
 anchor_left = 0.0838542
 anchor_top = 0.712037
-anchor_right = 0.310612
+anchor_right = 0.3
 anchor_bottom = 0.872222
 margin_left = 552.0
-margin_top = -272.0
+margin_top = -222.0
 margin_right = 604.625
-margin_bottom = -272.0
+margin_bottom = -222.0
 focus_mode = 0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/normal = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "  Credits"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button5" type="Button" parent="."]
+anchor_left = 0.0831576
+anchor_top = 0.215276
+anchor_right = 0.286282
+anchor_bottom = 0.375276
+margin_left = -54.6626
+margin_top = 111.502
+margin_right = -54.6627
+margin_bottom = 111.502
+focus_mode = 0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+disabled = true
+enabled_focus_mode = 0
+text = "Load"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button6" type="Button" parent="."]
+anchor_left = 0.0838542
+anchor_top = 0.712037
+anchor_right = 0.310612
+anchor_bottom = 0.872222
+margin_left = 552.0
+margin_top = -425.0
+margin_right = 604.625
+margin_bottom = -425.0
+focus_mode = 0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+disabled = true
+enabled_focus_mode = 0
+text = "Save"
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -162,3 +212,5 @@ __meta__ = {
 [connection signal="button_up" from="Button2" to="." method="_on_Button2_button_up"]
 [connection signal="button_up" from="Button3" to="." method="_on_Button3_button_up"]
 [connection signal="button_up" from="Button4" to="." method="_on_Button4_button_up"]
+[connection signal="button_up" from="Button5" to="." method="_on_Button5_button_up"]
+[connection signal="button_up" from="Button6" to="." method="_on_Button6_button_up"]

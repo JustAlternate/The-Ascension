@@ -13,4 +13,15 @@ func _ready():
 	var scene_name = "menu_main"
 	var path = "res://Scenes/UI/{scene_name}.tscn".format({"scene_name":scene_name})
 	get_tree().change_scene(path)
+	load_game()
 	
+func load_game():
+	var save_game = File.new()
+	if save_game.file_exists("user://savegame.save"):
+		save_game.open("user://savegame.save", File.READ)
+		var save_data = parse_json(save_game.get_line())
+		
+		GlobalVariables.master_volume = save_data["master_volume"]
+		GlobalVariables.music_volume = save_data["music_volume"]
+		GlobalVariables.sfx_volume = save_data["sfx_volume"]
+		GlobalVariables.current_level = save_data["current_level"]

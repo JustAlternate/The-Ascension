@@ -28,27 +28,71 @@
 [ext_resource path="res://Scenes/UI/button_exit.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scenes/map/NPC_multi_sentences.tscn" type="PackedScene" id=28]
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 2048, 2048 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 8 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 0, 2048, 2048, 2048 )
 
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 24 )
+region = Rect2( 2048, 2048, 2048, 2048 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 23 )
+region = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 23 )
+region = Rect2( 0, 2048, 2048, 2048 )
+
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 10 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -56,8 +100,8 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 2048, 2048 )
+atlas = ExtResource( 24 )
+region = Rect2( 0, 2048, 2048, 2048 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
@@ -69,70 +113,26 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
-atlas = ExtResource( 24 )
-region = Rect2( 2048, 2048, 2048, 2048 )
-
-[sub_resource type="SpriteFrames" id=15]
-animations = [ {
-"frames": [ SubResource( 14 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 23 )
-region = Rect2( 0, 0, 2048, 2048 )
-
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 23 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="SpriteFrames" id=18]
-animations = [ {
-"frames": [ SubResource( 16 ), SubResource( 17 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=19]
-flags = 4
-atlas = ExtResource( 24 )
-region = Rect2( 0, 2048, 2048, 2048 )
-
-[sub_resource type="SpriteFrames" id=20]
-animations = [ {
-"frames": [ SubResource( 19 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=32]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 512, 512 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 512, 512, 512 )
 
-[sub_resource type="SpriteFrames" id=23]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 32 ), SubResource( 33 ) ],
+"frames": [ SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=17]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
-[sub_resource type="TileSet" id=5]
+[sub_resource type="TileSet" id=18]
 0/name = "flor.png 0"
 0/texture = ExtResource( 11 )
 0/tex_offset = Vector2( 0, 0 )
@@ -143,22 +143,24 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 6 )
+0/shape = SubResource( 17 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 17 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 57.25, 134.5 )
 
-[node name="main3" type="Node2D" groups=["main"]]
+[node name="main3" type="Node2D" groups=[
+"main",
+]]
 script = ExtResource( 10 )
 
 [node name="niveau" type="Node2D" parent="."]
@@ -167,7 +169,9 @@ script = ExtResource( 17 )
 [node name="Node2D2" type="Node2D" parent="niveau"]
 z_index = -10
 
-[node name="ColorRect" type="ColorRect" parent="niveau/Node2D2" groups=["grp_change_color"]]
+[node name="ColorRect" type="ColorRect" parent="niveau/Node2D2" groups=[
+"grp_change_color",
+]]
 show_behind_parent = true
 margin_left = -35.0
 margin_top = -35.0
@@ -196,57 +200,57 @@ z_index = -1
 position = Vector2( 564, 511 )
 scale = Vector2( 0.200317, 0.172592 )
 z_index = -1
-frames = SubResource( 9 )
+frames = SubResource( 2 )
 
 [node name="eau" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 644, 488 )
 scale = Vector2( 0.118896, 0.116943 )
 z_index = -1
-frames = SubResource( 11 )
+frames = SubResource( 4 )
 
 [node name="Plante" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 735, 487 )
 scale = Vector2( 0.134, 0.134 )
-frames = SubResource( 13 )
+frames = SubResource( 6 )
 
 [node name="fenette" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 419, 273 )
 scale = Vector2( 0.134, 0.134 )
 z_index = -1
-frames = SubResource( 15 )
+frames = SubResource( 8 )
 
 [node name="Ventilo" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 1052, 121 )
 scale = Vector2( 0.075, 0.075 )
-frames = SubResource( 18 )
+frames = SubResource( 11 )
+frame = 1
 playing = true
 offset = Vector2( -1575, -138 )
 
 [node name="Ventilo2" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 986, 121 )
 scale = Vector2( 0.075, 0.075 )
-frames = SubResource( 18 )
-frame = 1
+frames = SubResource( 11 )
 playing = true
 offset = Vector2( -1575, -138 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 669, 275 )
 scale = Vector2( 0.134, 0.134 )
-frames = SubResource( 20 )
+frames = SubResource( 13 )
 
 [node name="ventilation" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 128, 81 )
 scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 23 )
-frame = 1
+frames = SubResource( 16 )
 speed_scale = 0.05
 playing = true
 
 [node name="Ventilo3" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 922, 121 )
 scale = Vector2( 0.075, 0.075 )
-frames = SubResource( 18 )
+frames = SubResource( 11 )
+frame = 1
 playing = true
 offset = Vector2( -1575, -138 )
 
@@ -269,29 +273,38 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="TileMap" type="TileMap" parent="niveau/dead"]
-tile_set = SubResource( 5 )
+tile_set = SubResource( 18 )
 collision_layer = 2
 collision_mask = 2
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65541, 0, 0, 65551, 0, 0, 131072, 0, 0, 131077, 0, 0, 131087, 0, 0, 196608, 0, 0, 196613, 0, 0, 196623, 0, 0, 262144, 0, 0, 262149, 0, 0, 262159, 0, 0, 327680, 0, 0, 327685, 0, 0, 327695, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
 
-[node name="fontaine2" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 7 )]
+[node name="fontaine2" parent="niveau" groups=[
+"grp_change_color",
+] instance=ExtResource( 7 )]
 position = Vector2( 813, 473 )
 scale = Vector2( 0.065, 0.065 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="fontaine3" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 7 )]
+[node name="fontaine3" parent="niveau" groups=[
+"grp_change_color",
+] instance=ExtResource( 7 )]
 position = Vector2( 162, 344 )
 scale = Vector2( 0.065, 0.065 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="piege_horizontale_simple" parent="niveau" groups=["grp_change_color", "grp_piege"] instance=ExtResource( 8 )]
+[node name="piege_horizontale_simple" parent="niveau" groups=[
+"grp_change_color",
+"grp_piege",
+] instance=ExtResource( 8 )]
 position = Vector2( 262, 340 )
 scale = Vector2( 0.03, 0.03 )
 
-[node name="movable_plateforme" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 14 )]
+[node name="movable_plateforme" parent="niveau" groups=[
+"grp_change_color",
+] instance=ExtResource( 14 )]
 position = Vector2( 928, 288 )
 scale = Vector2( 1, 3 )
 vitesse = 75
@@ -320,22 +333,28 @@ position = Vector2( -2.28882e-05, -50.6667 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="niveau/fin"]
 position = Vector2( 1074, 307 )
-shape = SubResource( 7 )
+shape = SubResource( 19 )
 
 [node name="Node2D" type="Node2D" parent="niveau"]
 
-[node name="Tesla-polePetit" parent="niveau/Node2D" groups=["grp_change_color"] instance=ExtResource( 18 )]
+[node name="Tesla-polePetit" parent="niveau/Node2D" groups=[
+"grp_change_color",
+] instance=ExtResource( 18 )]
 position = Vector2( 472, 411 )
 rotation = 1.57079
 scale = Vector2( 0.05, 0.05 )
 script = ExtResource( 22 )
 
-[node name="Tesla-poleGrand" parent="niveau/Node2D" groups=["grp_change_color"] instance=ExtResource( 20 )]
+[node name="Tesla-poleGrand" parent="niveau/Node2D" groups=[
+"grp_change_color",
+] instance=ExtResource( 20 )]
 position = Vector2( 645, 415 )
 scale = Vector2( 0.05, 0.05 )
 script = ExtResource( 22 )
 
-[node name="piege_horizontale_simple" parent="niveau/Node2D" groups=["grp_change_color"] instance=ExtResource( 19 )]
+[node name="piege_horizontale_simple" parent="niveau/Node2D" groups=[
+"grp_change_color",
+] instance=ExtResource( 19 )]
 position = Vector2( 545, 382 )
 rotation = 1.42109e-13
 scale = Vector2( 0.05, 0.05 )
@@ -343,12 +362,17 @@ scale = Vector2( 0.05, 0.05 )
 [node name="Tesla-poleSeul" parent="niveau/Node2D" instance=ExtResource( 21 )]
 use_parent_material = false
 
-[node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
+[node name="Spirit" parent="niveau" groups=[
+"playable",
+] instance=ExtResource( 4 )]
 position = Vector2( 40.0001, -93.9999 )
 scale = Vector2( 0.8, 0.8 )
 speed = 350
 
-[node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 1 )]
+[node name="body" parent="niveau" groups=[
+"playable",
+"tangible",
+] instance=ExtResource( 1 )]
 position = Vector2( 86, 336 )
 scale = Vector2( 0.07, 0.07 )
 run_speed = 320
@@ -361,10 +385,10 @@ margin_right = 1032.0
 margin_bottom = 51.0
 rect_pivot_offset = Vector2( -750, 85 )
 
-[connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/piege_horizontale_simple" method="_on_Button_levier_activated"]
 [connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/Node2D/piege_horizontale_simple" method="activation"]
-[connection signal="desactivated" from="niveau/dead/Button_levier2" to="niveau/piege_horizontale_simple" method="_on_Button_levier_desactivated"]
+[connection signal="activated" from="niveau/dead/Button_levier2" to="niveau/piege_horizontale_simple" method="_on_Button_levier_activated"]
 [connection signal="desactivated" from="niveau/dead/Button_levier2" to="niveau/Node2D/piege_horizontale_simple" method="desactivation"]
+[connection signal="desactivated" from="niveau/dead/Button_levier2" to="niveau/piege_horizontale_simple" method="_on_Button_levier_desactivated"]
 [connection signal="activated" from="niveau/dead/Button_levier3" to="niveau/movable_plateforme" method="move_forward"]
 [connection signal="desactivated" from="niveau/dead/Button_levier3" to="niveau/movable_plateforme" method="move_backward"]
 [connection signal="body_entered" from="niveau/fin" to="niveau" method="_on_fin_body_entered"]

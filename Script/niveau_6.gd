@@ -16,6 +16,7 @@ func _ready():
 #	pass
 func _on_fin_body_entered(body):
 	if body.name == "body":
+		GlobalVariables.current_level = 0
 		var map_name = "credits"
 		var path = "res://Scenes/UI/{map_name}.tscn".format({"map_name":map_name})
 		get_tree().change_scene(path)

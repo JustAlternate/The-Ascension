@@ -13,6 +13,7 @@ func _ready():
 
 func _on_fin_body_entered(body):
 	if body.name == "body":
+		GlobalVariables.current_level = 6
 		var map_name = "niveau_6"
 		var path = "res://Scenes/{map_name}.tscn".format({"map_name":map_name})
 		get_tree().change_scene(path)
