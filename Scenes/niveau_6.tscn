@@ -359,7 +359,7 @@ vitesse = 30
 choose_collision_layer = 3
 
 [node name="arrivée" type="Position2D" parent="niveau/movable_plateforme6"]
-position = Vector2( -60.4, -0.000244141 )
+position = Vector2( 0, -60 )
 
 [node name="enfant" type="Node2D" parent="niveau/movable_plateforme6"]
 
