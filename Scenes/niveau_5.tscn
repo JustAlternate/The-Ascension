@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Scenes/map/piege_horizontale_milieu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/map/live_TileMap.tscn" type="PackedScene" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Assets/Sprites/deco/distributeur-d'eau.png" type="Texture" id=26]
 [ext_resource path="res://Scenes/UI/button_exit.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Assets/Sprites/objets/platforme.png" type="Texture" id=28]
+[ext_resource path="res://Assets/exit.png" type="Texture" id=29]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -275,9 +276,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 99.625, 134.5 )
 
-[node name="main" type="Node2D" groups=[
-"main",
-]]
+[node name="main" type="Node2D" groups=["main"]]
 position = Vector2( -5, -7 )
 scale = Vector2( 1.8, 1.8 )
 script = ExtResource( 12 )
@@ -289,44 +288,32 @@ script = ExtResource( 17 )
 [node name="fond" type="Node2D" parent="niveau"]
 z_index = -4
 
-[node name="ColorRect" type="ColorRect" parent="niveau/fond" groups=[
-"grp_change_color",
-]]
+[node name="ColorRect" type="ColorRect" parent="niveau/fond" groups=["grp_change_color"]]
 margin_left = -94.0
 margin_top = -108.0
 margin_right = 2575.0
 margin_bottom = 1347.0
 script = ExtResource( 11 )
 
-[node name="fontaine" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 6 )]
+[node name="fontaine" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 6 )]
 position = Vector2( 1476.01, 1092 )
 scale = Vector2( 0.1, 0.1 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="bt_piege" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 7 )]
+[node name="bt_piege" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 7 )]
 position = Vector2( 576, 1147.33 )
 scale = Vector2( 0.1, 1 )
 
-[node name="bt_plateforme" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 7 )]
+[node name="bt_plateforme" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 7 )]
 position = Vector2( 832, 1147.33 )
 scale = Vector2( 0.1, 1 )
 
-[node name="bt_fin" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 7 )]
+[node name="bt_fin" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 7 )]
 position = Vector2( 1088, 1147.33 )
 scale = Vector2( 0.1, 1 )
 
-[node name="Box (alive)" parent="niveau" groups=[
-"tangible",
-] instance=ExtResource( 9 )]
+[node name="Box (alive)" parent="niveau" groups=["tangible"] instance=ExtResource( 9 )]
 position = Vector2( 440, 170 )
 collision_layer = 3
 collision_mask = 3
@@ -337,9 +324,7 @@ position = Vector2( 440, 94 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 14 )
 
-[node name="Node2D" type="Node2D" parent="niveau" groups=[
-"grp_change_color",
-]]
+[node name="Node2D" type="Node2D" parent="niveau" groups=["grp_change_color"]]
 position = Vector2( -48, 0 )
 scale = Vector2( 1.15, 1 )
 script = ExtResource( 13 )
@@ -381,9 +366,7 @@ use_parent_material = true
 position = Vector2( 1594, 762 )
 scale = Vector2( 0.08, 0.08 )
 
-[node name="porte_boite" parent="niveau" groups=[
-"grp_change_color",
-] instance=ExtResource( 8 )]
+[node name="porte_boite" parent="niveau" groups=["grp_change_color"] instance=ExtResource( 8 )]
 position = Vector2( 608, 192 )
 scale = Vector2( 1, 4 )
 choose_collision_layer = 3
@@ -421,6 +404,10 @@ scale = Vector2( 0.2, 0.4 )
 [node name="live_TileMap" parent="niveau/live" instance=ExtResource( 2 )]
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 65536, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 65568, 0, 0, 65569, 0, 0, 131072, 0, 0, 131090, 0, 0, 131091, 0, 0, 131104, 0, 0, 131105, 0, 0, 196608, 0, 0, 196626, 0, 0, 196627, 0, 0, 196640, 0, 0, 196641, 0, 0, 262144, 0, 0, 262162, 0, 0, 262163, 0, 0, 262176, 0, 0, 262177, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327698, 0, 0, 327699, 0, 0, 327712, 0, 0, 327713, 0, 0, 393216, 0, 0, 393234, 0, 0, 393235, 0, 0, 393248, 0, 0, 393249, 0, 0, 458752, 0, 0, 458770, 0, 0, 458771, 0, 0, 458784, 0, 0, 458785, 0, 0, 524288, 0, 0, 524306, 0, 0, 524307, 0, 0, 524320, 0, 0, 524321, 0, 0, 589824, 0, 0, 589842, 0, 0, 589843, 0, 0, 589856, 0, 0, 589857, 0, 0, 655360, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 655392, 0, 0, 655393, 0, 0, 720896, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720906, 0, 0, 720907, 0, 0, 720910, 0, 0, 720911, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 720928, 0, 0, 720929, 0, 0, 786432, 0, 0, 786436, 0, 0, 786463, 0, 0, 786464, 0, 0, 786465, 0, 0, 851968, 0, 0, 851999, 0, 0, 852000, 0, 0, 852001, 0, 0, 917504, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 917538, 0, 0, 917539, 0, 0, 983040, 0, 0, 983075, 0, 0, 1048576, 0, 0, 1048611, 0, 0, 1114112, 0, 0, 1114147, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0, 1179680, 0, 0, 1179681, 0, 0, 1179682, 0, 0, 1179683, 0, 0 )
 
+[node name="Sprite" type="Sprite" parent="niveau/live"]
+position = Vector2( 2111.11, 926.667 )
+texture = ExtResource( 29 )
+
 [node name="NPC3" parent="niveau/live" instance=ExtResource( 16 )]
 position = Vector2( 1710, 580 )
 scale = Vector2( 0.2, 0.2 )
@@ -452,7 +439,6 @@ z_index = -1
 position = Vector2( 31560, 6440 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.1
 playing = true
 offset = Vector2( -6040, -1120 )
@@ -461,6 +447,7 @@ offset = Vector2( -6040, -1120 )
 position = Vector2( 49918.6, 7135.5 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 5 )
+frame = 1
 speed_scale = 0.1
 playing = true
 offset = Vector2( -6040, -1120 )
@@ -480,6 +467,7 @@ playing = true
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 13580, 1640 )
 frames = SubResource( 8 )
+frame = 1
 speed_scale = 3.0
 playing = true
 
@@ -580,16 +568,11 @@ collision_mask = 2
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 65536, 0, 0, 65567, 0, 0, 131072, 0, 0, 131103, 0, 0, 196608, 0, 0, 196639, 0, 0, 262144, 0, 0, 262175, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327711, 0, 0, 393216, 0, 0, 393247, 0, 0, 458752, 0, 0, 458783, 0, 0, 524288, 0, 0, 524319, 0, 0, 589824, 0, 0, 589855, 0, 0, 655360, 0, 0, 655391, 0, 0, 720896, 0, 0, 720927, 0, 0, 786432, 0, 0, 786463, 0, 0, 851968, 0, 0, 851999, 0, 0, 917504, 0, 0, 917535, 0, 0, 983040, 0, 0, 983071, 0, 0, 1048576, 0, 0, 1048607, 0, 0, 1114112, 0, 0, 1114143, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179679, 0, 0 )
 
-[node name="Spirit" parent="niveau" groups=[
-"playable",
-] instance=ExtResource( 4 )]
+[node name="Spirit" parent="niveau" groups=["playable"] instance=ExtResource( 4 )]
 position = Vector2( 4, -240 )
 speed = 650
 
-[node name="body" parent="niveau" groups=[
-"playable",
-"tangible",
-] instance=ExtResource( 10 )]
+[node name="body" parent="niveau" groups=["playable", "tangible"] instance=ExtResource( 10 )]
 position = Vector2( 80.0005, 1086 )
 scale = Vector2( 0.1, 0.1 )
 run_speed = 400
@@ -609,14 +592,14 @@ margin_right = 1025.0
 margin_bottom = 60.0
 rect_pivot_offset = Vector2( -750, 85 )
 
+[connection signal="pushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple" method="desactivation"]
 [connection signal="pushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple2" method="desactivation"]
 [connection signal="pushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple3" method="desactivation"]
-[connection signal="pushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple" method="desactivation"]
 [connection signal="pushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple4" method="desactivation"]
 [connection signal="pushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple5" method="desactivation"]
+[connection signal="unpushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple" method="activation"]
 [connection signal="unpushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple2" method="activation"]
 [connection signal="unpushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple3" method="activation"]
-[connection signal="unpushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple" method="activation"]
 [connection signal="unpushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple4" method="activation"]
 [connection signal="unpushed" from="niveau/bt_piege" to="niveau/Node2D/piege_horizontale_simple5" method="activation"]
 [connection signal="pushed" from="niveau/bt_plateforme" to="niveau/porte_boite" method="move_forward"]
