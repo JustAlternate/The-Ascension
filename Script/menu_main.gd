@@ -6,10 +6,6 @@ var lowpassfilter = AudioServer.get_bus_effect(music_bus_idx,0)
 func _ready():
 	lowpassfilter.cutoff_hz = 20000
 	AudioServer.set_bus_effect_enabled(music_bus_idx,1,false)
-	if GlobalVariables.current_level == 0:
-		$Button6.disabled = true
-	else:
-		$Button6.disabled = false
 	var save_game = File.new()
 	if save_game.file_exists("user://savegame.save"):
 		$Button5.disabled = false
@@ -40,7 +36,7 @@ func _on_Button4_button_up():
 	var path = "res://Scenes/UI/{scene_name}.tscn".format({"scene_name":scene_name})
 	get_tree().change_scene(path)
 
-func save_game():					# Créé un fichier de sauvegarde ou l'écrase s'il existe déjà
+func save_game():# Créé un fichier de sauvegarde ou l'écrase s'il existe déjà
 	var save_game = File.new()
 	save_game.open("user://savegame.save",File.WRITE)
 	

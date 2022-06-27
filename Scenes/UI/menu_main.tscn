@@ -74,9 +74,9 @@ anchor_top = 0.366667
 anchor_right = 0.287109
 anchor_bottom = 0.526667
 margin_left = -56.0
-margin_top = 151.0
+margin_top = -67.0
 margin_right = -56.0001
-margin_bottom = 151.0
+margin_bottom = -67.0
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -97,9 +97,9 @@ anchor_top = 0.539815
 anchor_right = 0.334
 anchor_bottom = 0.7
 margin_left = -56.0001
-margin_top = 150.0
+margin_top = -34.0
 margin_right = -56.0001
-margin_bottom = 150.0
+margin_bottom = -34.0
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -119,10 +119,8 @@ anchor_left = 0.0838542
 anchor_top = 0.712037
 anchor_right = 0.286
 anchor_bottom = 0.872222
-margin_left = 552.0
-margin_top = -38.0
-margin_right = 552.0
-margin_bottom = -38.0
+margin_left = -56.0
+margin_right = -56.0
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -142,10 +140,10 @@ anchor_left = 0.0838542
 anchor_top = 0.712037
 anchor_right = 0.3
 anchor_bottom = 0.872222
-margin_left = 552.0
-margin_top = -222.0
-margin_right = 604.625
-margin_bottom = -222.0
+margin_left = 472.0
+margin_top = -220.0
+margin_right = 524.625
+margin_bottom = -220.0
 focus_mode = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -165,10 +163,10 @@ anchor_left = 0.0831576
 anchor_top = 0.215276
 anchor_right = 0.286282
 anchor_bottom = 0.375276
-margin_left = -54.6626
-margin_top = 111.502
-margin_right = -54.6627
-margin_bottom = 111.502
+margin_left = 473.337
+margin_top = 96.5019
+margin_right = 473.337
+margin_bottom = 96.5019
 focus_mode = 0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -188,35 +186,8 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Button6" type="Button" parent="."]
-anchor_left = 0.0838542
-anchor_top = 0.712037
-anchor_right = 0.310612
-anchor_bottom = 0.872222
-margin_left = 552.0
-margin_top = -425.0
-margin_right = 604.625
-margin_bottom = -425.0
-focus_mode = 0
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = ExtResource( 2 )
-disabled = true
-enabled_focus_mode = 0
-text = "Save"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
 [connection signal="button_up" from="Button2" to="." method="_on_Button2_button_up"]
 [connection signal="button_up" from="Button3" to="." method="_on_Button3_button_up"]
 [connection signal="button_up" from="Button4" to="." method="_on_Button4_button_up"]
 [connection signal="button_up" from="Button5" to="." method="_on_Button5_button_up"]
-[connection signal="button_up" from="Button6" to="." method="_on_Button6_button_up"]
