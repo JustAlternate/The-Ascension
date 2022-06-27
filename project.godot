@@ -20,11 +20,12 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Ascension"
+config/name="The Ascension"
 run/main_scene="res://Scenes/UI/intro_menu.tscn"
 boot_splash/image="res://Assets/loading_screen.png"
 boot_splash/use_filter=false
-config/icon="res://icon.png"
+config/icon="res://image-1.png.png"
+config/windows_native_icon="res://robot-calin (1).ico"
 
 [autoload]
 
@@ -35,7 +36,6 @@ GlobalVariables="*res://Scenes/UI/global_variables.gd"
 
 window/size/width=1920
 window/size/height=1080
-window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
