@@ -10,6 +10,8 @@ var interact
 var _on_fontaine = false
 var alive = true
 var pushing = []
+var chaud = []
+
 
 func get_input():
 	input_velocity = Vector2.ZERO
@@ -24,11 +26,13 @@ func get_input():
 			if $AnimatedSprite.flip_h == false and not (not pushing.empty() and interact):
 				$AnimatedSprite.flip_h = true
 				$pousse/CollisionShape2D.position.x = -50
+				$"chaud!/CollisionShape2D".position.x = -33
 			input_velocity.x -= 1
 		if Input.is_action_pressed("move_right"):
 			if $AnimatedSprite.flip_h == true and not (not pushing.empty() and interact):
 				$AnimatedSprite.flip_h = false
 				$pousse/CollisionShape2D.position.x = 50
+				$"chaud!/CollisionShape2D".position.x = 33
 			input_velocity.x += 1
 		input_velocity = input_velocity.normalized() * speed
 	
@@ -41,7 +45,11 @@ func move_box():
 	interact = Input.is_action_pressed("interact")
 	if interact and not pushing.empty():
 		for box in pushing:
-			box.move_and_slide(velocity, Vector2(0, -1))
+			var pushing_velocity = Vector2(velocity.x,0)
+			if box in chaud:
+				pushing_velocity.x*=1.3
+				print("chaud ",box.name)
+			box.move_and_slide(pushing_velocity, Vector2(0, -1))
 
 
 # revivre/mourire
@@ -77,8 +85,17 @@ func _on_pousse_body_entered(body):
 		pushing.append(body)
 
 
-
-
 func _on_pousse_body_exited(body):
 	if body.is_in_group("boxable"):
 		pushing.erase(body)
+
+
+func _on_chaud_body_entered(body):
+	if body.is_in_group("boxable"):
+		chaud.append(body)
+		print("in")
+
+func _on_chaud_body_exited(body):
+	if body.is_in_group("boxable"):
+		chaud.erase(body)
+		print("out")
