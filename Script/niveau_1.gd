@@ -20,5 +20,5 @@ func _on_fin_body_entered(body):
 	if body.name == "body":
 		GlobalVariables.current_level = 2
 		var map_name = "niveau_2"
-		var path = "res://Scenes/{map_name}.tscn".format({"map_name":map_name})
-		get_tree().change_scene(path)
+		var next_scene = preload("res://Scenes/niveau_2.tscn")
+		get_tree().change_scene_to(next_scene)

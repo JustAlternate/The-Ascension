@@ -22,8 +22,8 @@ func _process(_delta):
 		
 func _on_Button_button_up():
 	var map_name = "niveau_intro"
-	var path = "res://Scenes/{map_name}.tscn".format({"map_name":map_name})
-	get_tree().change_scene(path)
+	var next_scene = preload("res://Scenes/niveau_intro.tscn")
+	get_tree().change_scene_to(next_scene)
 	
 func _on_Button3_button_up():
 	get_tree().quit()
