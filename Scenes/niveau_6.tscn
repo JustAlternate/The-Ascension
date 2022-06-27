@@ -271,6 +271,7 @@ frames = SubResource( 6 )
 position = Vector2( 4390, 1380 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 9 )
+frame = 1
 speed_scale = 0.1
 playing = true
 offset = Vector2( -6040, -1120 )

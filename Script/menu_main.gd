@@ -13,8 +13,8 @@ func _ready():
 		$Button5.disabled = true
 
 func _process(_delta):
-	if $Sprite.position.y > -1320:
-		$Sprite.position.y -= 1
+	if $Sprite.position.y < 3180:
+		$Sprite.position.y += 1
 		
 func _on_Button_button_up():
 	var map_name = "niveau_intro"

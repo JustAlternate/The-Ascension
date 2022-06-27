@@ -63,7 +63,7 @@ func show_text(text):
 		
 		emit_signal("interacted",self)
 
-		yield(get_tree().create_timer(delay_after_speaking),"timeout")
+		yield(get_tree().create_timer(2),"timeout")
 		$Label.text = ""
 		$Sprite.visible = false
 		$Label.visible = false

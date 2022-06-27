@@ -424,13 +424,6 @@ dialogue_npc = "It sucks to be an intern!"
 font_size = 100
 autospeak = true
 
-[node name="NPC5" parent="niveau/live" instance=ExtResource( 16 )]
-position = Vector2( 708, 1108 )
-scale = Vector2( 0.2, 0.2 )
-dialogue_npc = "Even when you are dead, your body can still push buttons."
-skin = 5
-font_size = 90
-
 [node name="deco" type="Node2D" parent="niveau/live"]
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
@@ -439,6 +432,7 @@ z_index = -1
 position = Vector2( 31560, 6440 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 5 )
+frame = 1
 speed_scale = 0.1
 playing = true
 offset = Vector2( -6040, -1120 )
@@ -447,7 +441,6 @@ offset = Vector2( -6040, -1120 )
 position = Vector2( 49918.6, 7135.5 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 5 )
-frame = 1
 speed_scale = 0.1
 playing = true
 offset = Vector2( -6040, -1120 )
@@ -462,12 +455,12 @@ playing = true
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 2840.02, 880 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="niveau/live/deco"]
 position = Vector2( 13580, 1640 )
 frames = SubResource( 8 )
-frame = 1
 speed_scale = 3.0
 playing = true
 
