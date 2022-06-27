@@ -62,8 +62,8 @@ func _physics_process(_delta):
 		global_position = Vector2(-100,-100)
 	else:
 		get_input()
-		velocity = move_and_slide(velocity)
 		move_box()
+		velocity = move_and_slide(velocity)
 
 
 
