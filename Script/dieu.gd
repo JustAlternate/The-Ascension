@@ -30,7 +30,7 @@ func _on_Area2D_body_exited(body):
 func _input(event):
 	if event.is_action_pressed("interact"):
 		if body_in:
-			get_tree().call_group("main","revive")
+			get_tree().call_group("main","revive_tp",global_position)
 
 func change_color():
 	if material == load("res://shader_inversion.tres"):

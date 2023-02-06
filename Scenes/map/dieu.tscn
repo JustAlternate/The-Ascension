@@ -77,7 +77,7 @@ use_parent_material = true
 scale = Vector2( 35, 35 )
 frames = SubResource( 15 )
 animation = "droite-gauche"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
