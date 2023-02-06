@@ -63,7 +63,10 @@ func revive():
 	alive = true
 	visible = false
 	$ReviveSFX.play()
-	
+
+func revive_tp(position:Vector2):
+	revive()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	if alive:

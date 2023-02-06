@@ -139,6 +139,11 @@ func dead():
 func revive():
 	alive = true
 	velocity = Vector2.ZERO
+	
+func revive_tp(position:Vector2):
+	alive = true
+	velocity = Vector2.ZERO
+	global_position = position
 
 
 # booléens pour savoir si le joueur risque d'être écrasé
