@@ -1,2 +1,6 @@
 **/*.import
 **/*.stex
+*.md5
+*.stex
+*.stex
+*.tres
