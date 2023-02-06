@@ -36,9 +36,14 @@ func get_input():
 		var right = Input.is_action_pressed("move_right")
 		var left = Input.is_action_pressed("move_left")
 		var jump = Input.is_action_just_pressed("move_up")
+	
 		
-		if sur_echelle and Input.is_action_pressed("move_up"):
-			velocity.y = -vitesse_dechelage
+		if Input.is_action_pressed("move_up"):
+			if sur_echelle:
+				velocity.y = -vitesse_dechelage
+		if Input.is_action_pressed("move_down"):
+			if sur_echelle and not is_on_floor():
+				velocity.y = vitesse_dechelage
 
 		if is_on_floor() and jump:
 
